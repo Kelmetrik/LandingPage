@@ -57,10 +57,10 @@ const ParetoChart = () => {
       <div className="chart-header-analytics">
         <div className="chart-title-section">
           <BarChart3 className="chart-icon" />
-          <h3>Pareto Analysis - Defect Causes</h3>
+          <h3>Operational Analysis Example</h3>
         </div>
         <div className="pareto-summary">
-          <span className="pareto-total">Total Defects: {total}</span>
+          <span className="pareto-total">Total Events: {total}</span>
         </div>
       </div>
 
@@ -168,7 +168,7 @@ const ParetoChart = () => {
           );
         })}
 
-        {/* LÃ­nea acumulativa (curva de Pareto) */}
+        {/* Línea acumulativa (curva de Pareto) */}
         <path
           d={paretoData
             .map((item, i) => {
@@ -186,7 +186,7 @@ const ParetoChart = () => {
           }}
         />
 
-        {/* Puntos en la lÃ­nea acumulativa */}
+        {/* Puntos en la línea acumulativa */}
         {paretoData.map((item, i) => {
           const x = 135 + i * 90;
           const y = 280 - item.cumulativePercentage * 2;
@@ -285,14 +285,15 @@ const ParetoChart = () => {
               .toFixed(1)}
             %
           </strong>{" "}
-          of all defects
+          of all defects. Example of how operational data can be analyzed and
+          prioritized.
         </span>
       </div>
     </div>
   );
 };
 
-// Componente de grÃ¡fica animada de fondo mejorada
+// Componente de gráfica animada de fondo mejorada
 const AnimatedBackgroundChart = () => {
   const [time, setTime] = useState(0);
   const svgRef = useRef(null);
@@ -447,7 +448,7 @@ const AnimatedBackgroundChart = () => {
           );
         })}
 
-        {/* LÃ­nea de tendencia animada */}
+        {/* Línea de tendencia animada */}
         <path
           d={`M 60 ${300 + Math.sin(time) * 20} Q 200 ${
             250 + Math.sin(time + 1) * 30
@@ -492,7 +493,7 @@ const AnimatedBackgroundChart = () => {
           );
         })}
 
-        {/* PartÃ­culas en movimiento */}
+        {/* Partículas en movimiento */}
         {Array.from({ length: 20 }, (_, i) => (
           <circle
             key={`particle-${i}`}
@@ -504,7 +505,7 @@ const AnimatedBackgroundChart = () => {
           />
         ))}
 
-        {/* Indicadores de mÃ©tricas flotantes */}
+        {/* Indicadores de métricas flotantes */}
         <g
           transform={`translate(${600 + Math.sin(time) * 10}, ${
             80 + Math.cos(time) * 5
@@ -870,7 +871,7 @@ const AnimatedChart = () => {
   );
 };
 
-// Componente de grÃ¡fica industrial animada para Solutions
+// Componente de gráfica industrial animada para Solutions
 const IndustrialChart = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [animationPhase, setAnimationPhase] = useState(0);
@@ -911,7 +912,7 @@ const IndustrialChart = () => {
     { label: "Efficiency", value: 88, color: "#ef4444", delay: 600 },
   ];
 
-  // Datos para la grÃ¡fica de lÃ­nea de producciÃ³n
+  // Datos para la gráfica de línea de producción
   const productionData = [
     { month: "Jan", value: 85 },
     { month: "Feb", value: 88 },
@@ -933,10 +934,10 @@ const IndustrialChart = () => {
           }}
         >
           <h3>Real-time Performance</h3>
-          <span className="status-indicator">â— Live</span>
+          <span className="status-indicator">● Live</span>
         </div>
 
-        {/* Cards de MÃ©tricas con barras */}
+        {/* Cards de Métricas con barras */}
         <div className="metrics-grid">
           {metrics.map((metric, i) => (
             <div
@@ -968,7 +969,7 @@ const IndustrialChart = () => {
           ))}
         </div>
 
-        {/* GrÃ¡fica de tendencia de producciÃ³n */}
+        {/* Gráfica de tendencia de producción */}
         <div
           className="chart-visualization"
           style={{
@@ -1026,7 +1027,7 @@ const IndustrialChart = () => {
               />
             ))}
 
-            {/* Ãrea bajo la curva */}
+            {/* Área bajo la curva */}
             <path
               d={`M 80 170 ${productionData
                 .map((d, i) => `L ${80 + i * 80} ${170 - d.value}`)
@@ -1036,7 +1037,7 @@ const IndustrialChart = () => {
               style={{ transition: "opacity 1.5s ease 1s" }}
             />
 
-            {/* LÃ­nea de tendencia */}
+            {/* Línea de tendencia */}
             <path
               d={`M ${productionData
                 .map(
@@ -1053,7 +1054,7 @@ const IndustrialChart = () => {
               style={{ transition: "stroke-dashoffset 2s ease 1s" }}
             />
 
-            {/* Puntos de datos con animaciÃ³n */}
+            {/* Puntos de datos con animación */}
             {productionData.map((d, i) => (
               <g key={`point-${i}`}>
                 <circle
@@ -1187,7 +1188,7 @@ const AnimatedFeature = ({ feature, index }) => {
   );
 };
 
-// Componente de Tendencias de ProducciÃ³n
+// Componente de Tendencias Operativas
 const ProductionTrendsChart = () => {
   const [time, setTime] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
@@ -1211,7 +1212,7 @@ const ProductionTrendsChart = () => {
     };
   }, []);
 
-  // Datos simulados de producciÃ³n
+  // Datos simulados de producción
   const productionData = [
     { month: "Ene", production: 1200, defects: 24 },
     { month: "Feb", production: 1350, defects: 18 },
@@ -1226,7 +1227,7 @@ const ProductionTrendsChart = () => {
       <div className="chart-header-analytics">
         <div className="chart-title-section">
           <TrendingUp className="chart-icon" />
-          <h3>Production Trends</h3>
+          <h3>Operational Trends</h3>
         </div>
       </div>
 
@@ -1363,7 +1364,7 @@ const ProductionTrendsChart = () => {
   );
 };
 
-// Componente de DistribuciÃ³n de Calidad
+// Componente de Distribución de Procesos
 const QualityDistributionChart = () => {
   const [isVisible, setIsVisible] = useState(false);
   const chartRef = useRef(null);
@@ -1390,7 +1391,7 @@ const QualityDistributionChart = () => {
   return (
     <div ref={chartRef} className="chart-container-analytics">
       <div className="chart-header-analytics">
-        <h3>Quality Distribution</h3>
+        <h3>Process Distribution</h3>
       </div>
 
       <div className="quality-chart-content">
@@ -1460,7 +1461,7 @@ const QualityDistributionChart = () => {
   );
 };
 
-// Componente de Estado de LÃ­neas de ProducciÃ³n
+// Componente de Estado Operativo de Líneas
 const ProductionLinesStatus = () => {
   const [isVisible, setIsVisible] = useState(false);
   const chartRef = useRef(null);
@@ -1487,7 +1488,7 @@ const ProductionLinesStatus = () => {
       <div className="chart-header-analytics">
         <div className="chart-title-section">
           <Factory className="chart-icon" />
-          <h3>Production Line Status</h3>
+          <h3>Operational Status</h3>
         </div>
       </div>
 
@@ -1505,7 +1506,7 @@ const ProductionLinesStatus = () => {
             <div className="line-header">
               <h4>{line.name}</h4>
               <div className={`status-badge ${line.status.toLowerCase()}`}>
-                {line.status === "Operando" ? "âœ“" : "âš "} {line.status}
+                {line.status === "Operando" ? "✓" : "⚠"} {line.status}
               </div>
             </div>
             <div className="line-metrics">
@@ -1559,7 +1560,7 @@ const OEEMetricsCard = () => {
           >
             92.4%
           </span>
-          <span className="oee-label">Average OEE</span>
+          <span className="oee-label">Performance Overview</span>
         </div>
       </div>
 
@@ -1601,7 +1602,7 @@ const OEEMetricsCard = () => {
   );
 };
 
-// Componente de GrÃ¡fico X-Bar (SPC)
+// Componente de Gráfico X-Bar (SPC)
 const SPCXBarChart = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [time, setTime] = useState(0);
@@ -1642,7 +1643,7 @@ const SPCXBarChart = () => {
 
     let baseValue = 50 + Math.sin(i * 0.3) * 1.5;
 
-    const outOfControlPoints = [7, 15, 22]; // Puntos 8, 16 y 23 (Ã­ndices 7, 15, 22)
+    const outOfControlPoints = [7, 15, 22]; // Puntos 8, 16 y 23 (índices 7, 15, 22)
 
     if (outOfControlPoints.includes(i)) {
       if (i === 7) {
@@ -1675,7 +1676,7 @@ const SPCXBarChart = () => {
       <div className="chart-header-analytics">
         <div className="chart-title-section">
           <BarChart3 className="chart-icon" />
-          <h3>Statistical Process Control (XÌ„-Chart)</h3>
+          <h3>Statistical Process Monitoring</h3>
         </div>
         <div className="spc-controls">
           <span
@@ -1683,7 +1684,7 @@ const SPCXBarChart = () => {
               outOfControlCount > 0 ? "out-of-control" : "in-control"
             }`}
           >
-            â— {outOfControlCount > 0 ? "Out of Control" : "En Control"}
+            ● {outOfControlCount > 0 ? "Out of Control" : "In Control"}
           </span>
         </div>
       </div>
@@ -1796,7 +1797,7 @@ const SPCXBarChart = () => {
           fill="#3b82f6"
           textAnchor="end"
         >
-          XÌ„
+          X̄
         </text>
         <text
           x="45"
@@ -1883,7 +1884,7 @@ const SPCXBarChart = () => {
   );
 };
 
-// Componente de Ãndices de Capacidad (Cp, Cpk, Pp, Ppk)
+// Componente de Índices de Capacidad (Cp, Cpk, Pp, Ppk)
 const CapabilityIndices = () => {
   const [isVisible, setIsVisible] = useState(false);
   const chartRef = useRef(null);
@@ -1964,7 +1965,7 @@ const CapabilityIndices = () => {
       <div className="chart-header-analytics">
         <div className="chart-title-section">
           <Shield className="chart-icon" />
-          <h3>Process Capability Indices</h3>
+          <h3>Process Capability Example</h3>
         </div>
       </div>
 
@@ -2102,7 +2103,7 @@ const ContactForm = () => {
       if (response.ok) {
         setFormStatus({ submitting: false, succeeded: true, error: false });
         form.reset();
-        // Opcional: ocultar el mensaje despuÃ©s de 5 segundos
+        // Opcional: ocultar el mensaje después de 5 segundos
         setTimeout(() => {
           setFormStatus({ submitting: false, succeeded: false, error: false });
         }, 5000);
@@ -2187,10 +2188,10 @@ const ContactForm = () => {
         </div>
 
         <div className="form-group">
-          <label>Main Challenges (Optional)</label>
+          <label>Operational Challenge</label>
           <textarea
             name="challenges"
-            placeholder="Tell us about your current manufacturing challenges..."
+            placeholder="Tell us about the process, system or operational challenge you want to improve."
             rows="3"
             disabled={formStatus.submitting}
           ></textarea>
@@ -2233,7 +2234,7 @@ const ContactForm = () => {
           className="btn btn-primary btn-lg"
           disabled={formStatus.submitting}
         >
-          {formStatus.submitting ? "Sending..." : "Contact us"}
+          {formStatus.submitting ? "Sending..." : "Send Project Details"}
         </button>
       </form>
     </div>
@@ -2257,20 +2258,15 @@ function App({ onLoginClick }) {
               Solutions
             </a>
             <a href="#features" className="nav-link">
-              Features
+              Capabilities
             </a>
             <a href="#analytics" className="nav-link">
               Analytics
             </a>
-            <a href="#cta" className="nav-link">
-              Get Started
+            <a href="#contact" className="nav-link">
+              Contact
             </a>
           </nav>
-          <div className="header-actions">
-            <button onClick={onLoginClick} className="btn btn-primary">
-              Login to MES
-            </button>
-          </div>
         </div>
       </header>
 
@@ -2282,14 +2278,16 @@ function App({ onLoginClick }) {
             <div className="hero-content">
               <div className="hero-text">
                 <h1 className="hero-title">
-                  Smart Manufacturing
+                  We start with the operation,
                   <br />
-                  <span className="hero-title-highlight">Execution System</span>
+                  <span className="hero-title-highlight">
+                    not the software.
+                  </span>
                 </h1>
                 <p className="hero-description">
-                  Complete MES solution for Industry 4.0. Real-time production
-                  monitoring, quality control, and operational intelligence
-                  powered by advanced analytics and multi-tenant architecture.
+                  Kelmetrik builds custom software, integrations and automation
+                  for industrial operations, connecting people, processes,
+                  equipment and existing systems.
                 </p>
               </div>
             </div>
@@ -2303,30 +2301,31 @@ function App({ onLoginClick }) {
               {/* Columna Izquierda - Contenido de texto */}
               <div className="solutions-content">
                 <h2 className="section-title">
-                  Build a manufacturing
+                  Technology designed around
                   <br />
-                  solution that's{" "}
-                  <span className="section-title-highlight">truly smart.</span>
+                  <span className="section-title-highlight">
+                    your operation.
+                  </span>
                 </h2>
                 <div className="features-list">
                   {[
                     {
                       icon: Factory,
-                      title: "Production Monitoring",
+                      title: "Custom Industrial Software",
                       description:
-                        "Real-time visibility into your manufacturing operations with comprehensive dashboards and alerts.",
-                    },
-                    {
-                      icon: BarChart3,
-                      title: "Quality Management",
-                      description:
-                        "Automated quality control processes with statistical process control and traceability.",
+                        "Web and mobile applications designed around your workflows, users and operational requirements.",
                     },
                     {
                       icon: Cpu,
-                      title: "Machine Integration",
+                      title: "Systems Integration",
                       description:
-                        "Seamless connectivity with PLCs, SCADA systems, and industrial IoT devices.",
+                        "Connect ERP, legacy databases, APIs, devices and industrial equipment.",
+                    },
+                    {
+                      icon: BarChart3,
+                      title: "Operational Visibility",
+                      description:
+                        "Dashboards, alerts and traceability that turn operational data into actionable information.",
                     },
                   ].map((feature, i) => (
                     <AnimatedFeature key={i} feature={feature} index={i} />
@@ -2336,9 +2335,9 @@ function App({ onLoginClick }) {
 
               {/* Columna Derecha - TODO en un solo contenedor */}
               <div className="solutions-chart-wrapper">
-                {/* Contenedor Ãºnico con Pareto + Stats */}
+                {/* Contenedor único con Pareto + Stats */}
                 <div className="solutions-chart-single-column">
-                  {/* GrÃ¡fica de Pareto */}
+                  {/* Gráfica de Pareto */}
                   <ParetoChart />
 
                   {/* Stats Grid DENTRO del mismo contenedor */}
@@ -2349,7 +2348,7 @@ function App({ onLoginClick }) {
                       </div>
                       <div className="stat-content">
                         <span className="stat-number">99.2%</span>
-                        <span className="stat-label">Quality Rate</span>
+                        <span className="stat-label">Process Visibility</span>
                       </div>
                     </div>
 
@@ -2359,7 +2358,9 @@ function App({ onLoginClick }) {
                       </div>
                       <div className="stat-content">
                         <span className="stat-number">-35%</span>
-                        <span className="stat-label">Defect Reduction</span>
+                        <span className="stat-label">
+                          Improvement Potential
+                        </span>
                       </div>
                     </div>
 
@@ -2369,7 +2370,7 @@ function App({ onLoginClick }) {
                       </div>
                       <div className="stat-content">
                         <span className="stat-number">2.5hrs</span>
-                        <span className="stat-label">Avg Response Time</span>
+                        <span className="stat-label">Operational Response</span>
                       </div>
                     </div>
                   </div>
@@ -2384,85 +2385,89 @@ function App({ onLoginClick }) {
           <div className="container">
             <div className="features-header">
               <h2 className="features-title">
-                Your production line is always
+                Connect the systems, people and processes
                 <br />
                 <span className="features-title-highlight">
-                  connected and optimized.
+                  that run your operation.
                 </span>
               </h2>
               <p className="features-description">
-                Manufacturing execution system for companies who value
-                efficiency, quality, and data-driven decisions.
+                Kelmetrik combines industrial experience, software development,
+                data integration and automation to build solutions for real
+                operating environments.
               </p>
             </div>
             <div className="features-grid">
               {[
                 {
                   icon: TrendingUp,
-                  title: "OEE Analytics",
+                  title: "Custom Industrial Software",
                   description:
-                    "Track Overall Equipment Effectiveness in real-time",
+                    "Operational web and mobile applications designed around real workflows.",
                   features: [
-                    "Real-time monitoring",
-                    "Performance metrics",
-                    "Efficiency tracking",
+                    "Web applications",
+                    "Mobile and handheld workflows",
+                    "Administrative platforms",
                   ],
                   color: "blue",
                 },
                 {
                   icon: Shield,
-                  title: "Quality Control",
+                  title: "Warehouse Solutions",
                   description:
-                    "Automated quality checks and compliance reporting",
+                    "Digital workflows for receiving, inventory, locations, picking and movements.",
                   features: [
-                    "Automated inspections",
-                    "Compliance reporting",
-                    "Defect tracking",
+                    "Inventory by location",
+                    "Barcode validation",
+                    "Guided picking",
                   ],
                   color: "green",
                 },
                 {
                   icon: Clock,
-                  title: "Real-time Monitoring",
-                  description: "Live production data and instant notifications",
+                  title: "Operational Monitoring",
+                  description:
+                    "Real-time visibility into production, inventory and operational events.",
                   features: [
-                    "Live data streams",
-                    "Instant alerts",
+                    "Live operational data",
+                    "Alerts and notifications",
                     "Dashboard views",
                   ],
                   color: "orange",
                 },
                 {
                   icon: Wrench,
-                  title: "Maintenance Planning",
-                  description: "Predictive maintenance scheduling and tracking",
+                  title: "Workflow Automation",
+                  description:
+                    "Replace repetitive manual tasks with guided and traceable digital processes.",
                   features: [
-                    "Predictive scheduling",
-                    "Asset tracking",
-                    "Maintenance logs",
+                    "Guided workflows",
+                    "Process validation",
+                    "Event history",
                   ],
                   color: "purple",
                 },
                 {
                   icon: Users,
-                  title: "Multi-tenant Architecture",
+                  title: "ERP & Legacy Integration",
                   description:
-                    "Secure isolated environments for multiple organizations",
+                    "Connect modern operational tools with existing systems and databases.",
                   features: [
-                    "Data isolation",
-                    "Role-based access",
-                    "Scalable infrastructure",
+                    "ERP integration",
+                    "Legacy databases",
+                    "Controlled synchronization",
                   ],
                   color: "red",
                 },
                 {
                   icon: Settings,
-                  title: "Machine Integration",
-                  description: "Connect with PLCs, SCADA, and IoT devices",
+                  title: "Industrial Connectivity",
+                  description:
+                    "Connect applications with PLCs, SCADA, devices, scanners and industrial equipment.",
                   features: [
-                    "PLC connectivity",
-                    "SCADA integration",
-                    "IoT device support",
+                    "PLC and SCADA",
+                    "Barcode devices",
+                    "Industrial equipment",
                   ],
                   color: "indigo",
                 },
@@ -2480,7 +2485,7 @@ function App({ onLoginClick }) {
                   <div className="feature-list">
                     {feature.features.map((item, idx) => (
                       <div key={idx} className="feature-list-item">
-                        <div className="feature-checkmark-small">âœ“</div>
+                        <div className="feature-checkmark-small">✓</div>
                         <span>{item}</span>
                       </div>
                     ))}
@@ -2496,12 +2501,14 @@ function App({ onLoginClick }) {
           <div className="container">
             <div className="analytics-header">
               <h2 className="section-title">
-                Data Intelligence that{" "}
-                <span className="section-title-highlight">Boost Decisions</span>
+                Operational data that{" "}
+                <span className="section-title-highlight">
+                  supports better decisions
+                </span>
               </h2>
               <p className="analytics-description">
-                Interactive dashboards and predictive analysis to optimize your
-                production
+                Interactive dashboards, traceability and analytics can transform
+                disconnected operational data into useful information.
               </p>
             </div>
 
@@ -2543,10 +2550,8 @@ function App({ onLoginClick }) {
             <div className="contact-grid">
               <div className="contact-content">
                 <h2 className="contact-title">
-                  Ready to Transform Your{" "}
-                  <span className="contact-title-highlight">
-                    Manufacturing?
-                  </span>
+                  Let's discuss your{" "}
+                  <span className="contact-title-highlight">operation.</span>
                 </h2>
 
                 <div className="contact-benefits">
@@ -2555,8 +2560,11 @@ function App({ onLoginClick }) {
                       <Users className="icon" />
                     </div>
                     <div className="benefit-text">
-                      <h4>Personalized Demo</h4>
-                      <p>Tailored to your industry and specific needs</p>
+                      <h4>Operational Assessment</h4>
+                      <p>
+                        We begin by understanding the real process, users and
+                        constraints.
+                      </p>
                     </div>
                   </div>
 
@@ -2565,7 +2573,11 @@ function App({ onLoginClick }) {
                       <Clock className="icon" />
                     </div>
                     <div className="benefit-text">
-                      <h4>Quick Implementation</h4>
+                      <h4>Practical Approach</h4>
+                      <p>
+                        We prioritize the workflows that create the greatest
+                        operational impact.
+                      </p>
                     </div>
                   </div>
 
@@ -2574,8 +2586,11 @@ function App({ onLoginClick }) {
                       <Shield className="icon" />
                     </div>
                     <div className="benefit-text">
-                      <h4>24/7 Support</h4>
-                      <p>Expert technical team always available</p>
+                      <h4>Solution-Oriented Conversation</h4>
+                      <p>
+                        The first discussion focuses on the problem, not on
+                        selling a predefined platform.
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -2587,7 +2602,7 @@ function App({ onLoginClick }) {
                   </div>
                   <div className="contact-method">
                     <MessageSquare className="contact-icon" />
-                    <span>+52 664 789 1548</span>
+                    <span>+52 663 123 3838</span>
                   </div>
                 </div>
               </div>
@@ -2603,16 +2618,16 @@ function App({ onLoginClick }) {
           <div className="container">
             <div className="cta-content">
               <h2 className="cta-title">
-                Let's optimize your manufacturing.
+                Build technology around your operation.
                 <br />
-                Without the complexity.
+                Without unnecessary complexity.
               </h2>
               <p className="cta-description">
-                Transform your production floor with Kelmetrik's intelligent MES
-                platform.
+                Kelmetrik develops custom industrial software, integrations and
+                automation solutions designed around real operational needs.
                 <br />
-                Real-time monitoring, quality control, and operational
-                excellence made simple.
+                From warehouse and production applications to ERP connectivity,
+                traceability and operational dashboards.
               </p>
             </div>
           </div>
@@ -2629,46 +2644,46 @@ function App({ onLoginClick }) {
                   <CompanyLogo className="footer-logo" />
                 </a>
                 <p className="footer-description">
-                  Empowering manufacturing excellence through intelligent
-                  automation and real-time insights.
+                  Custom industrial software, integration and automation for
+                  connected operations.
                 </p>
               </div>
               <div className="footer-section">
-                <h3 className="footer-title">Platform</h3>
+                <h3 className="footer-title">Capabilities</h3>
                 <nav className="footer-nav">
                   <a href="#features" className="footer-link">
-                    Production Monitoring
+                    Custom Software
                   </a>
                   <a href="#solutions" className="footer-link">
-                    Quality Management
+                    Warehouse Solutions
                   </a>
                   <a href="#analytics" className="footer-link">
-                    OEE Analytics
+                    Manufacturing Solutions
                   </a>
-                  <a href="#" className="footer-link">
-                    Machine Integration
+                  <a href="#features" className="footer-link">
+                    Systems Integration
                   </a>
                 </nav>
               </div>
               <div className="footer-section">
                 <h3 className="footer-title">Industries</h3>
                 <nav className="footer-nav">
-                  <a href="#" className="footer-link">
-                    Automotive
+                  <a href="#solutions" className="footer-link">
+                    Manufacturing
                   </a>
-                  <a href="#" className="footer-link">
-                    Electronics
+                  <a href="#solutions" className="footer-link">
+                    Food Distribution
                   </a>
-                  <a href="#" className="footer-link">
-                    Aerospace
+                  <a href="#solutions" className="footer-link">
+                    Warehousing
                   </a>
-                  <a href="#" className="footer-link">
-                    Pharmaceuticals
+                  <a href="#solutions" className="footer-link">
+                    Logistics
                   </a>
                 </nav>
               </div>
               <div className="footer-section">
-                <h3 className="footer-title">Get Updates</h3>
+                <h3 className="footer-title">Start a Conversation</h3>
                 <p
                   style={{
                     fontSize: "14px",
@@ -2676,23 +2691,23 @@ function App({ onLoginClick }) {
                     marginBottom: "16px",
                   }}
                 >
-                  Subscribe to get the latest manufacturing insights and product
-                  updates.
+                  Tell us about the process or operational challenge you want to
+                  improve.
                 </p>
                 <div className="footer-form">
                   <input
                     type="email"
-                    placeholder="Enter your business email"
+                    placeholder="Business email"
                     className="footer-input"
                   />
-                  <button type="button" className="btn btn-primary">
-                    Subscribe
-                  </button>
+                  <a href="#contact" className="btn btn-primary">
+                    Contact Us
+                  </a>
                 </div>
               </div>
             </div>
             <div className="footer-bottom">
-              Â© {new Date().getFullYear()} Kelmetrik. All rights reserved.
+              © {new Date().getFullYear()} Kelmetrik. All rights reserved.
             </div>
           </div>
         </div>
