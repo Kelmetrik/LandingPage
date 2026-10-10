@@ -3556,3 +3556,15 @@ html.block-scroll:has(input:focus, textarea:focus, dialog[open]) {
     animation: none;
   }
 }
+
+.solution-summary {
+  font-size: 18px;
+  line-height: 1.75;
+  color: #344a68;
+  margin: 0 0 24px;
+}
+@media (max-width: 620px) {
+  .solution-summary {
+    font-size: 17px;
+  }
+}

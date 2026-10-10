@@ -61,6 +61,8 @@ export const content = {
         {
           id: "manufacturing",
           title: "Manufacturing Execution & Traceability",
+          summary:
+            "We connect stations, equipment and production systems to record what happens at every manufacturing stage. From component identification to test results, we build traceability that helps teams control processes, detect deviations and understand what happened to each product.",
           problem:
             "Component identification, process records and test results often live in separate systems, making it difficult to follow each product through production.",
           flow: "We develop custom MES systems and execution modules that connect stations, equipment and production systems. We link ERP orders, component identification and test results to record what happens at each manufacturing stage.",
@@ -90,6 +92,8 @@ export const content = {
         {
           id: "quality",
           title: "Quality Management & Safe Launch",
+          summary:
+            "We digitize inspections, validations and containment processes so every result has a clear follow-up. We connect evidence, defects, owners and quality decisions, reducing reliance on scattered records and making new-launch controls easier to manage.",
           problem:
             "Inspections generate findings, but evidence, containment actions and quality decisions can become scattered across spreadsheets and conversations.",
           flow: "We digitize inspections, validations and containment workflows through quality applications connected to your ERP or MES. Each result links defects, evidence, owners and the decisions that follow.",
@@ -119,6 +123,8 @@ export const content = {
         {
           id: "apqp",
           title: "APQP & Industrial Project Management",
+          summary:
+            "We connect project planning with actual execution. We centralize activities, deliverables, owners and evidence to identify delays, visualize dependencies and ensure milestones advance with verifiable results behind them.",
           problem:
             "Project plans and actual progress often diverge when activities, deliverables and approvals are tracked separately.",
           flow: "We develop project management applications and custom ERP modules that connect planning with execution. We bring activities, deliverables, dependencies, owners and approval evidence into a shared workflow.",
@@ -146,6 +152,8 @@ export const content = {
         {
           id: "warehouse",
           title: "Warehouse & Material Management",
+          summary:
+            "We connect physical material movements with the systems that manage operations. We design receiving, storage, picking and inventory workflows with validation and traceability, eliminating duplicate data entry and improving control over each movement.",
           problem:
             "Physical material movements and system records can fall out of sync when receiving, picking and inventory updates require repeated manual entry.",
           flow: "We develop custom WMS systems, warehouse modules and ERP integrations for receiving, storage, picking and inventory. We connect physical movements with operational records through material, quantity and location validation.",
@@ -379,6 +387,8 @@ export const content = {
         {
           id: "manufacturing",
           title: "Ejecución de manufactura y trazabilidad",
+          summary:
+            "Conectamos estaciones, equipos y sistemas de producción para registrar lo que ocurre durante cada etapa de manufactura. Desde la identificación de componentes hasta los resultados de prueba, construimos trazabilidad que permite controlar procesos, detectar desviaciones y entender qué ocurrió con cada producto.",
           problem:
             "La identificación de componentes, los registros de proceso y los resultados de prueba suelen quedar en sistemas separados, dificultando seguir cada producto durante su fabricación.",
           flow: "Desarrollamos MES a medida y módulos de ejecución que conectan estaciones, equipos y sistemas de producción. Vinculamos órdenes del ERP, identificación de componentes y resultados de prueba para registrar lo que ocurre en cada etapa de manufactura.",
@@ -409,6 +419,8 @@ export const content = {
         {
           id: "quality",
           title: "Gestión de calidad y Safe Launch",
+          summary:
+            "Digitalizamos inspecciones, validaciones y procesos de contención para que cada resultado tenga un seguimiento claro. Conectamos evidencia, defectos, responsables y decisiones de calidad, reduciendo la dependencia de registros dispersos y facilitando el control de nuevos lanzamientos.",
           problem:
             "Las inspecciones generan hallazgos, pero la evidencia, las acciones de contención y las decisiones de calidad pueden quedar dispersas entre hojas de cálculo y conversaciones.",
           flow: "Digitalizamos inspecciones, validaciones y procesos de contención mediante aplicaciones de calidad conectadas con tu ERP o MES. Cada resultado relaciona defectos, evidencia, responsables y las decisiones de seguimiento.",
@@ -438,6 +450,8 @@ export const content = {
         {
           id: "apqp",
           title: "APQP y gestión de proyectos industriales",
+          summary:
+            "Conectamos la planeación de proyectos con su ejecución real. Centralizamos actividades, entregables, responsables y evidencia para identificar retrasos, visualizar dependencias y asegurar que los hitos avancen respaldados por resultados verificables.",
           problem:
             "La planeación y el avance real pueden separarse cuando las actividades, los entregables y las aprobaciones se siguen en registros distintos.",
           flow: "Desarrollamos aplicaciones de gestión de proyectos y módulos de ERP a medida que conectan la planeación con la ejecución. Centralizamos actividades, entregables, dependencias, responsables y evidencia de aprobación en un flujo compartido.",
@@ -465,6 +479,8 @@ export const content = {
         {
           id: "warehouse",
           title: "Gestión de almacenes y materiales",
+          summary:
+            "Conectamos los movimientos físicos de materiales con los sistemas que administran la operación. Diseñamos procesos de recibo, almacenamiento, picking e inventario con validaciones y trazabilidad, eliminando capturas duplicadas y mejorando el control sobre cada movimiento.",
           problem:
             "Los movimientos físicos y los registros del sistema pueden perder sincronía cuando el recibo, el surtido y las actualizaciones de inventario requieren capturas manuales repetidas.",
           flow: "Desarrollamos WMS a medida, módulos de almacén e integraciones con ERP para recibo, almacenamiento, picking e inventario. Conectamos los movimientos físicos con los registros de la operación mediante validaciones de material, cantidad y ubicación.",

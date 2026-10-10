@@ -250,6 +250,10 @@ manufacturing
 
 Manufacturing Execution & Traceability
 
+**domains.items.0.summary**
+
+We connect stations, equipment and production systems to record what happens at every manufacturing stage. From component identification to test results, we build traceability that helps teams control processes, detect deviations and understand what happened to each product.
+
 **domains.items.0.problem**
 
 Component identification, process records and test results often live in separate systems, making it difficult to follow each product through production.
@@ -358,6 +362,10 @@ quality
 
 Quality Management & Safe Launch
 
+**domains.items.1.summary**
+
+We digitize inspections, validations and containment processes so every result has a clear follow-up. We connect evidence, defects, owners and quality decisions, reducing reliance on scattered records and making new-launch controls easier to manage.
+
 **domains.items.1.problem**
 
 Inspections generate findings, but evidence, containment actions and quality decisions can become scattered across spreadsheets and conversations.
@@ -454,6 +462,10 @@ apqp
 
 APQP & Industrial Project Management
 
+**domains.items.2.summary**
+
+We connect project planning with actual execution. We centralize activities, deliverables, owners and evidence to identify delays, visualize dependencies and ensure milestones advance with verifiable results behind them.
+
 **domains.items.2.problem**
 
 Project plans and actual progress often diverge when activities, deliverables and approvals are tracked separately.
@@ -545,6 +557,10 @@ warehouse
 **domains.items.3.title**
 
 Warehouse & Material Management
+
+**domains.items.3.summary**
+
+We connect physical material movements with the systems that manage operations. We design receiving, storage, picking and inventory workflows with validation and traceability, eliminating duplicate data entry and improving control over each movement.
 
 **domains.items.3.problem**
 
@@ -1225,6 +1241,10 @@ manufacturing
 
 Ejecución de manufactura y trazabilidad
 
+**domains.items.0.summary**
+
+Conectamos estaciones, equipos y sistemas de producción para registrar lo que ocurre durante cada etapa de manufactura. Desde la identificación de componentes hasta los resultados de prueba, construimos trazabilidad que permite controlar procesos, detectar desviaciones y entender qué ocurrió con cada producto.
+
 **domains.items.0.problem**
 
 La identificación de componentes, los registros de proceso y los resultados de prueba suelen quedar en sistemas separados, dificultando seguir cada producto durante su fabricación.
@@ -1333,6 +1353,10 @@ quality
 
 Gestión de calidad y Safe Launch
 
+**domains.items.1.summary**
+
+Digitalizamos inspecciones, validaciones y procesos de contención para que cada resultado tenga un seguimiento claro. Conectamos evidencia, defectos, responsables y decisiones de calidad, reduciendo la dependencia de registros dispersos y facilitando el control de nuevos lanzamientos.
+
 **domains.items.1.problem**
 
 Las inspecciones generan hallazgos, pero la evidencia, las acciones de contención y las decisiones de calidad pueden quedar dispersas entre hojas de cálculo y conversaciones.
@@ -1429,6 +1453,10 @@ apqp
 
 APQP y gestión de proyectos industriales
 
+**domains.items.2.summary**
+
+Conectamos la planeación de proyectos con su ejecución real. Centralizamos actividades, entregables, responsables y evidencia para identificar retrasos, visualizar dependencias y asegurar que los hitos avancen respaldados por resultados verificables.
+
 **domains.items.2.problem**
 
 La planeación y el avance real pueden separarse cuando las actividades, los entregables y las aprobaciones se siguen en registros distintos.
@@ -1520,6 +1548,10 @@ warehouse
 **domains.items.3.title**
 
 Gestión de almacenes y materiales
+
+**domains.items.3.summary**
+
+Conectamos los movimientos físicos de materiales con los sistemas que administran la operación. Diseñamos procesos de recibo, almacenamiento, picking e inventario con validaciones y trazabilidad, eliminando capturas duplicadas y mejorando el control sobre cada movimiento.
 
 **domains.items.3.problem**
 

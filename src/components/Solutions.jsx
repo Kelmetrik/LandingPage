@@ -195,21 +195,17 @@ export default function Solutions({ c }) {
                     <span className="solution-platform">{item.platform}</span>
                   </div>
                   <h3>{item.title}</h3>
-                  <h4 className="solution-step-label">
-                    <span>01</span>
-                    {d.problem}
-                  </h4>
-                  <p className="solution-problem">{item.problem}</p>
+                  <p className="solution-summary">{item.summary}</p>
                 </Observed>
                 <div className="solution-description">
                   <h4 className="solution-step-label">
-                    <span>02</span>
+                    <span>01</span>
                     {d.flow}
                   </h4>
                   <p>{item.flow}</p>
                   <div className="solution-benefit">
                     <h4 className="solution-step-label">
-                      <span>03</span>
+                      <span>02</span>
                       {d.result}
                     </h4>
                     <p>{item.result}</p>
