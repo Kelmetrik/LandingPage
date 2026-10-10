@@ -133,7 +133,9 @@ test("Spanish page: six sections, bilingual navigation, accessible menu and four
   const toggle = ui.getByRole("button", { name: "Menú" });
   fireEvent.click(toggle);
   assert.equal(toggle.getAttribute("aria-expanded"), "true");
-  fireEvent.keyDown(ui.getByRole("navigation"), { key: "Escape" });
+  fireEvent.keyDown(ui.getByRole("navigation", { name: "Menú" }), {
+    key: "Escape",
+  });
   assert.equal(toggle.getAttribute("aria-expanded"), "false");
   assert.equal(ui.getByLabelText("Correo empresarial *").type, "email");
   assert.equal(ui.container.querySelectorAll(".solution-example").length, 4);
@@ -259,7 +261,16 @@ test("solution contact links report a controlled domain and no demo events", asy
   });
 });
 test("background chart pauses outside the viewport, on hidden tabs and on reduced motion", () => {
-  let observerCallback, onMotion;
+  let observerCallback, onMotion, nextFrame;
+  let cancelled = 0;
+  window.requestAnimationFrame = (callback) => {
+    nextFrame = callback;
+    return 1;
+  };
+  window.cancelAnimationFrame = () => {
+    cancelled++;
+    nextFrame = undefined;
+  };
   const reduced = {
     matches: false,
     addEventListener: (_, cb) => {
@@ -287,6 +298,23 @@ test("background chart pauses outside the viewport, on hidden tabs and on reduce
   visibility("visible");
   observerCallback([{ isIntersecting: true }]);
   assert.ok(chart.classList.contains("chart-running"));
+  const originalValues = [...chart.querySelectorAll(".chart-value")].map(
+    (el) => el.textContent,
+  );
+  const originalHighlights = [...chart.querySelectorAll(".chart-bar")].map(
+    (el) => el.classList.contains("chart-highlight"),
+  );
+  for (let now = 0; now <= 4000; now += 50) nextFrame(now);
+  assert.notDeepEqual(
+    [...chart.querySelectorAll(".chart-value")].map((el) => el.textContent),
+    originalValues,
+  );
+  assert.notDeepEqual(
+    [...chart.querySelectorAll(".chart-bar")].map((el) =>
+      el.classList.contains("chart-highlight"),
+    ),
+    originalHighlights,
+  );
   visibility("hidden");
   document.dispatchEvent(new Event("visibilitychange"));
   assert.ok(!chart.classList.contains("chart-running"));
@@ -302,4 +330,8 @@ test("background chart pauses outside the viewport, on hidden tabs and on reduce
   cleanup();
   delete globalThis.IntersectionObserver;
   delete window.matchMedia;
+  assert.ok(cancelled > 0);
+  assert.equal(nextFrame, undefined);
+  delete window.requestAnimationFrame;
+  delete window.cancelAnimationFrame;
 });

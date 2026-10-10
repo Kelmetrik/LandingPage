@@ -156,6 +156,31 @@ export default function Solutions({ c }) {
           <h2>{d.title}</h2>
           <p className="section-intro">{d.intro}</p>
         </Observed>
+        <div className="platform-overview">
+          <h3>{d.platformTitle}</h3>
+          <div className="platform-grid">
+            {d.platforms.map(([name, label, body]) => (
+              <div className="platform-item" key={name}>
+                <div className="platform-name">
+                  <strong>{name}</strong>
+                  <span>{d.custom}</span>
+                </div>
+                <h4>{label}</h4>
+                <p>{body}</p>
+              </div>
+            ))}
+          </div>
+          <p className="platform-note">{d.platformNote}</p>
+        </div>
+        <nav className="solution-jump" aria-label={d.navigate}>
+          {d.items.map((item, i) => (
+            <a key={item.id} href={`#solution-${item.id}`}>
+              <span className="mono">0{i + 1}</span>
+              {item.short}
+              <ArrowRight size={16} />
+            </a>
+          ))}
+        </nav>
         <div className="solution-list">
           {d.items.map((item, i) => (
             <article
@@ -165,15 +190,30 @@ export default function Solutions({ c }) {
             >
               <div className="solution-copy">
                 <Observed event="domain_view" value={item.id}>
-                  <p className="solution-number mono">0{i + 1} / KELMETRIK</p>
+                  <div className="solution-kicker">
+                    <span className="solution-number mono">0{i + 1}</span>
+                    <span className="solution-platform">{item.platform}</span>
+                  </div>
                   <h3>{item.title}</h3>
+                  <h4 className="solution-step-label">
+                    <span>01</span>
+                    {d.problem}
+                  </h4>
                   <p className="solution-problem">{item.problem}</p>
                 </Observed>
                 <div className="solution-description">
-                  <h4>{d.flow}</h4>
+                  <h4 className="solution-step-label">
+                    <span>02</span>
+                    {d.flow}
+                  </h4>
                   <p>{item.flow}</p>
-                  <h4>{d.result}</h4>
-                  <p>{item.result}</p>
+                  <div className="solution-benefit">
+                    <h4 className="solution-step-label">
+                      <span>03</span>
+                      {d.result}
+                    </h4>
+                    <p>{item.result}</p>
+                  </div>
                 </div>
                 <a
                   className="text-link solution-contact"

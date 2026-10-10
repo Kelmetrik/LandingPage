@@ -1,4 +1,4 @@
-# Kelmetrik — Especificación editorial V1, revisión 2
+# Kelmetrik — Especificación editorial V1, revisión 3
 
 Los textos EN/ES se generan desde los mismos diccionarios que usa la web. Regenerar con `npm run docs:editorial` después de editar contenido.
 
@@ -6,13 +6,13 @@ Los textos EN/ES se generan desde los mismos diccionarios que usa la web. Regene
 
 Kelmetrik: ingeniería de software e integración de sistemas industriales. Público: operaciones, manufactura, calidad, ingeniería y TI en México y Estados Unidos. Objetivo: conversaciones de diagnóstico. Inglés en / y español en /es/.
 
-Cuatro dominios y una capacidad transversal IT/OT. Ejemplos originales y conceptuales, sin simulación interactiva, sin presentarlos como productos terminados ni trabajos de clientes. Cada bloque responde: problema operativo → qué desarrolla Kelmetrik → qué permite hacer.
+Cuatro dominios y una capacidad transversal IT/OT. Capacidad explícita para desarrollar ERP, MES y WMS a medida, módulos e integraciones. La narrativa cubre procesos entre áreas, ERP, Excel, macros, correos y equipos. Ejemplos originales y conceptuales, sin simulación interactiva, sin presentarlos como productos terminados ni trabajos de clientes. Cada bloque responde: problema operativo → qué desarrolla Kelmetrik → qué permite hacer.
 
 ## Secuencia y recursos visuales
 
-1. Inicio: gráfica de barras azul animada detrás de la propuesta y las dos acciones. Decoración sin números ni afirmaciones de rendimiento; pausa fuera de pantalla y con pestaña oculta; versión estática con movimiento reducido.
-2. Desconexión: comparación del mismo flujo fragmentado y conectado.
-3. Soluciones: cuatro ejemplos completos y visibles. En escritorio, explicación junto a un fragmento de interfaz anotado; en móvil, explicación y ejemplo apilados.
+1. Inicio: gráfica de barras azul animada detrás de la propuesta y las dos acciones. Números sintéticos variables y una onda de color azul/naranja, identificados como ilustrativos; sin afirmaciones de rendimiento; pausa fuera de pantalla y con pestaña oculta; versión estática con movimiento reducido.
+2. Desconexión: comparación del mismo flujo fragmentado y conectado: orden en ERP, seguimiento en Excel, aprobación por correo y recaptura manual.
+3. Soluciones: cuatro ejemplos completos y visibles. En escritorio, explicación junto a un fragmento de interfaz anotado; en móvil, explicación y ejemplo apilados. Lectura guiada por punto de partida, solución y uso; tipografía mayor y resultado destacado.
 4. Más allá de la máquina: señal → contexto → evento → persona que puede actuar. Interfaces y accesos condicionan la integración.
 5. Enfoque: comprender → diseñar → construir → validar → desplegar, con entregable por etapa.
 6. Contacto: nombre, correo empresarial y empresa obligatorios; reto opcional.
@@ -147,7 +147,7 @@ The connections are missing.
 
 **disconnect.intro**
 
-A machine records a result. An operator updates a spreadsheet. Quality searches for the history. Each tool knows a part of the story.
+An order lives in the ERP. Its progress is tracked in Excel. Approvals arrive by email and a macro handles part of the work. Purchasing, warehouse, production and quality hold information about the same process, but do not always share its context.
 
 **disconnect.fragmented**
 
@@ -159,51 +159,51 @@ Working with context
 
 **disconnect.before.0**
 
-Machine result
+Order in ERP
 
 **disconnect.before.1**
 
-Manual entry
+Excel follow-up
 
 **disconnect.before.2**
 
-Separate systems
+Email approval
 
 **disconnect.before.3**
 
-Missing history
+Manual re-entry
 
 **disconnect.after.0**
 
-Captured signal
+Shared order
 
 **disconnect.after.1**
 
-Identified product
+Assigned workflow
 
 **disconnect.after.2**
 
-Shared context
+Rules and approvals
 
 **disconnect.after.3**
 
-Traceable decision
+Connected record
 
 **disconnect.foot**
 
-Connect the tools you already use, structure the handoffs, and make the complete story available.
+We connect systems, files, equipment and cross-functional processes. We integrate what already works and build the applications that are missing.
 
 **disconnect.problems.0**
 
-Data stays inside the equipment.
+ERP workflows that still require manual steps outside the system.
 
 **disconnect.problems.1**
 
-Information gets entered more than once.
+Spreadsheets, macros and files that depend on one person.
 
 **disconnect.problems.2**
 
-Investigations depend on emails and spreadsheets.
+Departments re-entering information or losing track of a request.
 
 **domains.eyebrow**
 
@@ -216,19 +216,19 @@ connected operation.
 
 **domains.intro**
 
-Every operation has its own systems, rules and constraints. We design software and integrations around that context. These examples show how we can approach four industrial challenges.
+We build custom ERP, MES and WMS systems, alongside applications and integrations for workflows your current systems do not cover. These four examples show how we connect work across departments.
 
 **domains.problem**
 
-THE CHALLENGE
+THE STARTING POINT
 
 **domains.flow**
 
-WHAT WE BUILD
+THE SOLUTION WE BUILD
 
 **domains.result**
 
-WHAT IT ENABLES
+WHAT YOUR TEAM CAN DO
 
 **domains.example**
 
@@ -256,7 +256,7 @@ When an issue appears, reconstructing a product’s history requires searching a
 
 **domains.items.0.flow**
 
-Execution applications and integrations that link orders, components and station results in a searchable record.
+We develop custom MES systems and execution modules that connect ERP orders, shop-floor capture, components and station results in a searchable record.
 
 **domains.items.0.result**
 
@@ -342,6 +342,14 @@ Material used → recorded operation → station result
 
 Look up a product, order or lot
 
+**domains.items.0.platform**
+
+Custom MES
+
+**domains.items.0.short**
+
+Manufacturing
+
 **domains.items.1.id**
 
 quality
@@ -356,7 +364,7 @@ An inspection identifies an issue, but its evidence, affected material and dispo
 
 **domains.items.1.flow**
 
-Workflows to record inspections, link evidence to products and manage containment, ownership and dispositions.
+We build quality applications connected to your ERP or MES to record inspections, link evidence to products and manage containment, ownership and dispositions.
 
 **domains.items.1.result**
 
@@ -430,6 +438,14 @@ Quality review
 
 A decision requires an authorized review
 
+**domains.items.1.platform**
+
+Connected quality
+
+**domains.items.1.short**
+
+Quality
+
 **domains.items.2.id**
 
 apqp
@@ -444,7 +460,7 @@ The plan shows a target date, but it does not make clear which deliverable or ap
 
 **domains.items.2.flow**
 
-Applications that connect milestones, deliverables, dependencies, owners and approval evidence.
+We develop management applications and custom ERP modules that link milestones, deliverables, dependencies, owners and approval evidence.
 
 **domains.items.2.result**
 
@@ -514,6 +530,14 @@ Reviewed and approved report
 
 The milestone shows its blocker and the next owner
 
+**domains.items.2.platform**
+
+Management applications
+
+**domains.items.2.short**
+
+APQP & projects
+
 **domains.items.3.id**
 
 warehouse
@@ -528,7 +552,7 @@ What is received or picked does not always match the order and the inventory rec
 
 **domains.items.3.flow**
 
-Scanning, material and quantity validation, and movement records connected with the ERP through its available interfaces.
+We develop custom WMS systems, warehouse modules and ERP integrations that connect scanning, material and quantity validation, locations and movement records.
 
 **domains.items.3.result**
 
@@ -598,58 +622,118 @@ Material does not match the order
 
 Movement pending correction of the discrepancy
 
+**domains.items.3.platform**
+
+Custom WMS
+
+**domains.items.3.short**
+
+Materials
+
+**domains.platformTitle**
+
+Software that fits your operation
+
+**domains.platformNote**
+
+We can build a custom platform, a focused module or an integration with your existing systems. The process defines the scope.
+
+**domains.platforms.0.0**
+
+ERP
+
+**domains.platforms.0.1**
+
+Business management
+
+**domains.platforms.0.2**
+
+Connect purchasing, inventory, requests and approvals across departments.
+
+**domains.platforms.1.0**
+
+MES
+
+**domains.platforms.1.1**
+
+Manufacturing execution
+
+**domains.platforms.1.2**
+
+Link orders, operations, components and shop-floor results.
+
+**domains.platforms.2.0**
+
+WMS
+
+**domains.platforms.2.1**
+
+Warehouse management
+
+**domains.platforms.2.2**
+
+Structure receipts, locations, picking and material movements.
+
+**domains.custom**
+
+CUSTOM BUILT
+
+**domains.navigate**
+
+Explore by process
+
 **machine.eyebrow**
 
-03 / BEYOND THE MACHINE
+03 / CONNECTING SYSTEMS AND OPERATIONS
 
 **machine.title**
 
-Your machines know more<br>
-than your systems show.
+From isolated data<br>
+to a connected process.
 
 **machine.intro**
 
-Cycle results, process values and alarms become more useful when connected to the order, product and station that produced them.
+An ERP movement, an Excel file or a machine signal can initiate the same workflow: identify the context, apply a rule and put the next step in the right team’s hands.
 
 **machine.note**
 
-Integration depends on the equipment’s available interfaces, access and operating constraints. We evaluate these before defining the solution.
+We assess APIs, files, databases and equipment interfaces, together with access permissions and operating constraints, before defining each integration.
 
 **machine.labels.0**
 
-Machine signal
+Systems, files & equipment
 
 **machine.labels.1**
 
-Production context
+Process context
 
 **machine.labels.2**
 
-Operational event
+Rules & follow-up
 
 **machine.labels.3**
 
-People who can act
+Cross-functional action
 
 **machine.details.0**
 
-Test value + unit
+ERP · Excel · applications · signals
 
 **machine.details.1**
 
-Order + serial + station
+Order · material · request · station
 
 **machine.details.2**
 
-Rule + result + evidence
+Validations · approvals · evidence
 
 **machine.details.3**
 
-Quality · Engineering · Maintenance
+Purchasing · Warehouse · Production · Quality
 
 **machine.caption**
 
-Industrial connectivity, with operational meaning.
+IT/OT integration and software that connect the work.
 
 **approach.eyebrow**
 
@@ -937,6 +1021,10 @@ Measurement could not start. Your preference is saved and you can continue using
 
 Starting permitted measurement…
 
+**chartNote**
+
+Illustrative visualization · synthetic data
+
 ## Español
 
 **lang**
@@ -1034,7 +1122,7 @@ Faltan las conexiones.
 
 **disconnect.intro**
 
-Una máquina registra un resultado. Un operador actualiza una hoja de cálculo. Calidad busca el historial. Cada herramienta conoce una parte de la historia.
+Una orden vive en el ERP. Su seguimiento está en Excel. Las aprobaciones llegan por correo y una macro completa parte del trabajo. Compras, almacén, producción y calidad tienen información del mismo proceso, pero no siempre comparten el contexto.
 
 **disconnect.fragmented**
 
@@ -1046,51 +1134,51 @@ Trabajo con contexto
 
 **disconnect.before.0**
 
-Resultado de máquina
+Orden en ERP
 
 **disconnect.before.1**
 
-Captura manual
+Seguimiento en Excel
 
 **disconnect.before.2**
 
-Sistemas separados
+Aprobación por correo
 
 **disconnect.before.3**
 
-Historial incompleto
+Recaptura manual
 
 **disconnect.after.0**
 
-Señal capturada
+Orden compartida
 
 **disconnect.after.1**
 
-Producto identificado
+Flujo con responsables
 
 **disconnect.after.2**
 
-Contexto compartido
+Reglas y aprobaciones
 
 **disconnect.after.3**
 
-Decisión trazable
+Registro conectado
 
 **disconnect.foot**
 
-Conecta las herramientas que ya utilizas, estructura los intercambios y haz accesible la historia completa.
+Conectamos sistemas, archivos, equipos y procesos entre áreas. Integramos lo que ya funciona y desarrollamos las aplicaciones que faltan.
 
 **disconnect.problems.0**
 
-Los datos permanecen dentro del equipo.
+Procesos del ERP que requieren pasos manuales fuera del sistema.
 
 **disconnect.problems.1**
 
-La información se captura más de una vez.
+Hojas de cálculo, macros y archivos que dependen de una persona.
 
 **disconnect.problems.2**
 
-Investigar depende de correos y hojas de cálculo.
+Áreas que recapturan información o pierden el estado de una solicitud.
 
 **domains.eyebrow**
 
@@ -1103,19 +1191,19 @@ operación conectada.
 
 **domains.intro**
 
-Cada operación tiene sus propios sistemas, reglas y restricciones. Diseñamos software e integraciones alrededor de ese contexto. Estos ejemplos muestran cómo podemos abordar cuatro retos industriales.
+Desarrollamos ERP, MES y WMS a medida, además de aplicaciones e integraciones para los procesos que tus sistemas actuales no cubren. Estos cuatro ejemplos muestran cómo conectamos el trabajo entre áreas.
 
 **domains.problem**
 
-EL RETO
+EL PUNTO DE PARTIDA
 
 **domains.flow**
 
-QUÉ DESARROLLAMOS
+LA SOLUCIÓN QUE CONSTRUIMOS
 
 **domains.result**
 
-QUÉ PERMITE HACER
+LO QUE TU EQUIPO PUEDE HACER
 
 **domains.example**
 
@@ -1143,7 +1231,7 @@ Cuando aparece un problema, reconstruir la historia de una pieza exige buscar en
 
 **domains.items.0.flow**
 
-Aplicaciones de ejecución e integraciones que relacionan órdenes, componentes y resultados de estación en un registro consultable.
+Desarrollamos MES a medida y módulos de ejecución que conectan órdenes del ERP, captura en piso, componentes y resultados de estación en un registro consultable.
 
 **domains.items.0.result**
 
@@ -1229,6 +1317,14 @@ Material utilizado → operación registrada → resultado de estación
 
 Consulta por pieza, orden o lote
 
+**domains.items.0.platform**
+
+MES a medida
+
+**domains.items.0.short**
+
+Manufactura
+
 **domains.items.1.id**
 
 quality
@@ -1243,7 +1339,7 @@ Una inspección detecta un hallazgo, pero la evidencia, el material afectado y l
 
 **domains.items.1.flow**
 
-Flujos para registrar inspecciones, vincular evidencia al producto y gestionar contenciones, responsables y disposiciones.
+Creamos aplicaciones de calidad conectadas con tu ERP o MES para registrar inspecciones, vincular evidencia al producto y gestionar contenciones, responsables y disposiciones.
 
 **domains.items.1.result**
 
@@ -1317,6 +1413,14 @@ Revisión de calidad
 
 La decisión requiere una revisión autorizada
 
+**domains.items.1.platform**
+
+Calidad conectada
+
+**domains.items.1.short**
+
+Calidad
+
 **domains.items.2.id**
 
 apqp
@@ -1331,7 +1435,7 @@ El plan indica una fecha de avance, pero no deja claro qué entregable o aprobac
 
 **domains.items.2.flow**
 
-Aplicaciones que relacionan hitos, entregables, dependencias, responsables y evidencia de aprobación.
+Desarrollamos aplicaciones de gestión y módulos de ERP a medida que relacionan hitos, entregables, dependencias, responsables y evidencia de aprobación.
 
 **domains.items.2.result**
 
@@ -1401,6 +1505,14 @@ Reporte revisado y aprobado
 
 El hito muestra su bloqueo y el siguiente responsable
 
+**domains.items.2.platform**
+
+Aplicaciones de gestión
+
+**domains.items.2.short**
+
+APQP y proyectos
+
 **domains.items.3.id**
 
 warehouse
@@ -1415,7 +1527,7 @@ Lo que se recibe o se surte no siempre coincide con la orden y el registro del i
 
 **domains.items.3.flow**
 
-Flujos de escaneo, validación de material y cantidad, y registro de movimientos conectados con el ERP según sus interfaces disponibles.
+Desarrollamos WMS a medida, módulos de almacén e integraciones con ERP para conectar escaneo, validación de material y cantidad, ubicaciones y registro de movimientos.
 
 **domains.items.3.result**
 
@@ -1485,58 +1597,118 @@ Material distinto al solicitado
 
 Movimiento pendiente de corregir la discrepancia
 
+**domains.items.3.platform**
+
+WMS a medida
+
+**domains.items.3.short**
+
+Materiales
+
+**domains.platformTitle**
+
+Software que se adapta a tu operación
+
+**domains.platformNote**
+
+Podemos desarrollar una plataforma a medida, un módulo específico o una integración con tus sistemas actuales. El alcance se define a partir del proceso.
+
+**domains.platforms.0.0**
+
+ERP
+
+**domains.platforms.0.1**
+
+Gestión empresarial
+
+**domains.platforms.0.2**
+
+Conecta compras, inventario, solicitudes y aprobaciones entre áreas.
+
+**domains.platforms.1.0**
+
+MES
+
+**domains.platforms.1.1**
+
+Ejecución de manufactura
+
+**domains.platforms.1.2**
+
+Relaciona órdenes, operaciones, componentes y resultados en piso.
+
+**domains.platforms.2.0**
+
+WMS
+
+**domains.platforms.2.1**
+
+Gestión de almacenes
+
+**domains.platforms.2.2**
+
+Estructura recibos, ubicaciones, surtido y movimientos de materiales.
+
+**domains.custom**
+
+A MEDIDA
+
+**domains.navigate**
+
+Explora por proceso
+
 **machine.eyebrow**
 
-03 / MÁS ALLÁ DE LA MÁQUINA
+03 / INTEGRACIÓN ENTRE SISTEMAS Y OPERACIÓN
 
 **machine.title**
 
-Tus máquinas saben más<br>
-de lo que muestran tus sistemas.
+Del dato aislado<br>
+al proceso conectado.
 
 **machine.intro**
 
-Los resultados de ciclo, valores de proceso y alarmas son más útiles cuando se vinculan con la orden, el producto y la estación que los generaron.
+Un movimiento en el ERP, un archivo de Excel o una señal de máquina pueden iniciar el mismo flujo: identificar el contexto, aplicar una regla y poner el siguiente paso en manos del área correcta.
 
 **machine.note**
 
-La integración depende de las interfaces disponibles, los accesos y las restricciones operativas del equipo. Evaluamos estas condiciones antes de definir la solución.
+Revisamos APIs, archivos, bases de datos e interfaces del equipo, junto con permisos y restricciones operativas, antes de definir cada integración.
 
 **machine.labels.0**
 
-Señal de máquina
+Sistemas, archivos y equipos
 
 **machine.labels.1**
 
-Contexto de producción
+Contexto del proceso
 
 **machine.labels.2**
 
-Evento operativo
+Reglas y seguimiento
 
 **machine.labels.3**
 
-Personas que pueden actuar
+Acciones entre áreas
 
 **machine.details.0**
 
-Valor de prueba + unidad
+ERP · Excel · aplicaciones · señales
 
 **machine.details.1**
 
-Orden + serie + estación
+Orden · material · solicitud · estación
 
 **machine.details.2**
 
-Regla + resultado + evidencia
+Validaciones · aprobaciones · evidencia
 
 **machine.details.3**
 
-Calidad · Ingeniería · Mantenimiento
+Compras · Almacén · Producción · Calidad
 
 **machine.caption**
 
-Conectividad industrial con significado operativo.
+Integración IT/OT y software para conectar el trabajo.
 
 **approach.eyebrow**
 
@@ -1823,3 +1995,7 @@ No se pudo iniciar la medición. Tu preferencia está guardada y puedes seguir u
 **consent.loading**
 
 Iniciando la medición permitida…
+
+**chartNote**
+
+Visualización ilustrativa · datos sintéticos

@@ -1,6 +1,6 @@
 # Kelmetrik — Connected Operations V1
 
-Bilingual industrial software and integration website: React + Vite, prerendered EN/ES HTML, restored animated bar-chart background, four original conceptual solution examples and the existing Formspree contact form. The interactive EOL simulation has been removed.
+Bilingual industrial software and integration website: React + Vite, prerendered EN/ES HTML, dynamic blue/orange bar-chart background with changing synthetic values, four original conceptual solution examples with guided reading and explicit custom ERP/MES/WMS capabilities and the existing Formspree contact form. The interactive EOL simulation has been removed.
 
 ## Local development
 

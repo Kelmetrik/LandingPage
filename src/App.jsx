@@ -8,6 +8,7 @@ import {
   Users,
   CircleDot,
   Mail,
+  PanelsTopLeft,
 } from "lucide-react";
 import logo from "./assets/logo.png";
 import { content } from "./content";
@@ -196,7 +197,7 @@ function BeyondMachine({ c }) {
             <div className="machine-stage" key={label}>
               <span className="mono">0{i + 1}</span>
               {i === 0 ? (
-                <ActivityGraphic />
+                <PanelsTopLeft size={44} strokeWidth={1.3} />
               ) : i === 1 ? (
                 <ScanGraphic />
               ) : i === 2 ? (
@@ -216,24 +217,6 @@ function BeyondMachine({ c }) {
         </div>
       </div>
     </section>
-  );
-}
-function ActivityGraphic() {
-  return (
-    <svg
-      width="68"
-      height="44"
-      viewBox="0 0 68 44"
-      fill="none"
-      aria-hidden="true"
-    >
-      <path
-        d="M0 25H12L17 9L25 36L33 16L40 25H68"
-        stroke="currentColor"
-        strokeWidth="1.5"
-      />
-      <path d="M0 42H68M0 2H68" stroke="currentColor" opacity=".15" />
-    </svg>
   );
 }
 function ScanGraphic() {
@@ -390,7 +373,7 @@ export default function App({ lang = "en", privacy = false }) {
               <div className="hero-chart-space" aria-hidden="true" />
               <div className="hero-baseline">
                 <span>{c.heroNote}</span>
-                <span className="mono">IT / OT / SOFTWARE</span>
+                <span className="chart-caption">{c.chartNote}</span>
               </div>
             </div>
           </section>
