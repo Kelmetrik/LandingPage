@@ -20,7 +20,7 @@ En la vista previa comprobar: siete secciones, menú táctil y Escape, enlaces E
 
 Con movimiento reducido, no deben correr animaciones. Fuera de pantalla y con pestaña oculta deben detenerse. Sin JavaScript, el HTML principal y los storyboards nativos siguen disponibles; el ejemplo EOL está descrito en el bloque desplegable y el formulario usa el envío nativo de Formspree.
 
-Comprobar recepción de una solicitud de prueba identificada como tal y confirmar la bandeja de destino. Una respuesta del servicio por sí sola no verifica entrega de correo.
+El 10 de octubre de 2026 se envió una sola solicitud real identificada como KELMETRIK-V1-20261010 al endpoint existente. Formspree respondió HTTP 200 con ok:true. Pendiente confirmar recepción en la bandeja del titular; la aceptación del servicio no demuestra entrega de correo. Esta comprobación directa del endpoint tampoco sustituye la prueba del formulario en el navegador de producción.
 
 ## Despliegue
 
