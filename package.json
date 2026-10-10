@@ -5,9 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "node scripts/build.mjs",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "vite build --ssr tests/component-entry.jsx --outDir .test-build && node --test tests/*.test.js",
+    "build:social": "node scripts/social-card.mjs",
+    "docs:editorial": "node scripts/editorial.mjs"
   },
   "dependencies": {
     "lucide-react": "^1.25.0",
@@ -16,6 +19,8 @@
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
+    "@resvg/resvg-js": "^2.6.2",
+    "@testing-library/react": "^16.3.3",
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.3",
@@ -23,6 +28,11 @@
     "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-react-refresh": "^0.5.3",
     "globals": "^17.7.0",
+    "jsdom": "^29.1.1",
+    "prettier": "^3.9.10",
     "vite": "^8.1.1"
+  },
+  "engines": {
+    "node": ">=22.13.0"
   }
 }
