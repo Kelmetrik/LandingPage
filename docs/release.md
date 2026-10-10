@@ -4,7 +4,7 @@
 
 Base original: `20b8d68bd494a4623e51a6c65d1ef5ac06b6f151`. Proyecto Vercel existente: landing-page. Mantener su integración con GitHub y publicar primero la rama como vista previa.
 
-- Nombre legal del responsable: pendiente de confirmación. Configurar VITE_PRIVACY_RESPONSIBLE antes de producción. El build de Vercel production falla de forma explícita si falta; preview/local funcionan y muestran el aviso pendiente.
+- Responsable del aviso: Kelmetrik, conforme a la indicación del titular. Es el valor predeterminado en ambos idiomas; VITE_PRIVACY_RESPONSIBLE permite cambiarlo si fuera necesario. Este dato ya no es un pendiente de publicación.
 - Domicilio confirmado: Miguel Alemán Valdez 3110, Oficina 1B, Colonia Gabilondo, 22044 Tijuana, B.C.
 - Privacidad: contact@kelmetrik.com. Contacto comercial existente: eduardo@kelmetrik.com.
 - Formspree conserva el endpoint existente; comprobar el destinatario y recepción en la cuenta del titular.

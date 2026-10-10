@@ -1036,10 +1036,6 @@ Questions and privacy requests
 
 For questions about information you submitted, or to request access, correction or deletion, contact
 
-**privacyContent.draft**
-
-Privacy details are being finalized. The legal name of the responsible party must be confirmed before this version is published.
-
 **privacyContent.back**
 
 Back to Kelmetrik
@@ -2177,10 +2173,6 @@ Preguntas y solicitudes de privacidad
 **privacyContent.rightsText**
 
 Para consultar la información que compartiste o solicitar acceso, corrección o eliminación, escribe a
-
-**privacyContent.draft**
-
-Se están completando los datos de privacidad. El nombre legal del responsable debe confirmarse antes de publicar esta versión.
 
 **privacyContent.back**
 

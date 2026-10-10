@@ -518,7 +518,8 @@ function Preferences({ c, inline = false }) {
 }
 function Privacy({ c }) {
   const p = c.privacyContent;
-  const responsible = import.meta.env.VITE_PRIVACY_RESPONSIBLE;
+  const responsible =
+    import.meta.env.VITE_PRIVACY_RESPONSIBLE?.trim() || "Kelmetrik";
   const address =
     "Miguel Alemán Valdez 3110, Oficina 1B, Colonia Gabilondo, 22044 Tijuana, B.C.";
   return (
@@ -530,11 +531,10 @@ function Privacy({ c }) {
       <p className="lead">{p.intro}</p>
       <dl>
         <dt>{p.responsible}</dt>
-        <dd>{responsible || "Kelmetrik"}</dd>
+        <dd>{responsible}</dd>
         <dt>{p.address}</dt>
         <dd>{address}</dd>
       </dl>
-      {!responsible && <p className="privacy-draft">{p.draft}</p>}
       <h2>{p.contactTitle}</h2>
       <p>{p.contactText}</p>
       <h2>{p.analyticsTitle}</h2>

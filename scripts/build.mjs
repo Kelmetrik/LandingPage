@@ -3,11 +3,6 @@ import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { resolve, dirname } from "node:path";
 import { pathToFileURL } from "node:url";
 const env = { ...loadEnv("production", process.cwd(), ""), ...process.env };
-if (env.VERCEL_ENV === "production" && !env.VITE_PRIVACY_RESPONSIBLE?.trim()) {
-  throw new Error(
-    "Production requires VITE_PRIVACY_RESPONSIBLE: confirm the legal responsible party before publishing. Preview builds remain available.",
-  );
-}
 await build({ build: { manifest: true } });
 await build({ build: { ssr: "src/entry-server.jsx", outDir: "dist-ssr" } });
 const { renderPage } = await import(

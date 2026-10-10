@@ -34,7 +34,7 @@ Build before running tests: the HTML checks read the generated pages. Component 
 
 Copy `.env.example` to `.env.local` for local configuration. Every `VITE_` value is public: never put credentials in it. Vercel uses the existing GitHub project integration and `vercel.json`.
 
-Production requires `VITE_PRIVACY_RESPONSIBLE`, the confirmed legal name of the responsible person or entity. Preview builds show a draft notice until this is supplied. The confirmed privacy email is contact@kelmetrik.com; commercial contact remains eduardo@kelmetrik.com.
+The owner confirmed **Kelmetrik** as the responsible party in both privacy notices. This is the default; `VITE_PRIVACY_RESPONSIBLE` is an optional override. The confirmed privacy email is contact@kelmetrik.com; commercial contact remains eduardo@kelmetrik.com.
 
 Plausible and Search Console accounts have not yet been created. Keep analytics disabled until configuration and verification are complete. Tracking is restricted to the production hostname and an explicit measurement preference; there is no session recording, persistent visitor identifier or transmission of form fields to analytics.
 

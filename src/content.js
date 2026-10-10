@@ -340,8 +340,6 @@ export const content = {
       rightsTitle: "Questions and privacy requests",
       rightsText:
         "For questions about information you submitted, or to request access, correction or deletion, contact",
-      draft:
-        "Privacy details are being finalized. The legal name of the responsible party must be confirmed before this version is published.",
       back: "Back to Kelmetrik",
       responsible: "Responsible party",
       address: "Contact address",
@@ -707,8 +705,6 @@ export const content = {
       rightsTitle: "Preguntas y solicitudes de privacidad",
       rightsText:
         "Para consultar la información que compartiste o solicitar acceso, corrección o eliminación, escribe a",
-      draft:
-        "Se están completando los datos de privacidad. El nombre legal del responsable debe confirmarse antes de publicar esta versión.",
       back: "Volver a Kelmetrik",
       responsible: "Responsable",
       address: "Domicilio de contacto",
