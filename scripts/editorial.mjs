@@ -1,7 +1,7 @@
 import { mkdir, writeFile } from "node:fs/promises";
 import { content } from "../src/content.js";
 await mkdir("docs", { recursive: true });
-let text = `# Kelmetrik — Especificación editorial V1, revisión 3
+let text = `# Kelmetrik — Especificación editorial V1, revisión 5
 
 Los textos EN/ES se generan desde los mismos diccionarios que usa la web. Regenerar con \`npm run docs:editorial\` después de editar contenido.
 
@@ -9,13 +9,13 @@ Los textos EN/ES se generan desde los mismos diccionarios que usa la web. Regene
 
 Kelmetrik: ingeniería de software e integración de sistemas industriales. Público: operaciones, manufactura, calidad, ingeniería y TI en México y Estados Unidos. Objetivo: conversaciones de diagnóstico. Inglés en / y español en /es/.
 
-Cuatro dominios y una capacidad transversal IT/OT. Capacidad explícita para desarrollar ERP, MES y WMS a medida, módulos e integraciones. La narrativa cubre procesos entre áreas, ERP, Excel, macros, correos y equipos. Ejemplos originales y conceptuales, sin simulación interactiva, sin presentarlos como productos terminados ni trabajos de clientes. Cada bloque responde: problema operativo → qué desarrolla Kelmetrik → qué permite hacer.
+Cuatro dominios y una capacidad transversal IT/OT. Capacidad explícita para desarrollar ERP, MES y WMS a medida, módulos e integraciones. La narrativa cubre procesos entre áreas, ERP, Excel, macros, correos y equipos. Ejemplos originales y conceptuales, sin simulación interactiva, sin presentarlos como productos terminados ni trabajos de clientes. Cada bloque utiliza el título original en inglés y un único párrafo comercial: el texto español del usuario se conserva literalmente y la versión inglesa lo traduce fielmente. No se añaden paráfrasis de solución o resultado.
 
 ## Secuencia y recursos visuales
 
 1. Inicio: gráfica de barras azul animada detrás de la propuesta y las dos acciones. Números sintéticos variables y una onda de color azul/naranja, identificados como ilustrativos; sin afirmaciones de rendimiento; pausa fuera de pantalla y con pestaña oculta; versión estática con movimiento reducido.
 2. Desconexión: comparación del mismo flujo fragmentado y conectado: orden en ERP, seguimiento en Excel, aprobación por correo y recaptura manual.
-3. Soluciones: cuatro ejemplos completos y visibles. En escritorio, explicación junto a un fragmento de interfaz anotado; en móvil, explicación y ejemplo apilados. Lectura guiada por punto de partida, solución y uso; tipografía mayor y resultado destacado.
+3. Soluciones: cuatro ejemplos completos y visibles. En escritorio, explicación junto a un fragmento de interfaz conceptual; en móvil, explicación y ejemplo apilados. Estructura: número y categoría → título → párrafo completo → contacto. El ejemplo conserva datos y estados específicos, sin anotaciones comerciales repetidas.
 4. Más allá de la máquina: señal → contexto → evento → persona que puede actuar. Interfaces y accesos condicionan la integración.
 5. Enfoque: comprender → diseñar → construir → validar → desplegar, con entregable por etapa.
 6. Contacto: nombre, correo empresarial y empresa obligatorios; reto opcional.

@@ -40,3 +40,50 @@ for (const [path, lang, title] of [
     }
   });
 }
+
+test("solutions preserve the approved Spanish paragraphs once, without duplicate explanations", async () => {
+  const approved = [
+    "Conectamos estaciones, equipos y sistemas de producción para registrar lo que ocurre durante cada etapa de manufactura. Desde la identificación de componentes hasta los resultados de prueba, construimos trazabilidad que permite controlar procesos, detectar desviaciones y entender qué ocurrió con cada producto.",
+    "Digitalizamos inspecciones, validaciones y procesos de contención para que cada resultado tenga un seguimiento claro. Conectamos evidencia, defectos, responsables y decisiones de calidad, reduciendo la dependencia de registros dispersos y facilitando el control de nuevos lanzamientos.",
+    "Conectamos la planeación de proyectos con su ejecución real. Centralizamos actividades, entregables, responsables y evidencia para identificar retrasos, visualizar dependencias y asegurar que los hitos avancen respaldados por resultados verificables.",
+    "Conectamos los movimientos físicos de materiales con los sistemas que administran la operación. Diseñamos procesos de recibo, almacenamiento, picking e inventario con validaciones y trazabilidad, eliminando capturas duplicadas y mejorando el control sobre cada movimiento.",
+  ];
+  const titles = [
+    "Manufacturing Execution & Traceability",
+    "Quality Management & Safe Launch",
+    "APQP & Industrial Project Management",
+    "Warehouse & Material Management",
+  ];
+  for (const path of ["es/index.html", "index.html"]) {
+    const { document } = new JSDOM(await readFile(`dist/${path}`, "utf8"))
+      .window;
+    const rows = [...document.querySelectorAll(".solution-row")];
+    assert.equal(rows.length, 4);
+    rows.forEach((row, i) => {
+      assert.equal(row.querySelector("h3").textContent, titles[i]);
+      assert.equal(row.querySelectorAll(".solution-copy p").length, 1);
+      assert.equal(
+        row.querySelector(".solution-contact").getAttribute("href"),
+        "#contact",
+      );
+      assert.ok(document.querySelector(`.solution-jump a[href="#${row.id}"]`));
+      assert.ok(row.querySelector(".solution-example .concept-label"));
+      assert.equal(
+        row.querySelector(
+          ".solution-description, .solution-benefit, .example-annotation",
+        ),
+        null,
+      );
+      if (path.startsWith("es/")) {
+        assert.equal(
+          row.querySelector(".solution-summary").textContent,
+          approved[i],
+        );
+        assert.equal(
+          document.body.textContent.split(approved[i]).length - 1,
+          1,
+        );
+      }
+    });
+  }
+});

@@ -1,4 +1,4 @@
-# Kelmetrik — Especificación editorial V1, revisión 3
+# Kelmetrik — Especificación editorial V1, revisión 5
 
 Los textos EN/ES se generan desde los mismos diccionarios que usa la web. Regenerar con `npm run docs:editorial` después de editar contenido.
 
@@ -6,13 +6,13 @@ Los textos EN/ES se generan desde los mismos diccionarios que usa la web. Regene
 
 Kelmetrik: ingeniería de software e integración de sistemas industriales. Público: operaciones, manufactura, calidad, ingeniería y TI en México y Estados Unidos. Objetivo: conversaciones de diagnóstico. Inglés en / y español en /es/.
 
-Cuatro dominios y una capacidad transversal IT/OT. Capacidad explícita para desarrollar ERP, MES y WMS a medida, módulos e integraciones. La narrativa cubre procesos entre áreas, ERP, Excel, macros, correos y equipos. Ejemplos originales y conceptuales, sin simulación interactiva, sin presentarlos como productos terminados ni trabajos de clientes. Cada bloque responde: problema operativo → qué desarrolla Kelmetrik → qué permite hacer.
+Cuatro dominios y una capacidad transversal IT/OT. Capacidad explícita para desarrollar ERP, MES y WMS a medida, módulos e integraciones. La narrativa cubre procesos entre áreas, ERP, Excel, macros, correos y equipos. Ejemplos originales y conceptuales, sin simulación interactiva, sin presentarlos como productos terminados ni trabajos de clientes. Cada bloque utiliza el título original en inglés y un único párrafo comercial: el texto español del usuario se conserva literalmente y la versión inglesa lo traduce fielmente. No se añaden paráfrasis de solución o resultado.
 
 ## Secuencia y recursos visuales
 
 1. Inicio: gráfica de barras azul animada detrás de la propuesta y las dos acciones. Números sintéticos variables y una onda de color azul/naranja, identificados como ilustrativos; sin afirmaciones de rendimiento; pausa fuera de pantalla y con pestaña oculta; versión estática con movimiento reducido.
 2. Desconexión: comparación del mismo flujo fragmentado y conectado: orden en ERP, seguimiento en Excel, aprobación por correo y recaptura manual.
-3. Soluciones: cuatro ejemplos completos y visibles. En escritorio, explicación junto a un fragmento de interfaz anotado; en móvil, explicación y ejemplo apilados. Lectura guiada por punto de partida, solución y uso; tipografía mayor y resultado destacado.
+3. Soluciones: cuatro ejemplos completos y visibles. En escritorio, explicación junto a un fragmento de interfaz conceptual; en móvil, explicación y ejemplo apilados. Estructura: número y categoría → título → párrafo completo → contacto. El ejemplo conserva datos y estados específicos, sin anotaciones comerciales repetidas.
 4. Más allá de la máquina: señal → contexto → evento → persona que puede actuar. Interfaces y accesos condicionan la integración.
 5. Enfoque: comprender → diseñar → construir → validar → desplegar, con entregable por etapa.
 6. Contacto: nombre, correo empresarial y empresa obligatorios; reto opcional.
@@ -218,18 +218,6 @@ connected operation.
 
 We build custom ERP, MES and WMS systems, alongside applications and integrations for workflows your current systems do not cover. These four examples show how we connect work across departments.
 
-**domains.problem**
-
-THE STARTING POINT
-
-**domains.flow**
-
-THE SOLUTION WE BUILD
-
-**domains.result**
-
-WHAT YOUR TEAM CAN DO
-
 **domains.example**
 
 Conceptual example
@@ -254,25 +242,9 @@ Manufacturing Execution & Traceability
 
 We connect stations, equipment and production systems to record what happens at every manufacturing stage. From component identification to test results, we build traceability that helps teams control processes, detect deviations and understand what happened to each product.
 
-**domains.items.0.problem**
-
-Component identification, process records and test results often live in separate systems, making it difficult to follow each product through production.
-
-**domains.items.0.flow**
-
-We develop custom MES systems and execution modules that connect stations, equipment and production systems. We link ERP orders, component identification and test results to record what happens at each manufacturing stage.
-
-**domains.items.0.result**
-
-Monitor process execution, identify deviations and investigate what happened to each product using its linked records.
-
 **domains.items.0.visualTitle**
 
 A connected product history
-
-**domains.items.0.annotation**
-
-Kelmetrik structures the relationships between your systems and makes evidence available to operations, quality and engineering.
 
 **domains.items.0.nodes.0.0**
 
@@ -366,25 +338,9 @@ Quality Management & Safe Launch
 
 We digitize inspections, validations and containment processes so every result has a clear follow-up. We connect evidence, defects, owners and quality decisions, reducing reliance on scattered records and making new-launch controls easier to manage.
 
-**domains.items.1.problem**
-
-Inspections generate findings, but evidence, containment actions and quality decisions can become scattered across spreadsheets and conversations.
-
-**domains.items.1.flow**
-
-We digitize inspections, validations and containment workflows through quality applications connected to your ERP or MES. Each result links defects, evidence, owners and the decisions that follow.
-
-**domains.items.1.result**
-
-Follow each finding through disposition and coordinate new-launch controls with shared records and clear responsibility.
-
 **domains.items.1.visualTitle**
 
 From finding to documented decision
-
-**domains.items.1.annotation**
-
-Kelmetrik connects shop-floor capture with quality follow-up, preserving context and ownership for every decision.
 
 **domains.items.1.recordTitle**
 
@@ -466,25 +422,9 @@ APQP & Industrial Project Management
 
 We connect project planning with actual execution. We centralize activities, deliverables, owners and evidence to identify delays, visualize dependencies and ensure milestones advance with verifiable results behind them.
 
-**domains.items.2.problem**
-
-Project plans and actual progress often diverge when activities, deliverables and approvals are tracked separately.
-
-**domains.items.2.flow**
-
-We develop project management applications and custom ERP modules that connect planning with execution. We bring activities, deliverables, dependencies, owners and approval evidence into a shared workflow.
-
-**domains.items.2.result**
-
-Identify delays, understand dependencies and review the verifiable evidence supporting each milestone before advancing.
-
 **domains.items.2.visualTitle**
 
 The dependency behind the delay
-
-**domains.items.2.annotation**
-
-Kelmetrik turns scattered follow-up into a shared view of the work and the evidence required to move forward.
 
 **domains.items.2.recordTitle**
 
@@ -562,25 +502,9 @@ Warehouse & Material Management
 
 We connect physical material movements with the systems that manage operations. We design receiving, storage, picking and inventory workflows with validation and traceability, eliminating duplicate data entry and improving control over each movement.
 
-**domains.items.3.problem**
-
-Physical material movements and system records can fall out of sync when receiving, picking and inventory updates require repeated manual entry.
-
-**domains.items.3.flow**
-
-We develop custom WMS systems, warehouse modules and ERP integrations for receiving, storage, picking and inventory. We connect physical movements with operational records through material, quantity and location validation.
-
-**domains.items.3.result**
-
-Detect discrepancies before confirming movements, trace their history and reuse captured information across connected systems.
-
 **domains.items.3.visualTitle**
 
 Validate the movement before recording it
-
-**domains.items.3.annotation**
-
-Kelmetrik connects the physical operation to the business record and makes the rules for confirming each movement explicit.
 
 **domains.items.3.recordTitle**
 
@@ -1209,18 +1133,6 @@ operación conectada.
 
 Desarrollamos ERP, MES y WMS a medida, además de aplicaciones e integraciones para los procesos que tus sistemas actuales no cubren. Estos cuatro ejemplos muestran cómo conectamos el trabajo entre áreas.
 
-**domains.problem**
-
-EL PUNTO DE PARTIDA
-
-**domains.flow**
-
-LA SOLUCIÓN QUE CONSTRUIMOS
-
-**domains.result**
-
-LO QUE TU EQUIPO PUEDE HACER
-
 **domains.example**
 
 Ejemplo conceptual
@@ -1239,31 +1151,15 @@ manufacturing
 
 **domains.items.0.title**
 
-Ejecución de manufactura y trazabilidad
+Manufacturing Execution & Traceability
 
 **domains.items.0.summary**
 
 Conectamos estaciones, equipos y sistemas de producción para registrar lo que ocurre durante cada etapa de manufactura. Desde la identificación de componentes hasta los resultados de prueba, construimos trazabilidad que permite controlar procesos, detectar desviaciones y entender qué ocurrió con cada producto.
 
-**domains.items.0.problem**
-
-La identificación de componentes, los registros de proceso y los resultados de prueba suelen quedar en sistemas separados, dificultando seguir cada producto durante su fabricación.
-
-**domains.items.0.flow**
-
-Desarrollamos MES a medida y módulos de ejecución que conectan estaciones, equipos y sistemas de producción. Vinculamos órdenes del ERP, identificación de componentes y resultados de prueba para registrar lo que ocurre en cada etapa de manufactura.
-
-**domains.items.0.result**
-
-Controlar la ejecución de los procesos, detectar desviaciones e investigar qué ocurrió con cada producto a partir de sus registros vinculados.
-
 **domains.items.0.visualTitle**
 
 La historia de una pieza, conectada
-
-**domains.items.0.annotation**
-
-Kelmetrik estructura las relaciones entre tus sistemas y pone la evidencia al alcance de operaciones, calidad e ingeniería.
 
 **domains.items.0.nodes.0.0**
 
@@ -1351,31 +1247,15 @@ quality
 
 **domains.items.1.title**
 
-Gestión de calidad y Safe Launch
+Quality Management & Safe Launch
 
 **domains.items.1.summary**
 
 Digitalizamos inspecciones, validaciones y procesos de contención para que cada resultado tenga un seguimiento claro. Conectamos evidencia, defectos, responsables y decisiones de calidad, reduciendo la dependencia de registros dispersos y facilitando el control de nuevos lanzamientos.
 
-**domains.items.1.problem**
-
-Las inspecciones generan hallazgos, pero la evidencia, las acciones de contención y las decisiones de calidad pueden quedar dispersas entre hojas de cálculo y conversaciones.
-
-**domains.items.1.flow**
-
-Digitalizamos inspecciones, validaciones y procesos de contención mediante aplicaciones de calidad conectadas con tu ERP o MES. Cada resultado relaciona defectos, evidencia, responsables y las decisiones de seguimiento.
-
-**domains.items.1.result**
-
-Dar seguimiento a cada hallazgo hasta su disposición y coordinar el control de nuevos lanzamientos con registros compartidos y responsabilidades claras.
-
 **domains.items.1.visualTitle**
 
 Del hallazgo a una decisión documentada
-
-**domains.items.1.annotation**
-
-Kelmetrik conecta la captura en piso con el seguimiento de calidad, conservando el contexto y la responsabilidad de cada decisión.
 
 **domains.items.1.recordTitle**
 
@@ -1451,31 +1331,15 @@ apqp
 
 **domains.items.2.title**
 
-APQP y gestión de proyectos industriales
+APQP & Industrial Project Management
 
 **domains.items.2.summary**
 
 Conectamos la planeación de proyectos con su ejecución real. Centralizamos actividades, entregables, responsables y evidencia para identificar retrasos, visualizar dependencias y asegurar que los hitos avancen respaldados por resultados verificables.
 
-**domains.items.2.problem**
-
-La planeación y el avance real pueden separarse cuando las actividades, los entregables y las aprobaciones se siguen en registros distintos.
-
-**domains.items.2.flow**
-
-Desarrollamos aplicaciones de gestión de proyectos y módulos de ERP a medida que conectan la planeación con la ejecución. Centralizamos actividades, entregables, dependencias, responsables y evidencia de aprobación en un flujo compartido.
-
-**domains.items.2.result**
-
-Identificar retrasos, visualizar dependencias y revisar la evidencia verificable que respalda cada hito antes de avanzar.
-
 **domains.items.2.visualTitle**
 
 La dependencia que explica el retraso
-
-**domains.items.2.annotation**
-
-Kelmetrik convierte el seguimiento disperso en una vista compartida del trabajo y de la evidencia necesaria para avanzar.
 
 **domains.items.2.recordTitle**
 
@@ -1547,31 +1411,15 @@ warehouse
 
 **domains.items.3.title**
 
-Gestión de almacenes y materiales
+Warehouse & Material Management
 
 **domains.items.3.summary**
 
 Conectamos los movimientos físicos de materiales con los sistemas que administran la operación. Diseñamos procesos de recibo, almacenamiento, picking e inventario con validaciones y trazabilidad, eliminando capturas duplicadas y mejorando el control sobre cada movimiento.
 
-**domains.items.3.problem**
-
-Los movimientos físicos y los registros del sistema pueden perder sincronía cuando el recibo, el surtido y las actualizaciones de inventario requieren capturas manuales repetidas.
-
-**domains.items.3.flow**
-
-Desarrollamos WMS a medida, módulos de almacén e integraciones con ERP para recibo, almacenamiento, picking e inventario. Conectamos los movimientos físicos con los registros de la operación mediante validaciones de material, cantidad y ubicación.
-
-**domains.items.3.result**
-
-Detectar discrepancias antes de confirmar movimientos, consultar su trazabilidad y reutilizar la información capturada entre los sistemas conectados.
-
 **domains.items.3.visualTitle**
 
 Validar el movimiento antes de registrarlo
-
-**domains.items.3.annotation**
-
-Kelmetrik conecta la operación física con el registro empresarial y hace explícitas las reglas para confirmar cada movimiento.
 
 **domains.items.3.recordTitle**
 

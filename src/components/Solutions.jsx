@@ -131,10 +131,6 @@ function Example({ item, copy }) {
         )}
         <p className="example-outcome">{item.outcome}</p>
       </div>
-      <p className="example-annotation">
-        <span aria-hidden="true">↳</span>
-        {item.annotation}
-      </p>
       <p className="example-caption">{copy.caption}</p>
     </figure>
   );
@@ -197,20 +193,6 @@ export default function Solutions({ c }) {
                   <h3>{item.title}</h3>
                   <p className="solution-summary">{item.summary}</p>
                 </Observed>
-                <div className="solution-description">
-                  <h4 className="solution-step-label">
-                    <span>01</span>
-                    {d.flow}
-                  </h4>
-                  <p>{item.flow}</p>
-                  <div className="solution-benefit">
-                    <h4 className="solution-step-label">
-                      <span>02</span>
-                      {d.result}
-                    </h4>
-                    <p>{item.result}</p>
-                  </div>
-                </div>
                 <a
                   className="text-link solution-contact"
                   href="#contact"

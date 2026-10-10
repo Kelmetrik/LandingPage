@@ -1,4 +1,4 @@
-# Publicación y verificación — revisión 4
+# Publicación y verificación — revisión 5
 
 ## Estado
 
@@ -6,15 +6,20 @@ Rama: feat/connected-operations-v1. PR: https://github.com/Kelmetrik/LandingPage
 
 Responsable confirmado: Kelmetrik. Domicilio: Miguel Alemán Valdez 3110, Oficina 1B, Colonia Gabilondo, 22044 Tijuana, B.C. Privacidad: contact@kelmetrik.com. Contacto comercial: eduardo@kelmetrik.com.
 
-## Ajustes de recorrido — revisión 4
+## Ajustes de recorrido — revisión 5
 
 - Scroll nativo de proximidad hacia encabezados de sección y los cuatro ejemplos, sin capturar la rueda ni obligar a saltar bloques largos. Se desactiva al escribir en el formulario, abrir un diálogo o solicitar movimiento reducido.
 - Aparición única y breve de títulos y visuales; pasos de integración y metodología con pequeños desfases. El contenido permanece visible si JavaScript o los observadores no están disponibles.
 - Valores de la gráfica en Arial, peso 600 y tamaño mayor, conservando los datos ilustrativos variables.
 
+## Limpieza editorial — revisión 5
+
+Los cuatro párrafos originales en español se conservan literalmente, una sola vez por solución, con los títulos originales en inglés. Se retiraron los apartados secundarios de solución/resultado y las anotaciones comerciales de los ejemplos en ambos idiomas, junto con sus campos y estilos sin uso. Cada bloque conserva número, categoría, título, párrafo y contacto, acompañado por su ejemplo conceptual. La altura sigue el contenido; no se añadieron rellenos ni alturas mínimas.
+
 ## Validación realizada
 
-- Lint y build correctos; 24 pruebas automatizadas aprobadas.
+- Lint y build correctos; 25 pruebas automatizadas aprobadas.
+- Una prueba compara los cuatro párrafos españoles con el texto aprobado, verifica una sola aparición y comprueba títulos, ejemplos y contactos en ambas versiones.
 - EN/ES prerenderizados, seis secciones, cuatro ejemplos visibles, enlaces antiguos equivalentes y ausencia de scripts de medición iniciales.
 - Apertura/cierre de preferencias y retorno de foco en DOM simulado, estados configurado/ausente/preview/bloqueado y elecciones aceptar/rechazar.
 - Carga del proveedor solo con permiso; revocación durante carga, sin replay; propiedades controladas y descarte de eventos EOL.

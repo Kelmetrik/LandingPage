@@ -50,6 +50,6 @@ Regenerate editorial content with npm run docs:editorial. Sharing assets: npm ru
 
 ## Verification
 
-22 automated tests pass; lint and build pass. Tests cover mocked form requests, preferences, consent races and provider failure, analytics deduplication/sanitization, static content and hydration. DOM tests do not establish browser layout or actual screen-reader behavior.
+25 automated tests pass; lint and build pass. Tests cover mocked form requests, preferences, consent races and provider failure, analytics deduplication/sanitization, static content and hydration. DOM tests do not establish browser layout or actual screen-reader behavior.
 
 Browser inspection is still blocked by an administrator policy. Chrome/Safari visual checks at 360, 390, 768 and 1440 px and real measurement with an owner-controlled account remain pending. A previously authorized Formspree test was accepted by the service; inbox reception remains unconfirmed. Production has not been changed.
