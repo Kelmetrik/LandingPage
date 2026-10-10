@@ -1,4 +1,4 @@
-# Publicación y verificación — revisión 3
+# Publicación y verificación — revisión 4
 
 ## Estado
 
@@ -6,19 +6,27 @@ Rama: feat/connected-operations-v1. PR: https://github.com/Kelmetrik/LandingPage
 
 Responsable confirmado: Kelmetrik. Domicilio: Miguel Alemán Valdez 3110, Oficina 1B, Colonia Gabilondo, 22044 Tijuana, B.C. Privacidad: contact@kelmetrik.com. Contacto comercial: eduardo@kelmetrik.com.
 
+## Ajustes de recorrido — revisión 4
+
+- Scroll nativo de proximidad hacia encabezados de sección y los cuatro ejemplos, sin capturar la rueda ni obligar a saltar bloques largos. Se desactiva al escribir en el formulario, abrir un diálogo o solicitar movimiento reducido.
+- Aparición única y breve de títulos y visuales; pasos de integración y metodología con pequeños desfases. El contenido permanece visible si JavaScript o los observadores no están disponibles.
+- Valores de la gráfica en Arial, peso 600 y tamaño mayor, conservando los datos ilustrativos variables.
+
 ## Validación realizada
 
-- Lint y build correctos; 22 pruebas automatizadas aprobadas.
+- Lint y build correctos; 24 pruebas automatizadas aprobadas.
 - EN/ES prerenderizados, seis secciones, cuatro ejemplos visibles, enlaces antiguos equivalentes y ausencia de scripts de medición iniciales.
 - Apertura/cierre de preferencias y retorno de foco en DOM simulado, estados configurado/ausente/preview/bloqueado y elecciones aceptar/rechazar.
 - Carga del proveedor solo con permiso; revocación durante carga, sin replay; propiedades controladas y descarte de eventos EOL.
 - Cambio de valores y colores, pausa/cancelación de cuadros por visibilidad y movimiento reducido comprobados con señales y tiempo simulados.
+- Entradas visuales de una sola aparición, cambio de preferencia de movimiento y limpieza al abandonar la página comprobados con observadores simulados.
 - Formulario: validación, retención de texto tras error y bloqueo de duplicados con red simulada.
 
 La inspección real de http://127.0.0.1:4173/ sigue bloqueada: el navegador no pudo verificar una política administrativa y denegó acceso. No se intentó eludirla. No hay capturas ni comprobación visual real de esta revisión.
 
 ## Comprobaciones pendientes de publicación
 
+- [ ] Revisar con rueda, trackpad, teclado y tacto que el ajuste de scroll resulte cómodo; permitir leer enteros los ejemplos altos y llegar al pie sin saltos.
 - [ ] Chrome y Safari móvil a 360, 390, 768 y 1440 px: barras visibles detrás del contenido, texto legible, sin desbordamiento y todos los ejemplos completos.
 - [ ] Teclado y lector de pantalla: menú, enlaces, tabla de materiales, foco atrapado en el diálogo, Escape y retorno al botón que lo abrió.
 - [ ] Revisión sin JavaScript y con movimiento reducido. El contenido principal debe seguir siendo útil y la gráfica estática.

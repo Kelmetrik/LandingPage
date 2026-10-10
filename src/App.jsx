@@ -18,6 +18,7 @@ import Preferences from "./components/Preferences";
 import Observed from "./components/Observed";
 import ContactForm from "./components/ContactForm";
 import { track } from "./lib/runtime";
+import { enhanceScrollPresentation } from "./lib/scrollPresentation";
 import "./App.css";
 
 function Motion({ children, className = "" }) {
@@ -330,6 +331,10 @@ function Privacy({ c }) {
 }
 export default function App({ lang = "en", privacy = false }) {
   const c = content[lang];
+  useEffect(() => {
+    if (!privacy)
+      return enhanceScrollPresentation(document.getElementById("main"));
+  }, [privacy, lang]);
   return (
     <>
       <a className="skip-link" href="#main">

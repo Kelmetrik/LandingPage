@@ -2909,10 +2909,10 @@ section[id] {
   fill: url(#hero-bar-orange);
 }
 .chart-value {
-  font:
-    8px "SFMono-Regular",
-    Consolas,
-    monospace;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
   fill: #629cf6;
   opacity: 0.72;
 }
@@ -3479,5 +3479,80 @@ section[id] {
   .machine-foot {
     grid-template-columns: 1fr;
     gap: 12px;
+  }
+}
+
+/* Native section settling keeps long blocks freely scrollable. No wheel interception. */
+html.block-scroll {
+  scroll-snap-type: y proximity;
+  scroll-behavior: smooth;
+}
+.block-scroll #hero,
+.block-scroll #main .section-heading,
+.block-scroll .solution-row {
+  scroll-snap-align: start;
+  scroll-snap-stop: normal;
+}
+.block-scroll #main .section-heading {
+  scroll-margin-top: 108px;
+}
+/* Avoid repositioning while a visitor writes or uses a modal. */
+html.block-scroll:has(input:focus, textarea:focus, dialog[open]) {
+  scroll-snap-type: none;
+}
+.reveal-arrived {
+  animation: section-arrive 480ms ease-out both;
+}
+.solution-example.reveal-arrived {
+  animation-name: visual-arrive;
+  animation-duration: 600ms;
+}
+.machine-stage.reveal-arrived:nth-child(2),
+.approach-steps > .reveal-arrived:nth-child(2) {
+  animation-delay: 50ms;
+}
+.machine-stage.reveal-arrived:nth-child(3),
+.approach-steps > .reveal-arrived:nth-child(3) {
+  animation-delay: 100ms;
+}
+.machine-stage.reveal-arrived:nth-child(4),
+.approach-steps > .reveal-arrived:nth-child(4) {
+  animation-delay: 150ms;
+}
+.approach-steps > .reveal-arrived:nth-child(5) {
+  animation-delay: 200ms;
+}
+@keyframes section-arrive {
+  from {
+    opacity: 0.65;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes visual-arrive {
+  from {
+    opacity: 0.6;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (max-width: 850px) {
+  .block-scroll #main .section-heading {
+    scroll-margin-top: 92px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html.block-scroll {
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+  }
+  .reveal-arrived {
+    animation: none;
   }
 }
