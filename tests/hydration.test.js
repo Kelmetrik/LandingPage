@@ -37,7 +37,7 @@ test("prerendered Spanish HTML hydrates without recovery or losing content", asy
     await new Promise((resolve) => setTimeout(resolve, 50));
   });
   assert.deepEqual(errors, []);
-  assert.equal(document.querySelectorAll("main>section").length, 7);
+  assert.equal(document.querySelectorAll("main>section").length, 6);
   await act(async () => root.unmount());
   dom.window.close();
 });

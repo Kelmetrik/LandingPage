@@ -1,47 +1,43 @@
-import { createAnalytics } from "./analytics";
-import { createPlausibleAdapter } from "./plausible";
-
-const preferenceKey = "kelmetrik-measurement-v1";
-export let analytics = createAnalytics();
-let configured = false;
-let privacySignal = false;
-let choice = "off";
-export function measurementState() {
-  return { configured, privacySignal, choice, enabled: analytics.isEnabled() };
-}
+import { createMeasurement } from "./measurement.js";
+import { createUmamiLoader } from "./umami.js";
+let measurement = createMeasurement();
+export let analytics = measurement.analytics;
+export const measurementState = () => measurement.state();
+export const chooseMeasurement = (value) => measurement.choose(value);
 export function initializeAnalytics(language) {
   const env = import.meta.env;
-  configured =
-    env.VITE_ANALYTICS_ENABLED === "true" &&
-    Boolean(env.VITE_PLAUSIBLE_DOMAIN) &&
-    ["www.kelmetrik.com", "kelmetrik.com"].includes(window.location.hostname);
-  privacySignal =
-    navigator.globalPrivacyControl === true || navigator.doNotTrack === "1";
+  const production = ["www.kelmetrik.com", "kelmetrik.com"].includes(
+    window.location.hostname,
+  );
+  let storage;
   try {
-    choice = localStorage.getItem(preferenceKey) || "unset";
+    storage = window.localStorage;
   } catch {
-    choice = "unset";
+    /* Memory preference only. */
   }
-  analytics = createAnalytics({
+  let loader;
+  measurement = createMeasurement({
     language,
-    enabled: configured && !privacySignal && choice === "on",
-    adapter: createPlausibleAdapter({
-      domain: env.VITE_PLAUSIBLE_DOMAIN,
-      href: window.location.href,
-      referrer: document.referrer,
-    }),
+    configured:
+      env.VITE_ANALYTICS_ENABLED === "true" &&
+      /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(
+        env.VITE_UMAMI_WEBSITE_ID || "",
+      ),
+    environment: production ? "production" : "preview",
+    storage,
+    privacy: () =>
+      navigator.globalPrivacyControl === true || navigator.doNotTrack === "1",
+    load: (canSend) => {
+      loader ||= createUmamiLoader({
+        websiteId: env.VITE_UMAMI_WEBSITE_ID,
+        canSend,
+      });
+      return loader();
+    },
+    notify: () => window.dispatchEvent(new Event("kelmetrik:measurement")),
   });
-  analytics.track("page_view", {}, "page");
+  analytics = measurement.analytics;
+  void measurement.start();
 }
-export function chooseMeasurement(value) {
-  choice = value === "on" ? "on" : "off";
-  try {
-    localStorage.setItem(preferenceKey, choice);
-  } catch {
-    /* Memory preference remains effective. */
-  }
-  analytics.setEnabled(configured && !privacySignal && choice === "on");
-  analytics.track("page_view", {}, "page");
-  window.dispatchEvent(new Event("kelmetrik:measurement"));
-}
-export const track = (name, props, key) => analytics.track(name, props, key);
+export const track = (name, properties, key) =>
+  analytics.track(name, properties, key);

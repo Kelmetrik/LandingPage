@@ -1,57 +1,43 @@
-# Medición V1
+# Medición V2
 
-El catálogo pertenece a Kelmetrik. `src/lib/analytics.js` define `createAnalytics`, `track` y el esquema 1. `src/lib/plausible.js` es el único adaptador del proveedor. El contexto de demo vive en memoria y termina con la carga de página.
+Decisión del titular: Umami Cloud Hobby + Search Console, con permiso antes de medir. Guía de activación: [activar-medicion.md](activar-medicion.md).
 
-## Eventos y significado
+## Catálogo e interfaz
 
-| Evento | Disparador | Propiedades específicas |
-| --- | --- | --- |
-| page_view | Carga con permiso, o permiso otorgado; una vez por página | language |
-| section_view | 60% del bloque de título/introducción visible durante 2 segundos continuos y pestaña visible | section |
-| domain_view | Mismo criterio para el título y problema de un dominio | domain |
-| domain_explore | Abrir storyboard o seguir enlace de manufactura | domain |
-| demo_start | Inicio explícito | scenario |
-| demo_scenario_select | Cambio explícito de opción | scenario |
-| demo_step_reached | Primera llegada a una etapa en una ejecución | scenario, stage |
-| demo_complete | Primera llegada a trazabilidad en una ejecución | scenario |
-| demo_reset | Reinicio o cambio que descarta una ejecución iniciada | scenario, reason |
-| contact_click | Clic de contacto o correo | location, contexto |
-| form_start | Primera edición del formulario | contexto |
-| form_submit_success | Respuesta HTTP satisfactoria de Formspree | contexto |
-| form_submit_error | Fallo de red/timeout o respuesta no satisfactoria | error, contexto |
+`track(eventName, properties)` conserva la interfaz central. El adaptador Umami es el único código que utiliza al proveedor. Se retiraron los eventos EOL y domain_explore, porque ya no hay simulaciones ni contenido oculto por explorar.
 
-Cada evento lleva `schema_version=1` y `language=en|es`. Contexto: `demo_explored` booleano, `demo_scenarios=none|normal|failure|both`, `demo_max_stage=0..6`. `stage`: work_order, identification, test, validation, disposition, traceability. `reason`: restart, scenario_change. `location`: header, hero, demo, contact, footer. `error`: network, service.
+| Evento              | Disparador                                                                                | Propiedades específicas                |
+| ------------------- | ----------------------------------------------------------------------------------------- | -------------------------------------- |
+| page_view           | Una vista cuando el proveedor está listo y existe permiso; nunca automática               | —                                      |
+| section_view        | 60% del encabezado/introducción visible durante dos segundos continuos; una vez por carga | section                                |
+| domain_view         | Mismo criterio para título/problema de un dominio                                         | domain                                 |
+| contact_click       | Clic explícito de contacto                                                                | location, domain solo desde un ejemplo |
+| form_start          | Primera edición del formulario                                                            | —                                      |
+| form_submit_success | Formspree confirma aceptación                                                             | —                                      |
+| form_submit_error   | Fallo de envío                                                                            | error: network o service               |
 
-`section`: hero, disconnect, connected-operations, solutions, machine, approach, contact. `domain`: manufacturing, quality, apqp, warehouse. El validador elimina claves desconocidas y valores fuera del catálogo. Nunca transmitir nombres, correos, empresas, retos, series ni texto libre.
+Cada evento lleva schema_version=2 y language=en|es. Valores de section: hero, disconnect, solutions, machine, approach, contact. Domain: manufacturing, quality, apqp, warehouse. Location: header, hero, solution, contact, footer.
 
-Una exposición no demuestra interés activo; usar domain_explore para esa distinción. Un envío aceptado no confirma entrega en bandeja ni una oportunidad calificada. La tasa de contacto tras demo representa correlación de esta carga de página, no causalidad ni atribución entre dispositivos.
+Los datos permitidos se filtran por listas cerradas. No se transmite texto libre, campos del formulario, identificadores de producto, propiedades heredadas de la demo ni un ID propio de visitante. El dominio de un contact_click describe el botón pulsado, no una atribución histórica al formulario posterior. Un dominio visto solo demuestra exposición.
 
-## Privacidad y activación
+## Ciclo de permiso
 
-Desactivada por defecto. No hay cuenta Plausible ni propiedad Search Console confirmadas. Una vez configurada, la implementación solicita permiso explícito antes de medir y ofrece revocación en el pie de página. Es una elección conservadora de producto; el aviso final debe revisarse con los datos reales del responsable. GPC o Do Not Track mantienen la medición apagada. La única persistencia del sitio es la preferencia on/off en localStorage; no contiene identificadores.
+Estado inicial: sin medición. Sin proveedor configurado, el panel explica que está apagada. En local y preview siempre explica que esa vista no envía estadísticas. En producción configurada muestra aceptar/rechazar. Cerrar conserva la medición apagada; se puede reabrir en el pie.
 
-No hay cola: eventos y contexto rechazados no se conservan ni se reproducen tras aceptar. Al revocar se limpia el contexto. Una petición que ya salió antes de revocar no puede recuperarse. Recargar o cambiar de idioma inicia una carga nueva. El dominio de producción es el único habilitado; las vistas previas y localhost no generan métricas reales.
+La preferencia utiliza kelmetrik-measurement-v2 en localStorage. No reutilizamos el permiso anterior para otro proveedor. Si el almacenamiento falla, la decisión dura en memoria. GPC/DNT impiden carga y envío.
 
-El adaptador envía desde el navegador a https://plausible.io/api/event, sin cookies ni credenciales. Mapea page_view a pageview, sin script que duplique vistas. Las exposiciones son no interactivas. Solo conserva utm_source, utm_medium y utm_campaign con etiquetas cortas alfanuméricas y guiones; descarta el resto de la consulta y el fragmento. El referrer se reduce al origen. Las campañas deben usar etiquetas genéricas, nunca nombres, emails o números de contacto. No hay proxy para eludir bloqueadores.
+Solo después de aceptar se carga https://cloud.umami.is/script.js. data-auto-track=false deshabilita inicialización automática; el sitio envía la única vista y sus eventos manuales. Se fija https://gateway.umami.is como destino y se verifica permiso de nuevo en el hook before-send. No se activa identify, performance, replay ni heatmap.
 
-## Configurar Plausible
+Durante la carga del proveedor se descartan interacciones, sin cola. Al estar listo se envía la vista actual y se reinician las ventanas de exposición. Revocar invalida cargas pendientes y deshabilita envío. Una solicitud que ya salió antes de revocar no se puede retirar. Errores de carga, timeout y errores del proveedor están aislados de contacto y navegación. No usamos proxies para eludir bloqueadores.
 
-1. El titular crea el sitio `kelmetrik.com` y selecciona un plan que permita propiedades personalizadas y embudos (Business en la documentación consultada). Los eventos cuentan en el volumen facturable.
-2. Crear objetivos de evento con los nombres anteriores excepto page_view; este utiliza la vista nativa.
-3. Crear objetivos filtrados de demo_step_reached por escenario y stage.
-4. Crear dos embudos secuenciales, uno por escenario: demo_start → seis objetivos de etapa. Crear otro embudo demo_start → contact_click → form_submit_success, permitiendo actividad intermedia.
-5. Configurar fuentes, país, dispositivo, idioma y objetivos en los informes. El contexto de contacto permite segmentar exploró/no exploró, escenarios y etapa máxima.
-6. Establecer VITE_ANALYTICS_ENABLED=true y VITE_PLAUSIBLE_DOMAIN=kelmetrik.com solo después de revisar privacidad y realizar una prueba controlada. Mantener apagado en preview.
-7. Comprobar eventos en el panel real. Un HTTP 202 del Events API no garantiza inclusión: Plausible puede descartar bots o pruebas. Deshabilitar otras instalaciones de seguimiento automático para no duplicar registros.
+El URL enviado solo conserva ruta y utm_source/utm_medium/utm_campaign con valores alfanuméricos, guiones y guion bajo de hasta 64 caracteres. Descarta fragmento y otros parámetros. El referrer se reduce al origen. No usar nombres ni correos como campañas.
 
-## Search Console
+## Configuración y costo
 
-Es complementario a Plausible: muestra rendimiento en búsquedas, no interacciones con la demo. El titular crea una propiedad de dominio para kelmetrik.com y verifica el DNS con el valor exacto entregado por Google. Alternativa: propiedad de prefijo https://www.kelmetrik.com/ y token público VITE_GOOGLE_SITE_VERIFICATION. Enviar https://www.kelmetrik.com/sitemap.xml y comprobar las cuatro rutas. No inventar valores DNS ni asumir verificación completada.
+VITE_ANALYTICS_ENABLED=false por defecto. VITE_UMAMI_WEBSITE_ID es público y se obtiene del sitio real. Solo kelmetrik.com/www.kelmetrik.com pueden enviar. CSP permite el script oficial y gateway.umami.is. No hay cuentas creadas ni estadísticas reales verificadas todavía.
 
-## Evolución y revisión
+Hobby consultado: un sitio, 100.000 eventos mensuales y seis meses de historial. Las propiedades consumen cuota. Confirmar los límites y comportamiento de sobreconsumo en la cuenta antes de activar; nunca iniciar prueba de pago ni autorizar cobros automáticamente.
 
-Un futuro adaptador recibe el mismo evento y las mismas propiedades saneadas. Cambiar su implementación no modifica componentes ni lógica EOL. Revisar antes cualquier ampliación de datos o persistencia.
+## Revisión
 
-A las dos y cuatro semanas de publicación, comparar fuentes, exposición/exploración por dominio, avance normal/falla y contactos con contexto. Registrar volumen y limitaciones; no imponer una meta de conversión sin línea base. No se programan recordatorios mientras no exista una fecha real de publicación.
-
-Referencias: https://plausible.io/docs/events-api · https://plausible.io/docs/funnel-analysis · https://plausible.io/docs/custom-props/for-custom-events · https://support.google.com/webmasters/answer/9008080
+A las dos y cuatro semanas de la publicación real: fuentes, exposición a dominios, contacto contextual y envíos aceptados. Registrar el volumen y las limitaciones de consentimiento/bloqueadores. Search Console complementa con consultas e indexación. No implica reconocer la identidad de visitantes.

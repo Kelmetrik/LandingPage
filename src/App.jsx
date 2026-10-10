@@ -1,27 +1,22 @@
-import { useEffect, useRef, useState, useSyncExternalStore } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   ArrowUpRight,
   ArrowRight,
   ArrowDown,
   Menu,
   X,
-  Factory,
-  Cpu,
   Users,
-  Network,
-  Check,
-  Layers,
-  Workflow,
   CircleDot,
   Mail,
 } from "lucide-react";
 import logo from "./assets/logo.png";
 import { content } from "./content";
-import { storyboards } from "./storyboards";
+import Solutions from "./components/Solutions";
+import AnimatedBackgroundChart from "./components/AnimatedBackgroundChart";
+import Preferences from "./components/Preferences";
 import Observed from "./components/Observed";
-import LazyDemo from "./components/LazyDemo";
 import ContactForm from "./components/ContactForm";
-import { track, measurementState, chooseMeasurement } from "./lib/runtime";
+import { track } from "./lib/runtime";
 import "./App.css";
 
 function Motion({ children, className = "" }) {
@@ -63,7 +58,7 @@ function Heading({ eyebrow, title, intro, section, className = "" }) {
 function Header({ c, privacy }) {
   const [open, setOpen] = useState(false);
   const toggle = useRef(null);
-  const links = ["solutions", "connected-operations", "approach", "contact"];
+  const links = ["solutions", "machine", "approach", "contact"];
   return (
     <header className="header">
       <div className="header-inner">
@@ -141,54 +136,6 @@ function Header({ c, privacy }) {
     </header>
   );
 }
-function HeroNetwork({ c }) {
-  const icons = [Layers, Cpu, Users];
-  return (
-    <Motion className="hero-network">
-      <div className="network-grid" aria-hidden="true" />
-      <div className="network-inputs">
-        {c.network.map((label, i) => {
-          const Icon = icons[i];
-          return (
-            <div className={`network-node network-node-${i}`} key={label}>
-              <Icon size={22} strokeWidth={1.5} />
-              <div>
-                <strong>{label}</strong>
-                <small>{c.networkLabels[i]}</small>
-              </div>
-              <span className="node-port" aria-hidden="true" />
-            </div>
-          );
-        })}
-      </div>
-      <svg
-        className="network-connections"
-        viewBox="0 0 400 260"
-        preserveAspectRatio="none"
-        aria-hidden="true"
-      >
-        <path d="M0 35H70Q95 35 95 60V105Q95 130 125 130H400M0 130H400M0 225H70Q95 225 95 200V155Q95 130 125 130H400" />
-        <path
-          className="travelling"
-          d="M0 35H70Q95 35 95 60V105Q95 130 125 130H400M0 130H400M0 225H70Q95 225 95 200V155Q95 130 125 130H400"
-        />
-      </svg>
-      <div className="context-node">
-        <span className="context-orbit" aria-hidden="true" />
-        <Network size={30} strokeWidth={1.5} />
-        <strong>{c.networkCenter}</strong>
-        <span className="mono">KELMETRIK</span>
-      </div>
-      <div className="network-output">
-        <div className="output-line" aria-hidden="true" />
-        <span className="output-symbol">
-          <Check size={24} />
-        </span>
-        <p>{c.networkCaption}</p>
-      </div>
-    </Motion>
-  );
-}
 function Disconnect({ c }) {
   const d = c.disconnect;
   return (
@@ -234,92 +181,6 @@ function Disconnect({ c }) {
           </div>
         </Motion>
         <p className="section-footnote">{d.foot}</p>
-      </div>
-    </section>
-  );
-}
-function Domains({ c }) {
-  const icons = [Factory, Check, Workflow, Layers];
-  const d = c.domains;
-  return (
-    <section id="solutions" className="section domains">
-      <div className="container">
-        <Heading {...d} section="solutions" />
-        <div className="domain-list">
-          {d.items.map((item, i) => {
-            const Icon = icons[i];
-            return (
-              <article key={item.id} className="domain-row">
-                <div className="domain-index mono">
-                  0{i + 1}
-                  <Icon size={27} strokeWidth={1.4} />
-                </div>
-                <div className="domain-content">
-                  <Observed event="domain_view" value={item.id}>
-                    <h3>{item.title}</h3>
-                    <p className="domain-problem">{item.problem}</p>
-                  </Observed>
-                  <div className="domain-description">
-                    <div>
-                      <span className="eyebrow small">{d.flow}</span>
-                      <p>{item.flow}</p>
-                    </div>
-                    <div>
-                      <span className="eyebrow small">{d.result}</span>
-                      <p>{item.result}</p>
-                    </div>
-                  </div>
-                  {i === 0 ? (
-                    <a
-                      className="text-link"
-                      href="#connected-operations"
-                      onClick={() =>
-                        track("domain_explore", { domain: item.id })
-                      }
-                    >
-                      {d.viewDemo}
-                      <ArrowUpRight size={18} />
-                    </a>
-                  ) : (
-                    <details
-                      className="storyboard"
-                      onToggle={(e) => {
-                        if (e.currentTarget.open)
-                          track("domain_explore", { domain: item.id });
-                      }}
-                    >
-                      <summary>
-                        {d.explore}
-                        <ArrowDown size={17} />
-                      </summary>
-                      <div>
-                        <p className="micro">{d.example}</p>
-                        <ol>
-                          {item.steps.map((step, j) => (
-                            <li key={step}>
-                              <span className="mono">0{j + 1}</span>
-                              <strong>{step}</strong>
-                            </li>
-                          ))}
-                        </ol>
-                        <dl className="story-facts">
-                          {storyboards[c.lang][item.id].map(
-                            ([label, value]) => (
-                              <div key={label}>
-                                <dt>{label}</dt>
-                                <dd>{value}</dd>
-                              </div>
-                            ),
-                          )}
-                        </dl>
-                      </div>
-                    </details>
-                  )}
-                </div>
-              </article>
-            );
-          })}
-        </div>
       </div>
     </section>
   );
@@ -433,89 +294,6 @@ function Approach({ c }) {
     </section>
   );
 }
-const serverMeasurement = JSON.stringify({
-  configured: false,
-  privacySignal: false,
-  choice: "off",
-  enabled: false,
-});
-function subscribeMeasurement(callback) {
-  window.addEventListener("kelmetrik:measurement", callback);
-  return () => window.removeEventListener("kelmetrik:measurement", callback);
-}
-function Preferences({ c, inline = false }) {
-  const [open, setOpen] = useState(false);
-  const serialized = useSyncExternalStore(
-    subscribeMeasurement,
-    () => JSON.stringify(measurementState()),
-    () => serverMeasurement,
-  );
-  const state = JSON.parse(serialized);
-  useEffect(() => {
-    const show = () => setOpen(true);
-    window.addEventListener("kelmetrik:preferences", show);
-    return () => window.removeEventListener("kelmetrik:preferences", show);
-  }, []);
-  const visible =
-    inline ||
-    open ||
-    (state.configured && !state.privacySignal && state.choice === "unset");
-  if (!visible) return null;
-  return (
-    <section
-      className={`preferences ${inline ? "inline-preferences" : ""}`}
-      aria-label={c.consent.title}
-    >
-      <h3>{c.consent.title}</h3>
-      <p>
-        {!state.configured
-          ? c.consent.disabled
-          : state.privacySignal
-            ? c.consent.protected
-            : c.consent.text}
-      </p>
-      {state.configured && !state.privacySignal && (
-        <>
-          <p className="micro">
-            {state.enabled ? c.consent.on : c.consent.off}
-          </p>
-          <div className="preference-actions">
-            <button
-              className="button quiet"
-              onClick={() => {
-                chooseMeasurement("off");
-                setOpen(false);
-              }}
-            >
-              {c.consent.reject}
-            </button>
-            <button
-              className="button primary"
-              onClick={() => {
-                chooseMeasurement("on");
-                setOpen(false);
-              }}
-            >
-              {c.consent.allow}
-            </button>
-          </div>
-        </>
-      )}
-      {!inline &&
-        (state.choice !== "unset" ||
-          !state.configured ||
-          state.privacySignal) && (
-          <button className="text-link" onClick={() => setOpen(false)}>
-            {c.consent.close}
-            <X size={16} />
-          </button>
-        )}
-      <a className="micro" href={c.privacyUrl}>
-        {c.privacy}
-      </a>
-    </section>
-  );
-}
 function Privacy({ c }) {
   const p = c.privacyContent;
   const responsible =
@@ -541,7 +319,12 @@ function Privacy({ c }) {
       <p>{p.analyticsText}</p>
       <h2>{p.choicesTitle}</h2>
       <p>{p.choicesText}</p>
-      <Preferences c={c} inline />
+      <button
+        className="button quiet"
+        onClick={() => window.dispatchEvent(new Event("kelmetrik:preferences"))}
+      >
+        {c.preferences}
+      </button>
       <h2>{p.rightsTitle}</h2>
       <p>
         {p.rightsText}{" "}
@@ -553,7 +336,7 @@ function Privacy({ c }) {
           <a href="https://formspree.io/legal/privacy-policy/">{p.formspree}</a>
         </li>
         <li>
-          <a href="https://plausible.io/data-policy">{p.plausible}</a>
+          <a href="https://umami.is/privacy">{p.umami}</a>
         </li>
         <li>
           <a href="https://vercel.com/legal/privacy-policy">{p.vercel}</a>
@@ -575,6 +358,8 @@ export default function App({ lang = "en", privacy = false }) {
       ) : (
         <main id="main">
           <section id="hero" className="hero">
+            <AnimatedBackgroundChart />
+            <span id="home" className="anchor-alias" aria-hidden="true" />
             <div className="container">
               <Observed value="hero" className="hero-copy">
                 <p className="eyebrow">
@@ -597,12 +382,12 @@ export default function App({ lang = "en", privacy = false }) {
                   {c.primary}
                   <ArrowUpRight size={18} />
                 </a>
-                <a href="#connected-operations" className="button quiet">
+                <a href="#solutions" className="button quiet">
                   {c.secondary}
                   <ArrowDown size={17} />
                 </a>
               </div>
-              <HeroNetwork c={c} />
+              <div className="hero-chart-space" aria-hidden="true" />
               <div className="hero-baseline">
                 <span>{c.heroNote}</span>
                 <span className="mono">IT / OT / SOFTWARE</span>
@@ -610,13 +395,7 @@ export default function App({ lang = "en", privacy = false }) {
             </div>
           </section>
           <Disconnect c={c} />
-          <section id="connected-operations" className="section demo-section">
-            <div className="container">
-              <Heading {...c.demo} section="connected-operations" />
-              <LazyDemo copy={c.demo} />
-            </div>
-          </section>
-          <Domains c={c} />
+          <Solutions c={c} />
           <BeyondMachine c={c} />
           <Approach c={c} />
           <section id="contact" className="section contact">
@@ -682,7 +461,7 @@ export default function App({ lang = "en", privacy = false }) {
           </div>
         </div>
       </footer>
-      {!privacy && <Preferences c={c} />}
+      <Preferences c={c} />
     </>
   );
 }

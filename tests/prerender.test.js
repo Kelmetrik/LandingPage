@@ -28,14 +28,11 @@ for (const [path, lang, title] of [
     for (const a of document.querySelectorAll('a[href^="#"]'))
       assert.ok(document.getElementById(a.hash.slice(1)), a.href);
     if (!path.includes("privacy") && !path.includes("privacidad")) {
-      assert.equal(document.querySelectorAll("main>section").length, 7);
-      assert.ok(
-        document.querySelector(".static-demo").textContent.includes("2.72 V"),
-      );
-      assert.equal(
-        document.querySelectorAll('script[src*="plausible"]').length,
-        0,
-      );
+      assert.equal(document.querySelectorAll("main>section").length, 6);
+      assert.equal(document.querySelectorAll(".solution-example").length, 4);
+      assert.equal(document.querySelectorAll(".chart-bars rect").length, 12);
+      assert.equal(document.querySelectorAll('script[src*="umami"]').length, 0);
+      assert.ok(!html.includes("Start simulation"));
       assert.equal(
         document.querySelector("form").action,
         "https://formspree.io/f/mdkwrdok",

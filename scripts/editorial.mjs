@@ -1,11 +1,61 @@
 import { mkdir, writeFile } from "node:fs/promises";
 import { content } from "../src/content.js";
-import { storyboards } from "../src/storyboards.js";
 await mkdir("docs", { recursive: true });
-let text = `# Kelmetrik — Especificación editorial V1\n\nFuente de verdad: los textos de este documento se generan de los mismos diccionarios que usa la web. Regenerar con \`npm run docs:editorial\` después de editar contenido.\n\n## Dirección y límites\n\nKelmetrik es una empresa de ingeniería de software e integración de sistemas industriales. Público: operaciones, manufactura, calidad, ingeniería y TI en México y Estados Unidos. Conversión: conversación de diagnóstico. Inglés en / y español en /es/.\n\nCuatro dominios operativos y una capacidad transversal IT/OT. No son productos licenciados. Cada afirmación debe ser una capacidad respaldada, un hecho verificable o un ejemplo explícito. No publicar clientes, métricas de mejora, certificaciones o datos propietarios sin evidencia y autorización.\n\n## Secuencia y recursos visuales\n\n1. Hero: sistemas, equipos y personas alimentan contexto operativo; dos llamadas a la acción.\n2. Desconexión: comparación del mismo flujo fragmentado y conectado.\n3. EOL: seis etapas con señal, regla, disposición y evidencia.\n4. Dominios: problema, flujo y resultado; storyboards identificados como ilustrativos.\n5. Máquina: señal → contexto → evento → persona que puede actuar.\n6. Enfoque: comprender → diseñar → construir → validar → desplegar; un entregable por fase.\n7. Contacto: nombre, correo y empresa obligatorios; reto opcional.\n\nEscritorio: diagrama horizontal con panel lateral. Móvil: etapas verticales, panel debajo y controles táctiles. La historia debe entenderse sin animaciones. Consultar wireframes.svg.\n\n## Storyboard EOL\n\nDatos originales y sintéticos. Orden DEMO-WO-2048; sensor DEMO-SENSOR-01; serie DEMO-SN-0042; componente DEMO-PCB-031; lote DEMO-LOT-008; estación DEMO-EOL-01; referencia DEMO-REF-01.\n\n| Etapa | Evidencia que aparece |\n| --- | --- |\n| Orden | Orden, modelo, operación EOL |\n| Identificación | Serie, componente y lote |\n| Prueba | Estación, condición, medición y unidad |\n| Validación | Límites 2.40–2.60 V inclusivos, regla DEMO-EOL-v1, resultado |\n| Disposición | Prueba aceptada o Quality Hold, con motivo |\n| Trazabilidad | Registro completo e historial de eventos |\n\nNormal: 2.51 V; falla: 2.72 V. No se representan otras especificaciones de un sensor real. Cambiar escenario limpia la ejecución; retroceder no duplica eventos. Reiniciar no libera una pieza retenida.\n\n## Glosario\n\n| EN | ES | Uso |\n| --- | --- | --- |\n| Work order | Orden de producción | Contexto originado en ERP |\n| Traceability | Trazabilidad | Relaciones recuperables entre producto, operación y evidencia |\n| Quality Hold | Quality Hold · Retención | Pieza contenida para revisión |\n| Test accepted | Prueba aceptada | No equivale a liberación comercial |\n| EOL | End-of-Line | Prueba funcional al final de línea |\n| Safe Launch | Safe Launch | Flujos de inspección y contención de arranque |\n| APQP | APQP | Planificación avanzada de la calidad del producto |\n| IT/OT | IT/OT | Integración de sistemas empresariales y tecnología operativa |\n\n## Registro de afirmaciones\n\nPermitido: describir capacidades acordadas, método, entregables y escenarios originales identificados. Condicionado: interfaces de equipos, acceso, alcance de integración y soporte según proyecto. Excluido: porcentajes de ahorro, eficiencia o disponibilidad; clientes ficticios; certificaciones; inferencias de IA predictiva; integración universal.\n\n## Textos completos de interfaz\n\nLas claves identifican el lugar de uso; cada texto aparece íntegro para revisión EN/ES.\n`;
+let text = `# Kelmetrik — Especificación editorial V1, revisión 2
+
+Los textos EN/ES se generan desde los mismos diccionarios que usa la web. Regenerar con \`npm run docs:editorial\` después de editar contenido.
+
+## Dirección acordada
+
+Kelmetrik: ingeniería de software e integración de sistemas industriales. Público: operaciones, manufactura, calidad, ingeniería y TI en México y Estados Unidos. Objetivo: conversaciones de diagnóstico. Inglés en / y español en /es/.
+
+Cuatro dominios y una capacidad transversal IT/OT. Ejemplos originales y conceptuales, sin simulación interactiva, sin presentarlos como productos terminados ni trabajos de clientes. Cada bloque responde: problema operativo → qué desarrolla Kelmetrik → qué permite hacer.
+
+## Secuencia y recursos visuales
+
+1. Inicio: gráfica de barras azul animada detrás de la propuesta y las dos acciones. Decoración sin números ni afirmaciones de rendimiento; pausa fuera de pantalla y con pestaña oculta; versión estática con movimiento reducido.
+2. Desconexión: comparación del mismo flujo fragmentado y conectado.
+3. Soluciones: cuatro ejemplos completos y visibles. En escritorio, explicación junto a un fragmento de interfaz anotado; en móvil, explicación y ejemplo apilados.
+4. Más allá de la máquina: señal → contexto → evento → persona que puede actuar. Interfaces y accesos condicionan la integración.
+5. Enfoque: comprender → diseñar → construir → validar → desplegar, con entregable por etapa.
+6. Contacto: nombre, correo empresarial y empresa obligatorios; reto opcional.
+
+## Ejemplos conceptuales
+
+| Dominio | Problema | Visual | Capacidad comunicada |
+| --- | --- | --- | --- |
+| Manufactura | Historia distribuida en registros separados | Orden → estación → registro, pieza, componente y lote | Integraciones, captura y relaciones de trazabilidad consultables |
+| Calidad y Safe Launch | Evidencia, alcance y decisión dispersos | Hallazgo, evidencia, contención, responsable y disposición pendiente | Inspección estructurada y seguimiento de decisiones autorizadas |
+| APQP | Dependencia que bloquea un hito | Plan aprobado, reporte pendiente y siguiente hito bloqueado | Relación entre planificación, evidencia y aprobación |
+| Materiales | Lo escaneado no coincide con la orden | Comparación de material, cantidad y ubicación | Validación antes de registrar un movimiento en el ERP |
+
+Los registros originales llevan etiquetas de ejemplo. Los estados tienen palabras además de color. No hay controles simulados. Cada dominio ofrece contacto contextual. Todo el contenido principal es legible sin JavaScript.
+
+## Glosario
+
+| EN | ES | Uso |
+| --- | --- | --- |
+| Work order | Orden de producción | Contexto de ejecución |
+| Traceability | Trazabilidad | Relaciones recuperables entre producto, operación y evidencia |
+| Disposition pending | Disposición pendiente | Una persona autorizada aún debe decidir |
+| Safe Launch | Safe Launch | Inspección y contención de arranque |
+| APQP | APQP | Planificación avanzada de la calidad del producto |
+| IT/OT | IT/OT | Sistemas empresariales y tecnología operativa |
+
+## Registro de afirmaciones
+
+Permitido: capacidades acordadas, método, entregables y ejemplos originales identificados. Condicionado: interfaces disponibles, accesos y alcance acordado. Excluido: ahorros, eficiencia o disponibilidad sin evidencia; clientes ficticios; certificaciones; integración universal.
+
+## Medición y privacidad
+
+Umami gratuito + Search Console. Permiso previo explícito. Sin medición local ni en vistas previas. Sin identificación propia de visitantes, sesiones grabadas, mapas de calor ni campos del formulario en analítica. Responsable: Kelmetrik; correo de privacidad: contact@kelmetrik.com. El domicilio confirmado aparece en ambos idiomas.
+
+## Textos completos de interfaz
+
+`;
 function append(value, path = "") {
   if (typeof value === "string") {
-    text += `\n**${path}**\n\n${value.replaceAll("\n", "  \n")}\n`;
+    text += `\n**${path}**\n\n${value.replaceAll("\n", "<br>\n")}\n`;
     return;
   }
   for (const [key, child] of Object.entries(value))
@@ -14,8 +64,6 @@ function append(value, path = "") {
 for (const lang of ["en", "es"]) {
   text += `\n## ${lang === "en" ? "English" : "Español"}\n`;
   append(content[lang]);
-  text += "\n### Ejemplos de los storyboards\n";
-  append(storyboards[lang], "storyboards");
 }
 await writeFile("docs/editorial-v1.md", text);
 console.log("Editorial specification generated from the production copy.");

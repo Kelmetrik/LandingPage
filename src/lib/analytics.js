@@ -2,12 +2,6 @@ export const EVENT_NAMES = Object.freeze([
   "page_view",
   "section_view",
   "domain_view",
-  "domain_explore",
-  "demo_start",
-  "demo_scenario_select",
-  "demo_step_reached",
-  "demo_complete",
-  "demo_reset",
   "contact_click",
   "form_start",
   "form_submit_success",
@@ -18,94 +12,47 @@ const enums = {
   section: [
     "hero",
     "disconnect",
-    "connected-operations",
     "solutions",
     "machine",
     "approach",
     "contact",
   ],
   domain: ["manufacturing", "quality", "apqp", "warehouse"],
-  scenario: ["normal", "failure"],
-  stage: [
-    "work_order",
-    "identification",
-    "test",
-    "validation",
-    "disposition",
-    "traceability",
-  ],
-  location: ["header", "hero", "demo", "contact", "footer"],
+  location: ["header", "hero", "solution", "contact", "footer"],
   error: ["network", "service"],
-  reason: ["restart", "scenario_change"],
-  demo_scenarios: ["none", "normal", "failure", "both"],
 };
-
 export function sanitizeProperties(properties = {}) {
-  const safe = { schema_version: "1" };
+  const safe = { schema_version: "2" };
   for (const [key, allowed] of Object.entries(enums)) {
     if (allowed.includes(properties[key])) safe[key] = properties[key];
   }
-  if (typeof properties.demo_explored === "boolean")
-    safe.demo_explored = properties.demo_explored;
-  if (
-    Number.isInteger(properties.demo_max_stage) &&
-    properties.demo_max_stage >= 0 &&
-    properties.demo_max_stage <= 6
-  )
-    safe.demo_max_stage = properties.demo_max_stage;
   return safe;
 }
-
-// No queue, visitor ID or persistent demo state. Disabled events are discarded.
+// Events rejected before consent/readiness are discarded, never queued.
 export function createAnalytics({
   adapter = () => {},
   enabled = false,
   language = "en",
 } = {}) {
   let allowed = enabled;
-  let explored = false;
-  let maxStage = 0;
-  const scenarios = new Set();
   const once = new Set();
-  const context = () => ({
-    demo_explored: explored,
-    demo_max_stage: maxStage,
-    demo_scenarios: scenarios.size === 2 ? "both" : [...scenarios][0] || "none",
-  });
-  function track(name, properties = {}, key) {
-    if (!allowed || !EVENT_NAMES.includes(name) || (key && once.has(key)))
-      return false;
-    if (key) once.add(key);
-    const contact = name.startsWith("contact_") || name.startsWith("form_");
-    const safe = sanitizeProperties({
-      ...properties,
-      language,
-      ...(contact ? context() : {}),
-    });
-    try {
-      Promise.resolve(adapter(name, safe)).catch(() => {});
-    } catch {
-      /* Analytics must never break an interaction. */
-    }
-    return true;
-  }
   return {
-    track,
-    context,
     isEnabled: () => allowed,
     setEnabled(value) {
       allowed = Boolean(value);
-      if (!allowed) {
-        explored = false;
-        maxStage = 0;
-        scenarios.clear();
-      }
     },
-    recordDemo(scenario, stage = 0) {
-      if (!allowed) return;
-      explored = true;
-      if (enums.scenario.includes(scenario)) scenarios.add(scenario);
-      maxStage = Math.max(maxStage, Math.min(6, Math.max(0, stage)));
+    track(name, properties = {}, key) {
+      if (!allowed || !EVENT_NAMES.includes(name) || (key && once.has(key)))
+        return false;
+      if (key) once.add(key);
+      try {
+        Promise.resolve(
+          adapter(name, sanitizeProperties({ ...properties, language })),
+        ).catch(() => {});
+      } catch {
+        /* A provider must never break navigation or contact. */
+      }
+      return true;
     },
   };
 }

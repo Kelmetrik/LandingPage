@@ -1,60 +1,54 @@
-# Kelmetrik — Especificación editorial V1
+# Kelmetrik — Especificación editorial V1, revisión 2
 
-Fuente de verdad: los textos de este documento se generan de los mismos diccionarios que usa la web. Regenerar con `npm run docs:editorial` después de editar contenido.
+Los textos EN/ES se generan desde los mismos diccionarios que usa la web. Regenerar con `npm run docs:editorial` después de editar contenido.
 
-## Dirección y límites
+## Dirección acordada
 
-Kelmetrik es una empresa de ingeniería de software e integración de sistemas industriales. Público: operaciones, manufactura, calidad, ingeniería y TI en México y Estados Unidos. Conversión: conversación de diagnóstico. Inglés en / y español en /es/.
+Kelmetrik: ingeniería de software e integración de sistemas industriales. Público: operaciones, manufactura, calidad, ingeniería y TI en México y Estados Unidos. Objetivo: conversaciones de diagnóstico. Inglés en / y español en /es/.
 
-Cuatro dominios operativos y una capacidad transversal IT/OT. No son productos licenciados. Cada afirmación debe ser una capacidad respaldada, un hecho verificable o un ejemplo explícito. No publicar clientes, métricas de mejora, certificaciones o datos propietarios sin evidencia y autorización.
+Cuatro dominios y una capacidad transversal IT/OT. Ejemplos originales y conceptuales, sin simulación interactiva, sin presentarlos como productos terminados ni trabajos de clientes. Cada bloque responde: problema operativo → qué desarrolla Kelmetrik → qué permite hacer.
 
 ## Secuencia y recursos visuales
 
-1. Hero: sistemas, equipos y personas alimentan contexto operativo; dos llamadas a la acción.
+1. Inicio: gráfica de barras azul animada detrás de la propuesta y las dos acciones. Decoración sin números ni afirmaciones de rendimiento; pausa fuera de pantalla y con pestaña oculta; versión estática con movimiento reducido.
 2. Desconexión: comparación del mismo flujo fragmentado y conectado.
-3. EOL: seis etapas con señal, regla, disposición y evidencia.
-4. Dominios: problema, flujo y resultado; storyboards identificados como ilustrativos.
-5. Máquina: señal → contexto → evento → persona que puede actuar.
-6. Enfoque: comprender → diseñar → construir → validar → desplegar; un entregable por fase.
-7. Contacto: nombre, correo y empresa obligatorios; reto opcional.
+3. Soluciones: cuatro ejemplos completos y visibles. En escritorio, explicación junto a un fragmento de interfaz anotado; en móvil, explicación y ejemplo apilados.
+4. Más allá de la máquina: señal → contexto → evento → persona que puede actuar. Interfaces y accesos condicionan la integración.
+5. Enfoque: comprender → diseñar → construir → validar → desplegar, con entregable por etapa.
+6. Contacto: nombre, correo empresarial y empresa obligatorios; reto opcional.
 
-Escritorio: diagrama horizontal con panel lateral. Móvil: etapas verticales, panel debajo y controles táctiles. La historia debe entenderse sin animaciones. Consultar wireframes.svg.
+## Ejemplos conceptuales
 
-## Storyboard EOL
+| Dominio | Problema | Visual | Capacidad comunicada |
+| --- | --- | --- | --- |
+| Manufactura | Historia distribuida en registros separados | Orden → estación → registro, pieza, componente y lote | Integraciones, captura y relaciones de trazabilidad consultables |
+| Calidad y Safe Launch | Evidencia, alcance y decisión dispersos | Hallazgo, evidencia, contención, responsable y disposición pendiente | Inspección estructurada y seguimiento de decisiones autorizadas |
+| APQP | Dependencia que bloquea un hito | Plan aprobado, reporte pendiente y siguiente hito bloqueado | Relación entre planificación, evidencia y aprobación |
+| Materiales | Lo escaneado no coincide con la orden | Comparación de material, cantidad y ubicación | Validación antes de registrar un movimiento en el ERP |
 
-Datos originales y sintéticos. Orden DEMO-WO-2048; sensor DEMO-SENSOR-01; serie DEMO-SN-0042; componente DEMO-PCB-031; lote DEMO-LOT-008; estación DEMO-EOL-01; referencia DEMO-REF-01.
-
-| Etapa | Evidencia que aparece |
-| --- | --- |
-| Orden | Orden, modelo, operación EOL |
-| Identificación | Serie, componente y lote |
-| Prueba | Estación, condición, medición y unidad |
-| Validación | Límites 2.40–2.60 V inclusivos, regla DEMO-EOL-v1, resultado |
-| Disposición | Prueba aceptada o Quality Hold, con motivo |
-| Trazabilidad | Registro completo e historial de eventos |
-
-Normal: 2.51 V; falla: 2.72 V. No se representan otras especificaciones de un sensor real. Cambiar escenario limpia la ejecución; retroceder no duplica eventos. Reiniciar no libera una pieza retenida.
+Los registros originales llevan etiquetas de ejemplo. Los estados tienen palabras además de color. No hay controles simulados. Cada dominio ofrece contacto contextual. Todo el contenido principal es legible sin JavaScript.
 
 ## Glosario
 
 | EN | ES | Uso |
 | --- | --- | --- |
-| Work order | Orden de producción | Contexto originado en ERP |
+| Work order | Orden de producción | Contexto de ejecución |
 | Traceability | Trazabilidad | Relaciones recuperables entre producto, operación y evidencia |
-| Quality Hold | Quality Hold · Retención | Pieza contenida para revisión |
-| Test accepted | Prueba aceptada | No equivale a liberación comercial |
-| EOL | End-of-Line | Prueba funcional al final de línea |
-| Safe Launch | Safe Launch | Flujos de inspección y contención de arranque |
+| Disposition pending | Disposición pendiente | Una persona autorizada aún debe decidir |
+| Safe Launch | Safe Launch | Inspección y contención de arranque |
 | APQP | APQP | Planificación avanzada de la calidad del producto |
-| IT/OT | IT/OT | Integración de sistemas empresariales y tecnología operativa |
+| IT/OT | IT/OT | Sistemas empresariales y tecnología operativa |
 
 ## Registro de afirmaciones
 
-Permitido: describir capacidades acordadas, método, entregables y escenarios originales identificados. Condicionado: interfaces de equipos, acceso, alcance de integración y soporte según proyecto. Excluido: porcentajes de ahorro, eficiencia o disponibilidad; clientes ficticios; certificaciones; inferencias de IA predictiva; integración universal.
+Permitido: capacidades acordadas, método, entregables y ejemplos originales identificados. Condicionado: interfaces disponibles, accesos y alcance acordado. Excluido: ahorros, eficiencia o disponibilidad sin evidencia; clientes ficticios; certificaciones; integración universal.
+
+## Medición y privacidad
+
+Umami gratuito + Search Console. Permiso previo explícito. Sin medición local ni en vistas previas. Sin identificación propia de visitantes, sesiones grabadas, mapas de calor ni campos del formulario en analítica. Responsable: Kelmetrik; correo de privacidad: contact@kelmetrik.com. El domicilio confirmado aparece en ambos idiomas.
 
 ## Textos completos de interfaz
 
-Las claves identifican el lugar de uso; cada texto aparece íntegro para revisión EN/ES.
 
 ## English
 
@@ -92,7 +86,7 @@ Solutions
 
 **nav.1**
 
-Connected operations
+IT/OT integration
 
 **nav.2**
 
@@ -136,43 +130,11 @@ Let’s discuss your operation
 
 **secondary**
 
-Explore a connected operation
+Explore our solutions
 
 **heroNote**
 
 Built around the way your operation actually works.
-
-**network.0**
-
-Enterprise systems
-
-**network.1**
-
-Industrial equipment
-
-**network.2**
-
-People & processes
-
-**networkCenter**
-
-Operational context
-
-**networkCaption**
-
-An order. A signal. A decision. Connected.
-
-**networkLabels.0**
-
-Work orders & materials
-
-**networkLabels.1**
-
-Signals & test results
-
-**networkLabels.2**
-
-Actions & evidence
 
 **disconnect.eyebrow**
 
@@ -180,7 +142,7 @@ Actions & evidence
 
 **disconnect.title**
 
-The information exists.  
+The information exists.<br>
 The connections are missing.
 
 **disconnect.intro**
@@ -243,347 +205,18 @@ Information gets entered more than once.
 
 Investigations depend on emails and spreadsheets.
 
-**demo.eyebrow**
-
-02 / CONNECTED OPERATIONS IN ACTION
-
-**demo.title**
-
-Follow a signal.  
-Understand a decision.
-
-**demo.intro**
-
-Explore an End-of-Line functional test for an industrial sensor. See how one measurement connects a machine, a product and a quality decision.
-
-**demo.badge**
-
-Interactive simulation · Synthetic data
-
-**demo.disclaimer**
-
-An original demonstration of a possible integration. All signals, limits and identifiers are fictitious. This is not a customer implementation or a real sensor specification.
-
-**demo.name**
-
-From work order to quality decision
-
-**demo.station**
-
-Sensor functional test / EOL
-
-**demo.normal**
-
-Normal cycle
-
-**demo.failure**
-
-Failed test
-
-**demo.scenarioLabel**
-
-Choose a scenario
-
-**demo.start**
-
-Start simulation
-
-**demo.next**
-
-Next step
-
-**demo.previous**
-
-Previous
-
-**demo.reset**
-
-Restart
-
-**demo.ready**
-
-Ready to explore
-
-**demo.step**
-
-STEP
-
-**demo.of**
-
-OF
-
-**demo.readyTitle**
-
-One sensor. A connected history.
-
-**demo.readyText**
-
-Choose a scenario, then follow the order through six stages. Advance at your own pace and inspect the information transferred at each handoff.
-
-**demo.steps.0**
-
-Work order
-
-**demo.steps.1**
-
-Identification
-
-**demo.steps.2**
-
-Functional test
-
-**demo.steps.3**
-
-Quality validation
-
-**demo.steps.4**
-
-Disposition
-
-**demo.steps.5**
-
-Traceability
-
-**demo.titles.0**
-
-The order sets the context.
-
-**demo.titles.1**
-
-The product gets a digital identity.
-
-**demo.titles.2**
-
-The machine contributes evidence.
-
-**demo.titles.3**
-
-The rule makes the result explicit.
-
-**demo.titles.4**
-
-The result becomes an operational action.
-
-**demo.titles.5**
-
-The complete history is available.
-
-**demo.bodies.0**
-
-The simulated ERP releases an order for DEMO-SENSOR-01. The production system associates it with the required EOL operation.
-
-**demo.bodies.1**
-
-The simulated scan links the serial number to its electronic component and sensing-element lot. Subsequent results belong to this specific product.
-
-**demo.bodies.2**
-
-Under the illustrative reference condition DEMO-REF-01, the station captures the sensor’s electrical output automatically.
-
-**demo.bodies.3**
-
-The captured value is compared with an inclusive illustrative range of 2.40–2.60 V. The measurement, limits and rule remain part of the record.
-
-**demo.bodies.4**
-
-A passing result is accepted for this test. An out-of-range result places the piece in Quality Hold and retains the reason for review.
-
-**demo.bodies.5**
-
-Quality and engineering can investigate the measurement together with its production context, rather than reconstructing it from disconnected records.
-
-**demo.transfers.0**
-
-ERP → Production system
-
-**demo.transfers.1**
-
-Identification → Product record
-
-**demo.transfers.2**
-
-EOL station → Test record
-
-**demo.transfers.3**
-
-Test record → Validation rule
-
-**demo.transfers.4**
-
-Validation → Quality disposition
-
-**demo.transfers.5**
-
-Traceable record → Quality & engineering
-
-**demo.payloads.0**
-
-Order · Model · Required operation
-
-**demo.payloads.1**
-
-Serial number · Component · Component lot
-
-**demo.payloads.2**
-
-Station · Condition · Measurement · Unit
-
-**demo.payloads.3**
-
-Measurement · Limits · Rule version
-
-**demo.payloads.4**
-
-Test result · Disposition · Reason
-
-**demo.payloads.5**
-
-Order · Product · Test · Decision
-
-**demo.evidence**
-
-Connected evidence
-
-**demo.empty**
-
-Start the simulation to build the product record.
-
-**demo.fields.order**
-
-Work order
-
-**demo.fields.model**
-
-Sensor model
-
-**demo.fields.operation**
-
-Required operation
-
-**demo.fields.serial**
-
-Serial number
-
-**demo.fields.component**
-
-Electronic component
-
-**demo.fields.lot**
-
-Sensing-element lot
-
-**demo.fields.station**
-
-Test station
-
-**demo.fields.condition**
-
-Reference condition
-
-**demo.fields.signal**
-
-Measured output
-
-**demo.fields.limits**
-
-Inclusive limits
-
-**demo.fields.rule**
-
-Validation rule
-
-**demo.fields.result**
-
-Test result
-
-**demo.fields.disposition**
-
-Disposition
-
-**demo.fields.reason**
-
-Reason
-
-**demo.pass**
-
-PASS
-
-**demo.fail**
-
-FAIL
-
-**demo.accepted**
-
-Test accepted
-
-**demo.hold**
-
-Quality Hold
-
-**demo.passReason**
-
-Output within the illustrative limits.
-
-**demo.failReason**
-
-Output above the illustrative upper limit.
-
-**demo.acceptance**
-
-Acceptance applies only to this simulated test, not to commercial product release.
-
-**demo.holdNote**
-
-The piece remains on hold. Restarting this demonstration does not release, repair or approve it.
-
-**demo.log**
-
-Operational event history
-
-**demo.eventNote**
-
-Reviewing previous steps does not create duplicate records.
-
-**demo.finalTitle**
-
-A result you can investigate.
-
-**demo.finalText**
-
-The signal has a source, the product has a history, and the decision has supporting evidence.
-
-**demo.contact**
-
-Discuss a flow like this
-
-**demo.loading**
-
-Loading the interactive experience…
-
-**demo.fallback**
-
-The experience could not load. The complete example remains below; you can also reload to try again.
-
-**demo.staticTitle**
-
-The operation, step by step
-
-**demo.staticText**
-
-Normal cycle: 2.51 V → test accepted. Failed test: 2.72 V → Quality Hold. Illustrative inclusive limits: 2.40–2.60 V.
-
 **domains.eyebrow**
 
-03 / WHAT WE BUILD
+02 / WHAT WE CAN BUILD
 
 **domains.title**
 
-Four operational domains.  
-One connected approach.
+Solutions for a<br>
+connected operation.
 
 **domains.intro**
 
-Custom solutions shaped around your workflows, constraints and existing systems.
+Every operation has its own systems, rules and constraints. We design software and integrations around that context. These examples show how we can approach four industrial challenges.
 
 **domains.problem**
 
@@ -591,23 +224,23 @@ THE CHALLENGE
 
 **domains.flow**
 
-WHAT WE CONNECT
+WHAT WE BUILD
 
 **domains.result**
 
 WHAT IT ENABLES
 
-**domains.explore**
-
-Explore the workflow
-
-**domains.viewDemo**
-
-Explore the EOL simulation
-
 **domains.example**
 
-Illustrative workflow · Not a packaged product
+Conceptual example
+
+**domains.caption**
+
+Illustrative workflow and interface. Scope is defined around your operation.
+
+**domains.contact**
+
+Let’s discuss this process
 
 **domains.items.0.id**
 
@@ -615,39 +248,99 @@ manufacturing
 
 **domains.items.0.title**
 
-Manufacturing execution & traceability
-
-**domains.items.0.short**
-
-Manufacturing
+Manufacturing & traceability
 
 **domains.items.0.problem**
 
-Production steps, component records and test results live in different places.
+When an issue appears, reconstructing a product’s history requires searching across disconnected records.
 
 **domains.items.0.flow**
 
-Work orders, product identification, station activity and machine results.
+Execution applications and integrations that link orders, components and station results in a searchable record.
 
 **domains.items.0.result**
 
-A product history that can be followed from execution to investigation.
+Retrieve a product’s journey and find the material and evidence associated with each operation.
 
-**domains.items.0.steps.0**
+**domains.items.0.visualTitle**
 
-Release order
+A connected product history
 
-**domains.items.0.steps.1**
+**domains.items.0.annotation**
 
-Identify product
+Kelmetrik structures the relationships between your systems and makes evidence available to operations, quality and engineering.
 
-**domains.items.0.steps.2**
+**domains.items.0.nodes.0.0**
 
-Capture test
+ERP
 
-**domains.items.0.steps.3**
+**domains.items.0.nodes.0.1**
 
-Trace decision
+Work order
+
+**domains.items.0.nodes.1.0**
+
+Station
+
+**domains.items.0.nodes.1.1**
+
+Identity + result
+
+**domains.items.0.nodes.2.0**
+
+Record
+
+**domains.items.0.nodes.2.1**
+
+Product history
+
+**domains.items.0.recordTitle**
+
+Traceability record
+
+**domains.items.0.facts.0.0**
+
+Work order
+
+**domains.items.0.facts.0.1**
+
+EX-2048
+
+**domains.items.0.facts.1.0**
+
+Product
+
+**domains.items.0.facts.1.1**
+
+EX-0042
+
+**domains.items.0.facts.2.0**
+
+Component / lot
+
+**domains.items.0.facts.2.1**
+
+PCB-A / LT-08
+
+**domains.items.0.facts.3.0**
+
+Station / operation
+
+**domains.items.0.facts.3.1**
+
+Station 02 / assembly
+
+**domains.items.0.evidence**
+
+Linked evidence
+
+**domains.items.0.evidenceText**
+
+Material used → recorded operation → station result
+
+**domains.items.0.outcome**
+
+Look up a product, order or lot
 
 **domains.items.1.id**
 
@@ -657,37 +350,85 @@ quality
 
 Quality & Safe Launch
 
-**domains.items.1.short**
-
-Quality
-
 **domains.items.1.problem**
 
-Inspections, containment and release decisions rely on scattered evidence.
+An inspection identifies an issue, but its evidence, affected material and disposition live in separate conversations.
 
 **domains.items.1.flow**
 
-Defect records, product identity, inspection evidence and controlled disposition.
+Workflows to record inspections, link evidence to products and manage containment, ownership and dispositions.
 
 **domains.items.1.result**
 
-Quality decisions with a visible owner, status and supporting record.
+Identify which material is contained, why, and who needs to review the evidence before making a decision.
+
+**domains.items.1.visualTitle**
+
+From finding to documented decision
+
+**domains.items.1.annotation**
+
+Kelmetrik connects shop-floor capture with quality follow-up, preserving context and ownership for every decision.
+
+**domains.items.1.recordTitle**
+
+Finding follow-up
+
+**domains.items.1.finding**
+
+Surface mark on housing
+
+**domains.items.1.facts.0.0**
+
+Product / lot
+
+**domains.items.1.facts.0.1**
+
+Housing A / LT-08
+
+**domains.items.1.facts.1.0**
+
+Evidence
+
+**domains.items.1.facts.1.1**
+
+Linked inspection record
+
+**domains.items.1.facts.2.0**
+
+Scope
+
+**domains.items.1.facts.2.1**
+
+Identified material from the lot
+
+**domains.items.1.facts.3.0**
+
+Owner
+
+**domains.items.1.facts.3.1**
+
+Quality engineering
+
+**domains.items.1.status**
+
+Disposition pending
 
 **domains.items.1.steps.0**
 
-Record defect
+Finding recorded
 
 **domains.items.1.steps.1**
 
-Link evidence
+Containment identified
 
 **domains.items.1.steps.2**
 
-Assign review
+Quality review
 
-**domains.items.1.steps.3**
+**domains.items.1.outcome**
 
-Manage disposition
+A decision requires an authorized review
 
 **domains.items.2.id**
 
@@ -697,37 +438,81 @@ apqp
 
 APQP & project execution
 
-**domains.items.2.short**
-
-APQP
-
 **domains.items.2.problem**
 
-A milestone looks on track until a missing approval blocks execution.
+The plan shows a target date, but it does not make clear which deliverable or approval prevents the next milestone.
 
 **domains.items.2.flow**
 
-Deliverables, dependencies, responsibilities, risks and approval evidence.
+Applications that connect milestones, deliverables, dependencies, owners and approval evidence.
 
 **domains.items.2.result**
 
-A clear view of what is blocked, why it matters and who can act.
+Distinguish completed work from approved work and address the dependency blocking progress.
 
-**domains.items.2.steps.0**
+**domains.items.2.visualTitle**
 
-Inspect milestone
+The dependency behind the delay
 
-**domains.items.2.steps.1**
+**domains.items.2.annotation**
 
-Find missing approval
+Kelmetrik turns scattered follow-up into a shared view of the work and the evidence required to move forward.
 
-**domains.items.2.steps.2**
+**domains.items.2.recordTitle**
 
-Identify owner
+Validation readiness
 
-**domains.items.2.steps.3**
+**domains.items.2.milestone**
 
-Resolve dependency
+Milestone: process validation
+
+**domains.items.2.status**
+
+Blocked by approval
+
+**domains.items.2.rows.0.0**
+
+Validation plan
+
+**domains.items.2.rows.0.1**
+
+Approved
+
+**domains.items.2.rows.1.0**
+
+Test report
+
+**domains.items.2.rows.1.1**
+
+Approval pending
+
+**domains.items.2.rows.2.0**
+
+Next milestone
+
+**domains.items.2.rows.2.1**
+
+Waiting for report
+
+**domains.items.2.facts.0.0**
+
+Owner
+
+**domains.items.2.facts.0.1**
+
+Quality engineering
+
+**domains.items.2.facts.1.0**
+
+Required evidence
+
+**domains.items.2.facts.1.1**
+
+Reviewed and approved report
+
+**domains.items.2.outcome**
+
+The milestone shows its blocker and the next owner
 
 **domains.items.3.id**
 
@@ -735,47 +520,91 @@ warehouse
 
 **domains.items.3.title**
 
-Warehouse & material operations
-
-**domains.items.3.short**
-
-Materials
+Warehouse & materials
 
 **domains.items.3.problem**
 
-Physical material movements and enterprise records fall out of sync.
+What is received or picked does not always match the order and the inventory record.
 
 **domains.items.3.flow**
 
-ERP orders, receiving, locations, guided picking and scan validation.
+Scanning, material and quantity validation, and movement records connected with the ERP through its available interfaces.
 
 **domains.items.3.result**
 
-Material movements checked against the work that needs to be done.
+Detect discrepancies before confirming a movement and preserve its relationship to the order and location.
 
-**domains.items.3.steps.0**
+**domains.items.3.visualTitle**
 
-Receive order
+Validate the movement before recording it
 
-**domains.items.3.steps.1**
+**domains.items.3.annotation**
 
-Scan material
+Kelmetrik connects the physical operation to the business record and makes the rules for confirming each movement explicit.
 
-**domains.items.3.steps.2**
+**domains.items.3.recordTitle**
 
-Validate quantity
+Pick validation
 
-**domains.items.3.steps.3**
+**domains.items.3.columns.0**
 
-Record movement
+Order requires
+
+**domains.items.3.columns.1**
+
+Scan records
+
+**domains.items.3.rows.0.0**
+
+Material
+
+**domains.items.3.rows.0.1**
+
+MAT-A2
+
+**domains.items.3.rows.0.2**
+
+MAT-B1
+
+**domains.items.3.rows.1.0**
+
+Quantity
+
+**domains.items.3.rows.1.1**
+
+12 units
+
+**domains.items.3.rows.1.2**
+
+12 units
+
+**domains.items.3.rows.2.0**
+
+Location
+
+**domains.items.3.rows.2.1**
+
+A-03
+
+**domains.items.3.rows.2.2**
+
+A-03
+
+**domains.items.3.status**
+
+Material does not match the order
+
+**domains.items.3.outcome**
+
+Movement pending correction of the discrepancy
 
 **machine.eyebrow**
 
-04 / BEYOND THE MACHINE
+03 / BEYOND THE MACHINE
 
 **machine.title**
 
-Your machines know more  
+Your machines know more<br>
 than your systems show.
 
 **machine.intro**
@@ -824,11 +653,11 @@ Industrial connectivity, with operational meaning.
 
 **approach.eyebrow**
 
-05 / OUR APPROACH
+04 / OUR APPROACH
 
 **approach.title**
 
-We start with the operation,  
+We start with the operation,<br>
 not the software.
 
 **approach.intro**
@@ -901,11 +730,11 @@ Deployment & handover plan
 
 **contact.eyebrow**
 
-06 / START A CONVERSATION
+05 / LET’S START A CONVERSATION
 
 **contact.title**
 
-Let’s discuss  
+Let’s discuss<br>
 your operation.
 
 **contact.intro**
@@ -1014,7 +843,7 @@ Optional measurement
 
 **privacyContent.analyticsText**
 
-When enabled and permitted, Plausible receives page views and a limited set of interactions: sections viewed, workflows explored, simulation progress and contact actions. Form fields, product identifiers and free text are never sent to analytics. We do not use session recordings or advertising pixels.
+After you accept, Umami may receive page views and a limited set of interactions: sections and domains viewed, contact actions, and form start and outcome. We never send form fields, product identifiers or free text. We do not enable user identification, session recordings, heatmaps or advertising pixels.
 
 **privacyContent.choicesTitle**
 
@@ -1052,13 +881,13 @@ Contact address
 
 Formspree privacy notice
 
-**privacyContent.plausible**
-
-Plausible data policy
-
 **privacyContent.vercel**
 
 Vercel privacy notice
+
+**privacyContent.umami**
+
+Umami privacy notice
 
 **consent.title**
 
@@ -1066,7 +895,7 @@ Optional audience measurement
 
 **consent.text**
 
-Help us understand which workflows are useful. Optional analytics measures visits and interactions without recording sessions or collecting form contents.
+May we use Umami to measure visits, interest in our solutions and contact actions? We do not send form contents or record sessions. You can decline and still use the entire site.
 
 **consent.allow**
 
@@ -1074,11 +903,11 @@ Allow analytics
 
 **consent.reject**
 
-Keep analytics off
+Reject analytics
 
 **consent.disabled**
 
-Optional analytics is not active on this site.
+Optional measurement is disabled. This page does not send usage statistics.
 
 **consent.on**
 
@@ -1096,103 +925,17 @@ Close preferences
 
 Your browser privacy signal keeps analytics off.
 
-### Ejemplos de los storyboards
+**consent.preview**
 
-**storyboards.quality.0.0**
+This preview does not send statistics. You can review how optional measurement is presented here.
 
-Inspection
+**consent.unavailable**
 
-**storyboards.quality.0.1**
+Measurement could not start. Your preference is saved and you can continue using the page.
 
-A housing mark is recorded against DEMO-SN-0187.
+**consent.loading**
 
-**storyboards.quality.1.0**
-
-Evidence
-
-**storyboards.quality.1.1**
-
-The inspection record and defect location remain linked to the product.
-
-**storyboards.quality.2.0**
-
-Review owner
-
-**storyboards.quality.2.1**
-
-Quality reviews the record. Disposition is pending; the product remains contained.
-
-**storyboards.quality.3.0**
-
-Decision
-
-**storyboards.quality.3.1**
-
-The authorized disposition and its supporting evidence become part of the history.
-
-**storyboards.apqp.0.0**
-
-Milestone
-
-**storyboards.apqp.0.1**
-
-EOL validation — blocked.
-
-**storyboards.apqp.1.0**
-
-Dependency
-
-**storyboards.apqp.1.1**
-
-The test plan is approved; the validation report still needs approval.
-
-**storyboards.apqp.2.0**
-
-Responsible role
-
-**storyboards.apqp.2.1**
-
-Quality engineering owns the pending report.
-
-**storyboards.apqp.3.0**
-
-Impact
-
-**storyboards.apqp.3.1**
-
-The milestone remains blocked until the required evidence is approved.
-
-**storyboards.warehouse.0.0**
-
-ERP request
-
-**storyboards.warehouse.0.1**
-
-DEMO-PICK-010 requests 12 units of DEMO-MAT-A2.
-
-**storyboards.warehouse.1.0**
-
-Scan
-
-**storyboards.warehouse.1.1**
-
-The operator scans DEMO-MAT-B1 at the picking location.
-
-**storyboards.warehouse.2.0**
-
-Validation
-
-**storyboards.warehouse.2.1**
-
-Material mismatch. The movement is blocked before inventory is changed.
-
-**storyboards.warehouse.3.0**
-
-Resolution
-
-**storyboards.warehouse.3.1**
-
-The correct material and quantity must be validated before recording the movement.
+Starting permitted measurement…
 
 ## Español
 
@@ -1230,7 +973,7 @@ Soluciones
 
 **nav.1**
 
-Operaciones conectadas
+Integración IT/OT
 
 **nav.2**
 
@@ -1274,43 +1017,11 @@ Hablemos de tu operación
 
 **secondary**
 
-Explora una operación conectada
+Explora nuestras soluciones
 
 **heroNote**
 
 Tecnología diseñada alrededor de cómo funciona tu operación.
-
-**network.0**
-
-Sistemas empresariales
-
-**network.1**
-
-Equipos industriales
-
-**network.2**
-
-Personas y procesos
-
-**networkCenter**
-
-Contexto operativo
-
-**networkCaption**
-
-Una orden. Una señal. Una decisión. Conectadas.
-
-**networkLabels.0**
-
-Órdenes y materiales
-
-**networkLabels.1**
-
-Señales y resultados de prueba
-
-**networkLabels.2**
-
-Acciones y evidencia
 
 **disconnect.eyebrow**
 
@@ -1318,7 +1029,7 @@ Acciones y evidencia
 
 **disconnect.title**
 
-La información existe.  
+La información existe.<br>
 Faltan las conexiones.
 
 **disconnect.intro**
@@ -1381,347 +1092,18 @@ La información se captura más de una vez.
 
 Investigar depende de correos y hojas de cálculo.
 
-**demo.eyebrow**
-
-02 / OPERACIONES CONECTADAS EN ACCIÓN
-
-**demo.title**
-
-Sigue una señal.  
-Comprende una decisión.
-
-**demo.intro**
-
-Explora una prueba funcional End-of-Line de un sensor industrial. Observa cómo una medición conecta una máquina, un producto y una decisión de calidad.
-
-**demo.badge**
-
-Simulación interactiva · Datos sintéticos
-
-**demo.disclaimer**
-
-Demostración original de una integración posible. Las señales, los límites y los identificadores son ficticios. No representa una implementación comercial ni la especificación de un sensor real.
-
-**demo.name**
-
-De la orden a la decisión de calidad
-
-**demo.station**
-
-Prueba funcional de sensor / EOL
-
-**demo.normal**
-
-Ciclo normal
-
-**demo.failure**
-
-Prueba fallida
-
-**demo.scenarioLabel**
-
-Elige un escenario
-
-**demo.start**
-
-Iniciar simulación
-
-**demo.next**
-
-Siguiente etapa
-
-**demo.previous**
-
-Anterior
-
-**demo.reset**
-
-Reiniciar
-
-**demo.ready**
-
-Lista para explorar
-
-**demo.step**
-
-ETAPA
-
-**demo.of**
-
-DE
-
-**demo.readyTitle**
-
-Un sensor. Una historia conectada.
-
-**demo.readyText**
-
-Elige un escenario y sigue la orden a través de seis etapas. Avanza a tu ritmo y consulta la información que se transfiere en cada intercambio.
-
-**demo.steps.0**
-
-Orden de producción
-
-**demo.steps.1**
-
-Identificación
-
-**demo.steps.2**
-
-Prueba funcional
-
-**demo.steps.3**
-
-Validación de calidad
-
-**demo.steps.4**
-
-Disposición
-
-**demo.steps.5**
-
-Trazabilidad
-
-**demo.titles.0**
-
-La orden establece el contexto.
-
-**demo.titles.1**
-
-El producto obtiene una identidad digital.
-
-**demo.titles.2**
-
-La máquina aporta evidencia.
-
-**demo.titles.3**
-
-La regla hace explícito el resultado.
-
-**demo.titles.4**
-
-El resultado se convierte en una acción.
-
-**demo.titles.5**
-
-La historia completa está disponible.
-
-**demo.bodies.0**
-
-El ERP simulado libera una orden para DEMO-SENSOR-01. El sistema de producción la asocia con la operación EOL requerida.
-
-**demo.bodies.1**
-
-El escaneo simulado vincula el número de serie con su componente electrónico y el lote del elemento sensor. Los resultados posteriores pertenecen a este producto.
-
-**demo.bodies.2**
-
-Bajo la condición de referencia ilustrativa DEMO-REF-01, la estación captura automáticamente la salida eléctrica del sensor.
-
-**demo.bodies.3**
-
-El valor capturado se compara con el rango ilustrativo inclusivo de 2.40–2.60 V. La medición, los límites y la regla permanecen en el registro.
-
-**demo.bodies.4**
-
-Un resultado conforme se acepta para esta prueba. Un valor fuera de rango coloca la pieza en Quality Hold y conserva el motivo para su revisión.
-
-**demo.bodies.5**
-
-Calidad e ingeniería pueden investigar la medición junto con su contexto de producción, sin reconstruirlo a partir de registros desconectados.
-
-**demo.transfers.0**
-
-ERP → Sistema de producción
-
-**demo.transfers.1**
-
-Identificación → Registro del producto
-
-**demo.transfers.2**
-
-Estación EOL → Registro de prueba
-
-**demo.transfers.3**
-
-Registro de prueba → Regla de validación
-
-**demo.transfers.4**
-
-Validación → Disposición de calidad
-
-**demo.transfers.5**
-
-Registro trazable → Calidad e ingeniería
-
-**demo.payloads.0**
-
-Orden · Modelo · Operación requerida
-
-**demo.payloads.1**
-
-Número de serie · Componente · Lote
-
-**demo.payloads.2**
-
-Estación · Condición · Medición · Unidad
-
-**demo.payloads.3**
-
-Medición · Límites · Versión de regla
-
-**demo.payloads.4**
-
-Resultado · Disposición · Motivo
-
-**demo.payloads.5**
-
-Orden · Producto · Prueba · Decisión
-
-**demo.evidence**
-
-Evidencia conectada
-
-**demo.empty**
-
-Inicia la simulación para construir el registro del producto.
-
-**demo.fields.order**
-
-Orden de producción
-
-**demo.fields.model**
-
-Modelo de sensor
-
-**demo.fields.operation**
-
-Operación requerida
-
-**demo.fields.serial**
-
-Número de serie
-
-**demo.fields.component**
-
-Componente electrónico
-
-**demo.fields.lot**
-
-Lote del elemento sensor
-
-**demo.fields.station**
-
-Estación de prueba
-
-**demo.fields.condition**
-
-Condición de referencia
-
-**demo.fields.signal**
-
-Salida medida
-
-**demo.fields.limits**
-
-Límites inclusivos
-
-**demo.fields.rule**
-
-Regla de validación
-
-**demo.fields.result**
-
-Resultado de prueba
-
-**demo.fields.disposition**
-
-Disposición
-
-**demo.fields.reason**
-
-Motivo
-
-**demo.pass**
-
-CONFORME
-
-**demo.fail**
-
-NO CONFORME
-
-**demo.accepted**
-
-Prueba aceptada
-
-**demo.hold**
-
-Quality Hold · Retención
-
-**demo.passReason**
-
-Salida dentro de los límites ilustrativos.
-
-**demo.failReason**
-
-Salida superior al límite ilustrativo.
-
-**demo.acceptance**
-
-La aceptación corresponde únicamente a esta prueba simulada; no implica la liberación comercial del producto.
-
-**demo.holdNote**
-
-La pieza permanece retenida. Reiniciar la demostración no representa liberarla, repararla ni aprobarla.
-
-**demo.log**
-
-Historial de eventos operativos
-
-**demo.eventNote**
-
-Revisar etapas anteriores no genera registros duplicados.
-
-**demo.finalTitle**
-
-Un resultado que puedes investigar.
-
-**demo.finalText**
-
-La señal tiene un origen, el producto tiene un historial y la decisión tiene evidencia.
-
-**demo.contact**
-
-Hablemos de un flujo similar
-
-**demo.loading**
-
-Cargando la experiencia interactiva…
-
-**demo.fallback**
-
-No se pudo cargar la experiencia. El ejemplo completo sigue disponible abajo; también puedes recargar para intentarlo de nuevo.
-
-**demo.staticTitle**
-
-La operación, paso a paso
-
-**demo.staticText**
-
-Ciclo normal: 2.51 V → prueba aceptada. Prueba fallida: 2.72 V → Quality Hold. Límites inclusivos ilustrativos: 2.40–2.60 V.
-
 **domains.eyebrow**
 
-03 / QUÉ DESARROLLAMOS
+02 / LO QUE PODEMOS CONSTRUIR
 
 **domains.title**
 
-Cuatro ámbitos operativos.  
-Un enfoque conectado.
+Soluciones para una<br>
+operación conectada.
 
 **domains.intro**
 
-Soluciones a medida de tus flujos de trabajo, restricciones y sistemas existentes.
+Cada operación tiene sus propios sistemas, reglas y restricciones. Diseñamos software e integraciones alrededor de ese contexto. Estos ejemplos muestran cómo podemos abordar cuatro retos industriales.
 
 **domains.problem**
 
@@ -1729,23 +1111,23 @@ EL RETO
 
 **domains.flow**
 
-QUÉ CONECTAMOS
+QUÉ DESARROLLAMOS
 
 **domains.result**
 
-QUÉ HABILITA
-
-**domains.explore**
-
-Explorar el flujo
-
-**domains.viewDemo**
-
-Explorar la simulación EOL
+QUÉ PERMITE HACER
 
 **domains.example**
 
-Flujo ilustrativo · No es un producto empaquetado
+Ejemplo conceptual
+
+**domains.caption**
+
+Flujo e interfaz ilustrativos. El alcance se define con tu operación.
+
+**domains.contact**
+
+Hablemos de este proceso
 
 **domains.items.0.id**
 
@@ -1753,39 +1135,99 @@ manufacturing
 
 **domains.items.0.title**
 
-Ejecución de manufactura y trazabilidad
-
-**domains.items.0.short**
-
-Manufactura
+Manufactura y trazabilidad
 
 **domains.items.0.problem**
 
-Las etapas de producción, los componentes y los resultados de prueba están en lugares distintos.
+Cuando aparece un problema, reconstruir la historia de una pieza exige buscar en registros separados.
 
 **domains.items.0.flow**
 
-Órdenes de producción, identificación de producto, actividad de estaciones y resultados de equipos.
+Aplicaciones de ejecución e integraciones que relacionan órdenes, componentes y resultados de estación en un registro consultable.
 
 **domains.items.0.result**
 
-Un historial de producto que se puede seguir desde la ejecución hasta la investigación.
+Recuperar el recorrido de una pieza y encontrar el material y la evidencia asociados a cada operación.
 
-**domains.items.0.steps.0**
+**domains.items.0.visualTitle**
 
-Liberar orden
+La historia de una pieza, conectada
 
-**domains.items.0.steps.1**
+**domains.items.0.annotation**
 
-Identificar producto
+Kelmetrik estructura las relaciones entre tus sistemas y pone la evidencia al alcance de operaciones, calidad e ingeniería.
 
-**domains.items.0.steps.2**
+**domains.items.0.nodes.0.0**
 
-Capturar prueba
+ERP
 
-**domains.items.0.steps.3**
+**domains.items.0.nodes.0.1**
 
-Trazar decisión
+Orden de producción
+
+**domains.items.0.nodes.1.0**
+
+Estación
+
+**domains.items.0.nodes.1.1**
+
+Identidad + resultado
+
+**domains.items.0.nodes.2.0**
+
+Registro
+
+**domains.items.0.nodes.2.1**
+
+Historia de la pieza
+
+**domains.items.0.recordTitle**
+
+Registro de trazabilidad
+
+**domains.items.0.facts.0.0**
+
+Orden
+
+**domains.items.0.facts.0.1**
+
+EJ-2048
+
+**domains.items.0.facts.1.0**
+
+Pieza
+
+**domains.items.0.facts.1.1**
+
+EJ-0042
+
+**domains.items.0.facts.2.0**
+
+Componente / lote
+
+**domains.items.0.facts.2.1**
+
+PCB-A / LT-08
+
+**domains.items.0.facts.3.0**
+
+Estación / operación
+
+**domains.items.0.facts.3.1**
+
+Estación 02 / ensamble
+
+**domains.items.0.evidence**
+
+Evidencia vinculada
+
+**domains.items.0.evidenceText**
+
+Material utilizado → operación registrada → resultado de estación
+
+**domains.items.0.outcome**
+
+Consulta por pieza, orden o lote
 
 **domains.items.1.id**
 
@@ -1795,37 +1237,85 @@ quality
 
 Calidad y Safe Launch
 
-**domains.items.1.short**
-
-Calidad
-
 **domains.items.1.problem**
 
-Las inspecciones, contenciones y liberaciones dependen de evidencia dispersa.
+Una inspección detecta un hallazgo, pero la evidencia, el material afectado y la decisión quedan en conversaciones distintas.
 
 **domains.items.1.flow**
 
-Defectos, identidad de producto, evidencia de inspección y disposición controlada.
+Flujos para registrar inspecciones, vincular evidencia al producto y gestionar contenciones, responsables y disposiciones.
 
 **domains.items.1.result**
 
-Decisiones de calidad con responsable, estado y evidencia visibles.
+Identificar qué material está contenido, por qué y quién debe revisar la evidencia antes de decidir.
+
+**domains.items.1.visualTitle**
+
+Del hallazgo a una decisión documentada
+
+**domains.items.1.annotation**
+
+Kelmetrik conecta la captura en piso con el seguimiento de calidad, conservando el contexto y la responsabilidad de cada decisión.
+
+**domains.items.1.recordTitle**
+
+Seguimiento de un hallazgo
+
+**domains.items.1.finding**
+
+Marca superficial en alojamiento
+
+**domains.items.1.facts.0.0**
+
+Producto / lote
+
+**domains.items.1.facts.0.1**
+
+Alojamiento A / LT-08
+
+**domains.items.1.facts.1.0**
+
+Evidencia
+
+**domains.items.1.facts.1.1**
+
+Registro de inspección vinculado
+
+**domains.items.1.facts.2.0**
+
+Alcance
+
+**domains.items.1.facts.2.1**
+
+Material del lote identificado
+
+**domains.items.1.facts.3.0**
+
+Responsable
+
+**domains.items.1.facts.3.1**
+
+Ingeniería de calidad
+
+**domains.items.1.status**
+
+Disposición pendiente
 
 **domains.items.1.steps.0**
 
-Registrar defecto
+Hallazgo registrado
 
 **domains.items.1.steps.1**
 
-Vincular evidencia
+Contención identificada
 
 **domains.items.1.steps.2**
 
-Asignar revisión
+Revisión de calidad
 
-**domains.items.1.steps.3**
+**domains.items.1.outcome**
 
-Gestionar disposición
+La decisión requiere una revisión autorizada
 
 **domains.items.2.id**
 
@@ -1835,37 +1325,81 @@ apqp
 
 APQP y ejecución de proyectos
 
-**domains.items.2.short**
-
-APQP
-
 **domains.items.2.problem**
 
-Un hito parece avanzar hasta que una aprobación pendiente bloquea la ejecución.
+El plan indica una fecha de avance, pero no deja claro qué entregable o aprobación impide alcanzar el siguiente hito.
 
 **domains.items.2.flow**
 
-Entregables, dependencias, responsables, riesgos y evidencia de aprobación.
+Aplicaciones que relacionan hitos, entregables, dependencias, responsables y evidencia de aprobación.
 
 **domains.items.2.result**
 
-Visibilidad de qué está bloqueado, por qué importa y quién puede actuar.
+Distinguir trabajo terminado de trabajo aprobado y atender la dependencia que bloquea el avance.
 
-**domains.items.2.steps.0**
+**domains.items.2.visualTitle**
 
-Revisar hito
+La dependencia que explica el retraso
 
-**domains.items.2.steps.1**
+**domains.items.2.annotation**
 
-Detectar aprobación pendiente
+Kelmetrik convierte el seguimiento disperso en una vista compartida del trabajo y de la evidencia necesaria para avanzar.
 
-**domains.items.2.steps.2**
+**domains.items.2.recordTitle**
 
-Identificar responsable
+Preparación de validación
 
-**domains.items.2.steps.3**
+**domains.items.2.milestone**
 
-Resolver dependencia
+Hito: validación del proceso
+
+**domains.items.2.status**
+
+Bloqueado por aprobación
+
+**domains.items.2.rows.0.0**
+
+Plan de validación
+
+**domains.items.2.rows.0.1**
+
+Aprobado
+
+**domains.items.2.rows.1.0**
+
+Reporte de pruebas
+
+**domains.items.2.rows.1.1**
+
+Pendiente de aprobación
+
+**domains.items.2.rows.2.0**
+
+Siguiente hito
+
+**domains.items.2.rows.2.1**
+
+En espera del reporte
+
+**domains.items.2.facts.0.0**
+
+Responsable
+
+**domains.items.2.facts.0.1**
+
+Ingeniería de calidad
+
+**domains.items.2.facts.1.0**
+
+Evidencia requerida
+
+**domains.items.2.facts.1.1**
+
+Reporte revisado y aprobado
+
+**domains.items.2.outcome**
+
+El hito muestra su bloqueo y el siguiente responsable
 
 **domains.items.3.id**
 
@@ -1873,47 +1407,91 @@ warehouse
 
 **domains.items.3.title**
 
-Almacenes y operaciones de materiales
-
-**domains.items.3.short**
-
-Materiales
+Almacenes y materiales
 
 **domains.items.3.problem**
 
-Los movimientos físicos y los registros empresariales pierden sincronía.
+Lo que se recibe o se surte no siempre coincide con la orden y el registro del inventario.
 
 **domains.items.3.flow**
 
-Órdenes del ERP, recibos, ubicaciones, picking guiado y validación por escaneo.
+Flujos de escaneo, validación de material y cantidad, y registro de movimientos conectados con el ERP según sus interfaces disponibles.
 
 **domains.items.3.result**
 
-Movimientos de materiales verificados contra el trabajo requerido.
+Detectar discrepancias antes de confirmar un movimiento y conservar su relación con la orden y la ubicación.
 
-**domains.items.3.steps.0**
+**domains.items.3.visualTitle**
 
-Recibir orden
+Validar el movimiento antes de registrarlo
 
-**domains.items.3.steps.1**
+**domains.items.3.annotation**
 
-Escanear material
+Kelmetrik conecta la operación física con el registro empresarial y hace explícitas las reglas para confirmar cada movimiento.
 
-**domains.items.3.steps.2**
+**domains.items.3.recordTitle**
 
-Validar cantidad
+Validación de surtido
 
-**domains.items.3.steps.3**
+**domains.items.3.columns.0**
 
-Registrar movimiento
+Orden solicita
+
+**domains.items.3.columns.1**
+
+Escaneo registra
+
+**domains.items.3.rows.0.0**
+
+Material
+
+**domains.items.3.rows.0.1**
+
+MAT-A2
+
+**domains.items.3.rows.0.2**
+
+MAT-B1
+
+**domains.items.3.rows.1.0**
+
+Cantidad
+
+**domains.items.3.rows.1.1**
+
+12 unidades
+
+**domains.items.3.rows.1.2**
+
+12 unidades
+
+**domains.items.3.rows.2.0**
+
+Ubicación
+
+**domains.items.3.rows.2.1**
+
+A-03
+
+**domains.items.3.rows.2.2**
+
+A-03
+
+**domains.items.3.status**
+
+Material distinto al solicitado
+
+**domains.items.3.outcome**
+
+Movimiento pendiente de corregir la discrepancia
 
 **machine.eyebrow**
 
-04 / MÁS ALLÁ DE LA MÁQUINA
+03 / MÁS ALLÁ DE LA MÁQUINA
 
 **machine.title**
 
-Tus máquinas saben más  
+Tus máquinas saben más<br>
 de lo que muestran tus sistemas.
 
 **machine.intro**
@@ -1962,11 +1540,11 @@ Conectividad industrial con significado operativo.
 
 **approach.eyebrow**
 
-05 / NUESTRO ENFOQUE
+04 / NUESTRO ENFOQUE
 
 **approach.title**
 
-Comenzamos por la operación,  
+Comenzamos por la operación,<br>
 no por el software.
 
 **approach.intro**
@@ -2039,11 +1617,11 @@ Plan de despliegue y entrega
 
 **contact.eyebrow**
 
-06 / INICIEMOS UNA CONVERSACIÓN
+05 / INICIEMOS UNA CONVERSACIÓN
 
 **contact.title**
 
-Hablemos de  
+Hablemos de<br>
 tu operación.
 
 **contact.intro**
@@ -2152,7 +1730,7 @@ Medición opcional
 
 **privacyContent.analyticsText**
 
-Cuando está habilitado y permitido, Plausible recibe visitas y un conjunto limitado de interacciones: secciones vistas, flujos explorados, avance en la simulación y acciones de contacto. Los campos del formulario, identificadores de producto y texto libre nunca se envían a la analítica. No usamos grabaciones de sesiones ni píxeles publicitarios.
+Después de aceptar, Umami puede recibir visitas y un conjunto limitado de interacciones: secciones y dominios vistos, acciones de contacto e inicio y resultado del formulario. Nunca enviamos los campos del formulario, identificadores de producto ni texto libre. No activamos identificación de usuarios, grabaciones de sesiones, mapas de calor ni píxeles publicitarios.
 
 **privacyContent.choicesTitle**
 
@@ -2190,13 +1768,13 @@ Domicilio de contacto
 
 Aviso de privacidad de Formspree
 
-**privacyContent.plausible**
-
-Política de datos de Plausible
-
 **privacyContent.vercel**
 
 Aviso de privacidad de Vercel
+
+**privacyContent.umami**
+
+Aviso de privacidad de Umami
 
 **consent.title**
 
@@ -2204,7 +1782,7 @@ Medición opcional de audiencia
 
 **consent.text**
 
-Ayúdanos a entender qué flujos resultan útiles. La analítica opcional mide visitas e interacciones sin grabar sesiones ni recopilar el contenido del formulario.
+¿Nos permites medir visitas, interés en nuestras soluciones y acciones de contacto con Umami? No enviamos el contenido del formulario ni grabamos sesiones. Puedes rechazarlo y seguir usando toda la página.
 
 **consent.allow**
 
@@ -2212,11 +1790,11 @@ Permitir analítica
 
 **consent.reject**
 
-Mantener analítica desactivada
+Rechazar analítica
 
 **consent.disabled**
 
-La analítica opcional no está activa en este sitio.
+La medición opcional está desactivada. No se envían estadísticas de uso desde esta página.
 
 **consent.on**
 
@@ -2234,100 +1812,14 @@ Cerrar preferencias
 
 La señal de privacidad de tu navegador mantiene la analítica desactivada.
 
-### Ejemplos de los storyboards
+**consent.preview**
 
-**storyboards.quality.0.0**
+Esta vista previa no envía estadísticas. Puedes revisar aquí cómo se presenta la medición opcional.
 
-Inspección
+**consent.unavailable**
 
-**storyboards.quality.0.1**
+No se pudo iniciar la medición. Tu preferencia está guardada y puedes seguir usando la página.
 
-Se registra una marca en la carcasa de DEMO-SN-0187.
+**consent.loading**
 
-**storyboards.quality.1.0**
-
-Evidencia
-
-**storyboards.quality.1.1**
-
-El registro de inspección y la ubicación del defecto permanecen vinculados al producto.
-
-**storyboards.quality.2.0**
-
-Responsable de revisión
-
-**storyboards.quality.2.1**
-
-Calidad revisa el registro. La disposición está pendiente y el producto permanece contenido.
-
-**storyboards.quality.3.0**
-
-Decisión
-
-**storyboards.quality.3.1**
-
-La disposición autorizada y su evidencia se integran al historial.
-
-**storyboards.apqp.0.0**
-
-Hito
-
-**storyboards.apqp.0.1**
-
-Validación EOL — bloqueada.
-
-**storyboards.apqp.1.0**
-
-Dependencia
-
-**storyboards.apqp.1.1**
-
-El plan de prueba está aprobado; falta aprobar el reporte de validación.
-
-**storyboards.apqp.2.0**
-
-Rol responsable
-
-**storyboards.apqp.2.1**
-
-Ingeniería de calidad es responsable del reporte pendiente.
-
-**storyboards.apqp.3.0**
-
-Impacto
-
-**storyboards.apqp.3.1**
-
-El hito permanece bloqueado hasta que se apruebe la evidencia requerida.
-
-**storyboards.warehouse.0.0**
-
-Solicitud del ERP
-
-**storyboards.warehouse.0.1**
-
-DEMO-PICK-010 solicita 12 unidades de DEMO-MAT-A2.
-
-**storyboards.warehouse.1.0**
-
-Escaneo
-
-**storyboards.warehouse.1.1**
-
-El operador escanea DEMO-MAT-B1 en la ubicación de picking.
-
-**storyboards.warehouse.2.0**
-
-Validación
-
-**storyboards.warehouse.2.1**
-
-El material no corresponde. El movimiento se bloquea antes de modificar el inventario.
-
-**storyboards.warehouse.3.0**
-
-Resolución
-
-**storyboards.warehouse.3.1**
-
-Se deben validar el material correcto y la cantidad antes de registrar el movimiento.
+Iniciando la medición permitida…
