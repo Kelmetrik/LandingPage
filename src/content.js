@@ -60,12 +60,12 @@ export const content = {
       items: [
         {
           id: "manufacturing",
-          title: "Manufacturing & traceability",
+          title: "Manufacturing Execution & Traceability",
           problem:
-            "When an issue appears, reconstructing a product’s history requires searching across disconnected records.",
-          flow: "We develop custom MES systems and execution modules that connect ERP orders, shop-floor capture, components and station results in a searchable record.",
+            "Component identification, process records and test results often live in separate systems, making it difficult to follow each product through production.",
+          flow: "We develop custom MES systems and execution modules that connect stations, equipment and production systems. We link ERP orders, component identification and test results to record what happens at each manufacturing stage.",
           result:
-            "Retrieve a product’s journey and find the material and evidence associated with each operation.",
+            "Monitor process execution, identify deviations and investigate what happened to each product using its linked records.",
           visualTitle: "A connected product history",
           annotation:
             "Kelmetrik structures the relationships between your systems and makes evidence available to operations, quality and engineering.",
@@ -89,12 +89,12 @@ export const content = {
         },
         {
           id: "quality",
-          title: "Quality & Safe Launch",
+          title: "Quality Management & Safe Launch",
           problem:
-            "An inspection identifies an issue, but its evidence, affected material and disposition live in separate conversations.",
-          flow: "We build quality applications connected to your ERP or MES to record inspections, link evidence to products and manage containment, ownership and dispositions.",
+            "Inspections generate findings, but evidence, containment actions and quality decisions can become scattered across spreadsheets and conversations.",
+          flow: "We digitize inspections, validations and containment workflows through quality applications connected to your ERP or MES. Each result links defects, evidence, owners and the decisions that follow.",
           result:
-            "Identify which material is contained, why, and who needs to review the evidence before making a decision.",
+            "Follow each finding through disposition and coordinate new-launch controls with shared records and clear responsibility.",
           visualTitle: "From finding to documented decision",
           annotation:
             "Kelmetrik connects shop-floor capture with quality follow-up, preserving context and ownership for every decision.",
@@ -118,12 +118,12 @@ export const content = {
         },
         {
           id: "apqp",
-          title: "APQP & project execution",
+          title: "APQP & Industrial Project Management",
           problem:
-            "The plan shows a target date, but it does not make clear which deliverable or approval prevents the next milestone.",
-          flow: "We develop management applications and custom ERP modules that link milestones, deliverables, dependencies, owners and approval evidence.",
+            "Project plans and actual progress often diverge when activities, deliverables and approvals are tracked separately.",
+          flow: "We develop project management applications and custom ERP modules that connect planning with execution. We bring activities, deliverables, dependencies, owners and approval evidence into a shared workflow.",
           result:
-            "Distinguish completed work from approved work and address the dependency blocking progress.",
+            "Identify delays, understand dependencies and review the verifiable evidence supporting each milestone before advancing.",
           visualTitle: "The dependency behind the delay",
           annotation:
             "Kelmetrik turns scattered follow-up into a shared view of the work and the evidence required to move forward.",
@@ -145,12 +145,12 @@ export const content = {
         },
         {
           id: "warehouse",
-          title: "Warehouse & materials",
+          title: "Warehouse & Material Management",
           problem:
-            "What is received or picked does not always match the order and the inventory record.",
-          flow: "We develop custom WMS systems, warehouse modules and ERP integrations that connect scanning, material and quantity validation, locations and movement records.",
+            "Physical material movements and system records can fall out of sync when receiving, picking and inventory updates require repeated manual entry.",
+          flow: "We develop custom WMS systems, warehouse modules and ERP integrations for receiving, storage, picking and inventory. We connect physical movements with operational records through material, quantity and location validation.",
           result:
-            "Detect discrepancies before confirming a movement and preserve its relationship to the order and location.",
+            "Detect discrepancies before confirming movements, trace their history and reuse captured information across connected systems.",
           visualTitle: "Validate the movement before recording it",
           annotation:
             "Kelmetrik connects the physical operation to the business record and makes the rules for confirming each movement explicit.",
@@ -378,12 +378,12 @@ export const content = {
       items: [
         {
           id: "manufacturing",
-          title: "Manufactura y trazabilidad",
+          title: "Ejecución de manufactura y trazabilidad",
           problem:
-            "Cuando aparece un problema, reconstruir la historia de una pieza exige buscar en registros separados.",
-          flow: "Desarrollamos MES a medida y módulos de ejecución que conectan órdenes del ERP, captura en piso, componentes y resultados de estación en un registro consultable.",
+            "La identificación de componentes, los registros de proceso y los resultados de prueba suelen quedar en sistemas separados, dificultando seguir cada producto durante su fabricación.",
+          flow: "Desarrollamos MES a medida y módulos de ejecución que conectan estaciones, equipos y sistemas de producción. Vinculamos órdenes del ERP, identificación de componentes y resultados de prueba para registrar lo que ocurre en cada etapa de manufactura.",
           result:
-            "Recuperar el recorrido de una pieza y encontrar el material y la evidencia asociados a cada operación.",
+            "Controlar la ejecución de los procesos, detectar desviaciones e investigar qué ocurrió con cada producto a partir de sus registros vinculados.",
           visualTitle: "La historia de una pieza, conectada",
           annotation:
             "Kelmetrik estructura las relaciones entre tus sistemas y pone la evidencia al alcance de operaciones, calidad e ingeniería.",
@@ -408,12 +408,12 @@ export const content = {
         },
         {
           id: "quality",
-          title: "Calidad y Safe Launch",
+          title: "Gestión de calidad y Safe Launch",
           problem:
-            "Una inspección detecta un hallazgo, pero la evidencia, el material afectado y la decisión quedan en conversaciones distintas.",
-          flow: "Creamos aplicaciones de calidad conectadas con tu ERP o MES para registrar inspecciones, vincular evidencia al producto y gestionar contenciones, responsables y disposiciones.",
+            "Las inspecciones generan hallazgos, pero la evidencia, las acciones de contención y las decisiones de calidad pueden quedar dispersas entre hojas de cálculo y conversaciones.",
+          flow: "Digitalizamos inspecciones, validaciones y procesos de contención mediante aplicaciones de calidad conectadas con tu ERP o MES. Cada resultado relaciona defectos, evidencia, responsables y las decisiones de seguimiento.",
           result:
-            "Identificar qué material está contenido, por qué y quién debe revisar la evidencia antes de decidir.",
+            "Dar seguimiento a cada hallazgo hasta su disposición y coordinar el control de nuevos lanzamientos con registros compartidos y responsabilidades claras.",
           visualTitle: "Del hallazgo a una decisión documentada",
           annotation:
             "Kelmetrik conecta la captura en piso con el seguimiento de calidad, conservando el contexto y la responsabilidad de cada decisión.",
@@ -437,12 +437,12 @@ export const content = {
         },
         {
           id: "apqp",
-          title: "APQP y ejecución de proyectos",
+          title: "APQP y gestión de proyectos industriales",
           problem:
-            "El plan indica una fecha de avance, pero no deja claro qué entregable o aprobación impide alcanzar el siguiente hito.",
-          flow: "Desarrollamos aplicaciones de gestión y módulos de ERP a medida que relacionan hitos, entregables, dependencias, responsables y evidencia de aprobación.",
+            "La planeación y el avance real pueden separarse cuando las actividades, los entregables y las aprobaciones se siguen en registros distintos.",
+          flow: "Desarrollamos aplicaciones de gestión de proyectos y módulos de ERP a medida que conectan la planeación con la ejecución. Centralizamos actividades, entregables, dependencias, responsables y evidencia de aprobación en un flujo compartido.",
           result:
-            "Distinguir trabajo terminado de trabajo aprobado y atender la dependencia que bloquea el avance.",
+            "Identificar retrasos, visualizar dependencias y revisar la evidencia verificable que respalda cada hito antes de avanzar.",
           visualTitle: "La dependencia que explica el retraso",
           annotation:
             "Kelmetrik convierte el seguimiento disperso en una vista compartida del trabajo y de la evidencia necesaria para avanzar.",
@@ -464,12 +464,12 @@ export const content = {
         },
         {
           id: "warehouse",
-          title: "Almacenes y materiales",
+          title: "Gestión de almacenes y materiales",
           problem:
-            "Lo que se recibe o se surte no siempre coincide con la orden y el registro del inventario.",
-          flow: "Desarrollamos WMS a medida, módulos de almacén e integraciones con ERP para conectar escaneo, validación de material y cantidad, ubicaciones y registro de movimientos.",
+            "Los movimientos físicos y los registros del sistema pueden perder sincronía cuando el recibo, el surtido y las actualizaciones de inventario requieren capturas manuales repetidas.",
+          flow: "Desarrollamos WMS a medida, módulos de almacén e integraciones con ERP para recibo, almacenamiento, picking e inventario. Conectamos los movimientos físicos con los registros de la operación mediante validaciones de material, cantidad y ubicación.",
           result:
-            "Detectar discrepancias antes de confirmar un movimiento y conservar su relación con la orden y la ubicación.",
+            "Detectar discrepancias antes de confirmar movimientos, consultar su trazabilidad y reutilizar la información capturada entre los sistemas conectados.",
           visualTitle: "Validar el movimiento antes de registrarlo",
           annotation:
             "Kelmetrik conecta la operación física con el registro empresarial y hace explícitas las reglas para confirmar cada movimiento.",

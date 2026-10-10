@@ -248,19 +248,19 @@ manufacturing
 
 **domains.items.0.title**
 
-Manufacturing & traceability
+Manufacturing Execution & Traceability
 
 **domains.items.0.problem**
 
-When an issue appears, reconstructing a product’s history requires searching across disconnected records.
+Component identification, process records and test results often live in separate systems, making it difficult to follow each product through production.
 
 **domains.items.0.flow**
 
-We develop custom MES systems and execution modules that connect ERP orders, shop-floor capture, components and station results in a searchable record.
+We develop custom MES systems and execution modules that connect stations, equipment and production systems. We link ERP orders, component identification and test results to record what happens at each manufacturing stage.
 
 **domains.items.0.result**
 
-Retrieve a product’s journey and find the material and evidence associated with each operation.
+Monitor process execution, identify deviations and investigate what happened to each product using its linked records.
 
 **domains.items.0.visualTitle**
 
@@ -356,19 +356,19 @@ quality
 
 **domains.items.1.title**
 
-Quality & Safe Launch
+Quality Management & Safe Launch
 
 **domains.items.1.problem**
 
-An inspection identifies an issue, but its evidence, affected material and disposition live in separate conversations.
+Inspections generate findings, but evidence, containment actions and quality decisions can become scattered across spreadsheets and conversations.
 
 **domains.items.1.flow**
 
-We build quality applications connected to your ERP or MES to record inspections, link evidence to products and manage containment, ownership and dispositions.
+We digitize inspections, validations and containment workflows through quality applications connected to your ERP or MES. Each result links defects, evidence, owners and the decisions that follow.
 
 **domains.items.1.result**
 
-Identify which material is contained, why, and who needs to review the evidence before making a decision.
+Follow each finding through disposition and coordinate new-launch controls with shared records and clear responsibility.
 
 **domains.items.1.visualTitle**
 
@@ -452,19 +452,19 @@ apqp
 
 **domains.items.2.title**
 
-APQP & project execution
+APQP & Industrial Project Management
 
 **domains.items.2.problem**
 
-The plan shows a target date, but it does not make clear which deliverable or approval prevents the next milestone.
+Project plans and actual progress often diverge when activities, deliverables and approvals are tracked separately.
 
 **domains.items.2.flow**
 
-We develop management applications and custom ERP modules that link milestones, deliverables, dependencies, owners and approval evidence.
+We develop project management applications and custom ERP modules that connect planning with execution. We bring activities, deliverables, dependencies, owners and approval evidence into a shared workflow.
 
 **domains.items.2.result**
 
-Distinguish completed work from approved work and address the dependency blocking progress.
+Identify delays, understand dependencies and review the verifiable evidence supporting each milestone before advancing.
 
 **domains.items.2.visualTitle**
 
@@ -544,19 +544,19 @@ warehouse
 
 **domains.items.3.title**
 
-Warehouse & materials
+Warehouse & Material Management
 
 **domains.items.3.problem**
 
-What is received or picked does not always match the order and the inventory record.
+Physical material movements and system records can fall out of sync when receiving, picking and inventory updates require repeated manual entry.
 
 **domains.items.3.flow**
 
-We develop custom WMS systems, warehouse modules and ERP integrations that connect scanning, material and quantity validation, locations and movement records.
+We develop custom WMS systems, warehouse modules and ERP integrations for receiving, storage, picking and inventory. We connect physical movements with operational records through material, quantity and location validation.
 
 **domains.items.3.result**
 
-Detect discrepancies before confirming a movement and preserve its relationship to the order and location.
+Detect discrepancies before confirming movements, trace their history and reuse captured information across connected systems.
 
 **domains.items.3.visualTitle**
 
@@ -1223,19 +1223,19 @@ manufacturing
 
 **domains.items.0.title**
 
-Manufactura y trazabilidad
+Ejecución de manufactura y trazabilidad
 
 **domains.items.0.problem**
 
-Cuando aparece un problema, reconstruir la historia de una pieza exige buscar en registros separados.
+La identificación de componentes, los registros de proceso y los resultados de prueba suelen quedar en sistemas separados, dificultando seguir cada producto durante su fabricación.
 
 **domains.items.0.flow**
 
-Desarrollamos MES a medida y módulos de ejecución que conectan órdenes del ERP, captura en piso, componentes y resultados de estación en un registro consultable.
+Desarrollamos MES a medida y módulos de ejecución que conectan estaciones, equipos y sistemas de producción. Vinculamos órdenes del ERP, identificación de componentes y resultados de prueba para registrar lo que ocurre en cada etapa de manufactura.
 
 **domains.items.0.result**
 
-Recuperar el recorrido de una pieza y encontrar el material y la evidencia asociados a cada operación.
+Controlar la ejecución de los procesos, detectar desviaciones e investigar qué ocurrió con cada producto a partir de sus registros vinculados.
 
 **domains.items.0.visualTitle**
 
@@ -1331,19 +1331,19 @@ quality
 
 **domains.items.1.title**
 
-Calidad y Safe Launch
+Gestión de calidad y Safe Launch
 
 **domains.items.1.problem**
 
-Una inspección detecta un hallazgo, pero la evidencia, el material afectado y la decisión quedan en conversaciones distintas.
+Las inspecciones generan hallazgos, pero la evidencia, las acciones de contención y las decisiones de calidad pueden quedar dispersas entre hojas de cálculo y conversaciones.
 
 **domains.items.1.flow**
 
-Creamos aplicaciones de calidad conectadas con tu ERP o MES para registrar inspecciones, vincular evidencia al producto y gestionar contenciones, responsables y disposiciones.
+Digitalizamos inspecciones, validaciones y procesos de contención mediante aplicaciones de calidad conectadas con tu ERP o MES. Cada resultado relaciona defectos, evidencia, responsables y las decisiones de seguimiento.
 
 **domains.items.1.result**
 
-Identificar qué material está contenido, por qué y quién debe revisar la evidencia antes de decidir.
+Dar seguimiento a cada hallazgo hasta su disposición y coordinar el control de nuevos lanzamientos con registros compartidos y responsabilidades claras.
 
 **domains.items.1.visualTitle**
 
@@ -1427,19 +1427,19 @@ apqp
 
 **domains.items.2.title**
 
-APQP y ejecución de proyectos
+APQP y gestión de proyectos industriales
 
 **domains.items.2.problem**
 
-El plan indica una fecha de avance, pero no deja claro qué entregable o aprobación impide alcanzar el siguiente hito.
+La planeación y el avance real pueden separarse cuando las actividades, los entregables y las aprobaciones se siguen en registros distintos.
 
 **domains.items.2.flow**
 
-Desarrollamos aplicaciones de gestión y módulos de ERP a medida que relacionan hitos, entregables, dependencias, responsables y evidencia de aprobación.
+Desarrollamos aplicaciones de gestión de proyectos y módulos de ERP a medida que conectan la planeación con la ejecución. Centralizamos actividades, entregables, dependencias, responsables y evidencia de aprobación en un flujo compartido.
 
 **domains.items.2.result**
 
-Distinguir trabajo terminado de trabajo aprobado y atender la dependencia que bloquea el avance.
+Identificar retrasos, visualizar dependencias y revisar la evidencia verificable que respalda cada hito antes de avanzar.
 
 **domains.items.2.visualTitle**
 
@@ -1519,19 +1519,19 @@ warehouse
 
 **domains.items.3.title**
 
-Almacenes y materiales
+Gestión de almacenes y materiales
 
 **domains.items.3.problem**
 
-Lo que se recibe o se surte no siempre coincide con la orden y el registro del inventario.
+Los movimientos físicos y los registros del sistema pueden perder sincronía cuando el recibo, el surtido y las actualizaciones de inventario requieren capturas manuales repetidas.
 
 **domains.items.3.flow**
 
-Desarrollamos WMS a medida, módulos de almacén e integraciones con ERP para conectar escaneo, validación de material y cantidad, ubicaciones y registro de movimientos.
+Desarrollamos WMS a medida, módulos de almacén e integraciones con ERP para recibo, almacenamiento, picking e inventario. Conectamos los movimientos físicos con los registros de la operación mediante validaciones de material, cantidad y ubicación.
 
 **domains.items.3.result**
 
-Detectar discrepancias antes de confirmar un movimiento y conservar su relación con la orden y la ubicación.
+Detectar discrepancias antes de confirmar movimientos, consultar su trazabilidad y reutilizar la información capturada entre los sistemas conectados.
 
 **domains.items.3.visualTitle**
 
